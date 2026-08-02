@@ -535,13 +535,17 @@ function useFortschritt() {
       } else {
         setFortschritt({
           proThema: {},
-          pruefungsversuche: []
+          pruefungsversuche: [],
+          ausgeschlosseneFragenIds: [],
+          ausgeschlosseneThemenIds: []
         });
       }
     } catch (e) {
       setFortschritt({
         proThema: {},
-        pruefungsversuche: []
+        pruefungsversuche: [],
+        ausgeschlosseneFragenIds: [],
+        ausgeschlosseneThemenIds: []
       });
     }
     setGeladen(true);
@@ -1036,6 +1040,16 @@ function QuizScreen({
   const [neueRichtigeAusFalschen, setNeueRichtigeAusFalschen] = useState([]);
   const frage = fragenListe[index];
   const fortschrittProzent = index / fragenListe.length * 100;
+  const ausgeschlosseneIds = fortschritt.ausgeschlosseneFragenIds || [];
+  const istAusgeschlossen = frage ? ausgeschlosseneIds.includes(frage.id) : false;
+  const toggleAusschluss = async () => {
+    const aktuelleListe = fortschritt.ausgeschlosseneFragenIds || [];
+    const neueListe = istAusgeschlossen ? aktuelleListe.filter(id => id !== frage.id) : [...aktuelleListe, frage.id];
+    await speichern({
+      ...fortschritt,
+      ausgeschlosseneFragenIds: neueListe
+    });
+  };
   const waehleAntwort = i => {
     if (zeigeErgebnis) return;
     setAusgewaehlt(i);
@@ -1177,7 +1191,43 @@ function QuizScreen({
       lineHeight: 1.45,
       fontFamily: "'Newsreader', Georgia, serif"
     }
-  }, frage.frage)), /*#__PURE__*/React.createElement("div", {
+  }, frage.frage), /*#__PURE__*/React.createElement("button", {
+    onClick: toggleAusschluss,
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 6,
+      background: "none",
+      border: "none",
+      padding: "12px 0 0",
+      marginTop: 12,
+      borderTop: "1px solid #F3EFE8",
+      cursor: "pointer",
+      fontSize: 12.5,
+      color: istAusgeschlossen ? "#C1584A" : "#B8B0A2",
+      WebkitTapHighlightColor: "transparent",
+      width: "100%"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 14,
+      height: 14,
+      borderRadius: 4,
+      border: istAusgeschlossen ? "1.5px solid #C1584A" : "1.5px solid #B8B0A2",
+      background: istAusgeschlossen ? "#C1584A" : "transparent",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontSize: 10,
+      color: "#fff",
+      flexShrink: 0,
+      marginTop: 12
+    }
+  }, istAusgeschlossen ? "✓" : ""), /*#__PURE__*/React.createElement("span", {
+    style: {
+      marginTop: 12
+    }
+  }, istAusgeschlossen ? "Kommt nicht in der Prüfung dran" : "Frage kam laut Prof nicht dran?"))), /*#__PURE__*/React.createElement("div", {
     style: {
       display: "flex",
       flexDirection: "column",
@@ -1314,9 +1364,15 @@ function ErgebnisScreen({
    ============================================================ */
 function PruefungsIntroScreen({
   onStart,
-  onAbbrechen
+  onAbbrechen,
+  ausgeschlosseneFragenIds,
+  ausgeschlosseneThemenIds,
+  onToggleThema
 }) {
-  const gesamtFragenVerfuegbar = Object.values(FRAGEN_DATEN).reduce((s, arr) => s + arr.length, 0);
+  const anzahlAusgeschlossen = (ausgeschlosseneFragenIds || []).length;
+  const themenIds = ausgeschlosseneThemenIds || [];
+  const verfuegbareThemen = THEMEN_META.filter(t => FRAGEN_DATEN[t.id]);
+  const gesamtFragenVerfuegbar = Object.entries(FRAGEN_DATEN).filter(([themaId]) => !themenIds.includes(themaId)).flatMap(([, fragen]) => fragen).filter(f => !(ausgeschlosseneFragenIds || []).includes(f.id)).length;
   return /*#__PURE__*/React.createElement("div", {
     style: {
       padding: "24px 20px 100px"
@@ -1364,8 +1420,77 @@ function PruefungsIntroScreen({
   }), /*#__PURE__*/React.createElement(Zeile, {
     label: "Verfügbarer Fragenpool",
     wert: `${gesamtFragenVerfuegbar} Fragen`,
+    letzte: anzahlAusgeschlossen === 0
+  }), anzahlAusgeschlossen > 0 && /*#__PURE__*/React.createElement(Zeile, {
+    label: "Einzeln ausgeschlossene Fragen",
+    wert: `${anzahlAusgeschlossen} Fragen`,
     letzte: true
-  })), gesamtFragenVerfuegbar < PRUEFUNG_ANZAHL_FRAGEN && /*#__PURE__*/React.createElement("div", {
+  })), verfuegbareThemen.length > 1 && /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginBottom: 22
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      letterSpacing: 1,
+      color: "#7A7264",
+      textTransform: "uppercase",
+      fontWeight: 600,
+      marginBottom: 10
+    }
+  }, "Themengebiete in der Prüfung"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 8
+    }
+  }, verfuegbareThemen.map(thema => {
+    const istAktiv = !themenIds.includes(thema.id);
+    const anzahl = FRAGEN_DATEN[thema.id]?.length || 0;
+    return /*#__PURE__*/React.createElement("button", {
+      key: thema.id,
+      onClick: () => onToggleThema(thema.id),
+      style: {
+        display: "flex",
+        alignItems: "center",
+        gap: 12,
+        background: "#FFFFFF",
+        border: "1px solid #EFEAE1",
+        borderRadius: 14,
+        padding: "12px 14px",
+        cursor: "pointer",
+        textAlign: "left",
+        opacity: istAktiv ? 1 : 0.5,
+        WebkitTapHighlightColor: "transparent"
+      }
+    }, /*#__PURE__*/React.createElement("span", {
+      style: {
+        width: 20,
+        height: 20,
+        borderRadius: 6,
+        border: istAktiv ? "1.5px solid #1D4E4A" : "1.5px solid #B8B0A2",
+        background: istAktiv ? "#1D4E4A" : "transparent",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: 12,
+        color: "#fff",
+        flexShrink: 0
+      }
+    }, istAktiv ? "✓" : ""), /*#__PURE__*/React.createElement("span", {
+      style: {
+        flex: 1,
+        fontSize: 14.5,
+        fontWeight: 600,
+        color: "#2B2620"
+      }
+    }, thema.name), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 12.5,
+        color: "#B8B0A2"
+      }
+    }, anzahl, " Fragen"));
+  }))), gesamtFragenVerfuegbar < PRUEFUNG_ANZAHL_FRAGEN && /*#__PURE__*/React.createElement("div", {
     style: {
       background: "#FFF7ED",
       border: "1px solid #F0D9B5",
@@ -1376,10 +1501,11 @@ function PruefungsIntroScreen({
       color: "#8C6D3A",
       lineHeight: 1.5
     }
-  }, "Aktuell sind erst ", gesamtFragenVerfuegbar, " Fragen hinterlegt (nur Mikrobiologie). Die Simulation nutzt vorerst diese Fragen — mit weiteren Themen wird sie automatisch vollständiger."), /*#__PURE__*/React.createElement(Knopf, {
+  }, "Aktuell stehen ", gesamtFragenVerfuegbar, " Fragen zur Verfügung. Die Simulation nutzt vorerst diese Fragen — mit weiteren Themen wird sie automatisch vollständiger."), /*#__PURE__*/React.createElement(Knopf, {
     variant: "akzent",
     fullWidth: true,
     onClick: onStart,
+    disabled: gesamtFragenVerfuegbar === 0,
     style: {
       padding: "18px 24px"
     }
@@ -1412,10 +1538,13 @@ function Zeile({
 }
 function PruefungsScreen({
   onFertig,
-  onAbbrechen
+  onAbbrechen,
+  ausgeschlosseneFragenIds,
+  ausgeschlosseneThemenIds
 }) {
   const [fragenListe] = useState(() => {
-    const alle = Object.values(FRAGEN_DATEN).flat();
+    const themenIds = ausgeschlosseneThemenIds || [];
+    const alle = Object.entries(FRAGEN_DATEN).filter(([themaId]) => !themenIds.includes(themaId)).flatMap(([, fragen]) => fragen).filter(f => !(ausgeschlosseneFragenIds || []).includes(f.id));
     const auswahl = shuffle(alle).slice(0, Math.min(PRUEFUNG_ANZAHL_FRAGEN, alle.length));
     return fragenMitGemischtenOptionen(auswahl);
   });
@@ -1774,13 +1903,25 @@ function App() {
     onZurueck: () => setScreen("start")
   }), screen === "pruefung-intro" && /*#__PURE__*/React.createElement(PruefungsIntroScreen, {
     onStart: () => setScreen("pruefung"),
-    onAbbrechen: () => setScreen("start")
+    onAbbrechen: () => setScreen("start"),
+    ausgeschlosseneFragenIds: fortschritt.ausgeschlosseneFragenIds,
+    ausgeschlosseneThemenIds: fortschritt.ausgeschlosseneThemenIds,
+    onToggleThema: themaId => {
+      const aktuelle = fortschritt.ausgeschlosseneThemenIds || [];
+      const neue = aktuelle.includes(themaId) ? aktuelle.filter(id => id !== themaId) : [...aktuelle, themaId];
+      speichern({
+        ...fortschritt,
+        ausgeschlosseneThemenIds: neue
+      });
+    }
   }), screen === "pruefung" && /*#__PURE__*/React.createElement(PruefungsScreen, {
     onFertig: erg => {
       setLetztesPruefungsErgebnis(erg);
       setScreen("pruefung-ergebnis");
     },
-    onAbbrechen: () => setScreen("start")
+    onAbbrechen: () => setScreen("start"),
+    ausgeschlosseneFragenIds: fortschritt.ausgeschlosseneFragenIds,
+    ausgeschlosseneThemenIds: fortschritt.ausgeschlosseneThemenIds
   }), screen === "pruefung-ergebnis" && /*#__PURE__*/React.createElement(PruefungsErgebnisScreen, {
     ergebnis: letztesPruefungsErgebnis,
     onZurueck: () => setScreen("start")
