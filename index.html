@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<meta name="apple-mobile-web-app-title" content="ZMP Lernen" />
+<title>ZMP Lernapp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #FAF7F2; -webkit-tap-highlight-color: transparent; }
+  * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+  body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel" data-presets="react">
+const { useState, useEffect, useMemo, useCallback } = React;
+
+/* ============================================================
+   DATEN: Fragenpool nach Themengebiet
+   Weitere Themen werden hier als neue Einträge ergänzt.
+   ============================================================ */
+const THEMEN_META = [
+  { id: "mikrobiologie", name: "Mikrobiologie", kurz: "MIKRO", farbe: "#1D4E4A" },
+  { id: "thema2", name: "Themengebiet 2", kurz: "TH2", farbe: "#5B6B8C", kommendBald: true },
+  { id: "thema3", name: "Themengebiet 3", kurz: "TH3", farbe: "#7A5C61", kommendBald: true },
+  { id: "thema4", name: "Themengebiet 4", kurz: "TH4", farbe: "#8C7355", kommendBald: true },
+  { id: "thema5", name: "Themengebiet 5", kurz: "TH5", farbe: "#5C7A6E", kommendBald: true },
+];
+
+const FRAGEN_DATEN = {
+  mikrobiologie: [
+    { id: "mikro-001", frage: "Was versteht man unter dem Begriff 'Mikrobiom'?", optionen: ["Nur die schädlichen Bakterien im Körper", "Die Gesamtheit aller Mikroorganismen, die auf und in uns leben", "Ein Gerät zur Untersuchung von Bakterien", "Die Anzahl der Viren im Blut"], richtig: 1 },
+    { id: "mikro-002", frage: "Welche zwei Hauptaufbauformen von Zellen gibt es bei Mikroorganismen?", optionen: ["Groß- und Kleinzellen", "Prokaryoten und Eukaryoten", "Aerobe und anaerobe Zellen", "Gram-positive und Gram-negative Zellen"], richtig: 1 },
+    { id: "mikro-003", frage: "Was trifft auf Prokaryoten zu?", optionen: ["Sie besitzen einen echten, membranumschlossenen Zellkern", "Sie haben mehrere Chromosomen im Zellkern", "Ihr Erbgut liegt als ringförmiges Chromosom frei im Cytoplasma vor", "Sie sind grundsätzlich größer als Eukaryoten"], richtig: 2 },
+    { id: "mikro-004", frage: "Wer entdeckte im 17. Jahrhundert Mikroorganismen und Zellen?", optionen: ["Robert Koch und Louis Pasteur", "Robert Hooke und Antoni van Leeuwenhoek", "Alexander Fleming", "Charles Darwin"], richtig: 1 },
+    { id: "mikro-005", frage: "Was besagen die Koch'schen Postulate?", optionen: ["Regeln zur Antibiotika-Dosierung", "Ein Verfahren zur Sterilisation von Instrumenten", "Kriterien zum Nachweis, dass ein bestimmter Erreger eine bestimmte Krankheit auslöst", "Die Einteilung der Bakterien nach Form"], richtig: 2 },
+    { id: "mikro-006", frage: "Wofür dient die Gramfärbung?", optionen: ["Zur Bestimmung der Bakteriengröße", "Zur Differenzierung von Bakterien anhand des Zellwandaufbaus", "Zum Nachweis von Viren", "Zur Messung des Sauerstoffbedarfs"], richtig: 1 },
+    { id: "mikro-007", frage: "Welche Farbe zeigen grampositive Bakterien nach der Gramfärbung?", optionen: ["Rot", "Grün", "Blau/violett", "Gelb"], richtig: 2 },
+    { id: "mikro-008", frage: "Was ist ein Plasmid?", optionen: ["Ein Bestandteil der Zellwand", "Eine extrachromosomale DNA-Struktur im Bakterium", "Ein Enzym zur DNA-Reparatur", "Die äußere Schutzhülle des Bakteriums"], richtig: 1 },
+    { id: "mikro-009", frage: "Welche Aussage zu Endosporen ist korrekt?", optionen: ["Sie kommen nur bei Viren vor", "Sie sind sehr hitzeempfindlich", "Sie ermöglichen Bakterien das Überleben unter ungünstigen Bedingungen", "Sie sind für die Fortbewegung des Bakteriums zuständig"], richtig: 2 },
+    { id: "mikro-010", frage: "Welcher Erreger verursacht Tetanus (Wundstarrkrampf)?", optionen: ["Clostridium tetani", "Staphylococcus aureus", "Mycobacterium tuberculosis", "Neisseria meningitidis"], richtig: 0 },
+    { id: "mikro-011", frage: "Was unterscheidet aerobe von anaeroben Bakterien?", optionen: ["Ihre Größe", "Ihr Bedarf bzw. ihre Toleranz gegenüber Sauerstoff", "Ihre Farbe nach Gramfärbung", "Ihre Vermehrungsgeschwindigkeit"], richtig: 1 },
+    { id: "mikro-012", frage: "Wie vermehren sich Bakterien?", optionen: ["Geschlechtlich durch Verschmelzung zweier Zellen", "Ungeschlechtlich durch Zellteilung", "Nur durch Sporenbildung", "Durch Knospung wie bei Hefen"], richtig: 1 },
+    { id: "mikro-013", frage: "Was beschreibt die Konjugation bei Bakterien?", optionen: ["Aufnahme freier DNA aus der Umgebung", "Gentransfer durch Viren (Bakteriophagen)", "Direkter genetischer Austausch zwischen zwei Bakterien, die sich verbinden", "Zellteilung zur Vermehrung"], richtig: 2 },
+    { id: "mikro-014", frage: "Was beschreibt die Transduktion bei Bakterien?", optionen: ["Direkter Kontakt zweier Bakterien", "Gentransfer durch Bakteriophagen (Viren)", "Aufnahme freier DNA aus zerfallenen Zellen", "Zellteilung"], richtig: 1 },
+    { id: "mikro-015", frage: "Welches Bakterium spielt eine zentrale Rolle bei der Kariesentstehung?", optionen: ["Streptococcus mutans", "Staphylococcus aureus", "Neisseria gonorrhoeae", "Clostridium botulinum"], richtig: 0 },
+    { id: "mikro-016", frage: "Wie trägt Streptococcus mutans zur Kariesentstehung bei?", optionen: ["Er zerstört direkt den Zahnschmelz durch Enzyme", "Er bildet aus Kohlenhydraten Milchsäure, was zu einem pH-Abfall und Demineralisation führt", "Er verhindert die Bildung von Plaque", "Er produziert ausschließlich Sauerstoff"], richtig: 1 },
+    { id: "mikro-017", frage: "Was ist typisch für Scharlach?", optionen: ["Es betrifft ausschließlich Erwachsene", "Es wird durch Viren verursacht", "Typischer feinfleckiger Hautausschlag und 'Himbeerzunge', Mund-Kinn-Bereich bleibt frei", "Es ist nicht mit Antibiotika behandelbar"], richtig: 2 },
+    { id: "mikro-018", frage: "Welche Erkrankung wird durch Neisseria gonorrhoeae verursacht?", optionen: ["Tuberkulose", "Gonorrhoe ('Tripper')", "Listeriose", "Botulismus"], richtig: 1 },
+    { id: "mikro-019", frage: "Worauf sollten Schwangere im Hinblick auf Listerien besonders achten?", optionen: ["Keine Kohlenhydrate essen", "Kein Verzehr von nicht pasteurisierten Lebensmitteln (z.B. Rohmilchkäse)", "Keine körperliche Anstrengung", "Keine Zahnbehandlungen während der Schwangerschaft"], richtig: 1 },
+    { id: "mikro-020", frage: "Welche Krankheit wird durch Mycobacterium tuberculosis verursacht und betrifft vor allem welches Organ?", optionen: ["Tuberkulose, vor allem die Lunge", "Lepra, vor allem die Haut", "Tetanus, vor allem die Muskulatur", "Botulismus, vor allem das Nervensystem"], richtig: 0 },
+    { id: "mikro-021", frage: "Welches Bakterium verursacht Lepra?", optionen: ["Mycobacterium leprae", "Clostridium tetani", "Treponema pallidum", "Bordetella pertussis"], richtig: 0 },
+    { id: "mikro-022", frage: "Wodurch wird Keuchhusten (Pertussis) verursacht und wie verläuft er typischerweise?", optionen: ["Durch Bordetella pertussis, mit anhaltenden stakkatoartigen Hustenattacken", "Durch Legionellen, mit hohem Fieber", "Durch Salmonellen, mit Durchfall", "Durch Helicobacter, mit Magenschmerzen"], richtig: 0 },
+    { id: "mikro-023", frage: "Wie erfolgt die Ansteckung mit Legionellen typischerweise?", optionen: ["Über verunreinigtes Trinkwasser beim Trinken", "Durch Einatmen von keimhaltigen Aerosolen (z.B. Dusche, Klimaanlage)", "Durch Tröpfcheninfektion von Mensch zu Mensch", "Durch Zeckenstiche"], richtig: 1 },
+    { id: "mikro-024", frage: "Welches Bakterium ist an der Entstehung von Magenschleimhauterkrankungen und Geschwüren beteiligt und kann bei Nichtbehandlung zu einem Tumor führen?", optionen: ["Helicobacter pylori", "Salmonella", "Legionella", "Bordetella"], richtig: 0 },
+    { id: "mikro-025", frage: "Welcher Erreger verursacht Syphilis?", optionen: ["Treponema (pallidum)", "Borrelia burgdorferi", "Neisseria gonorrhoeae", "Mycoplasma pneumoniae"], richtig: 0 },
+    { id: "mikro-026", frage: "Wodurch wird die Lyme-Borreliose übertragen?", optionen: ["Durch Geschlechtsverkehr", "Durch Zecken", "Durch Tröpfcheninfektion", "Durch verunreinigtes Wasser"], richtig: 1 },
+    { id: "mikro-027", frage: "Was ist bei der Unterscheidung von FSME und Borreliose zu beachten?", optionen: ["Beide werden durch dasselbe Bakterium verursacht", "FSME wird durch ein Virus übertragen, gegen Borreliose gibt es keine Impfung", "Gegen beide gibt es eine Impfung", "Beide werden durch Mücken übertragen"], richtig: 1 },
+    { id: "mikro-028", frage: "Was sind Actinomyceten und wo befinden sie sich primär?", optionen: ["Grampositive Stäbchen/Fäden, primärer Lebensraum ist die Mundhöhle", "Gramnegative Kokken, primär im Darm", "Viren, primär im Blut", "Pilze, primär auf der Haut"], richtig: 0 },
+    { id: "mikro-029", frage: "Was ist eine Aktinomykose?", optionen: ["Eine Viruserkrankung der Atemwege", "Eine 'Strahlenpilzkrankheit' mit Abszess- und Fistelbildung, häufig zervikofazial", "Eine Pilzinfektion der Haut", "Eine Allergie gegen Bakterien"], richtig: 1 },
+    { id: "mikro-030", frage: "Wie groß sind Viren im Vergleich zu Bakterien?", optionen: ["Viren sind deutlich größer als Bakterien", "Viren sind mit 8-800nm deutlich kleiner und nur im Elektronenmikroskop sichtbar", "Viren und Bakterien sind etwa gleich groß", "Viren haben keine definierte Größe"], richtig: 1 },
+    { id: "mikro-031", frage: "Warum benötigen Viren eine Wirtszelle?", optionen: ["Sie haben keinen eigenen Stoffwechsel und keine eigene Replikation", "Sie können sich nicht bewegen", "Sie brauchen Sauerstoff aus der Wirtszelle", "Sie sind zu groß, um selbstständig zu wachsen"], richtig: 0 },
+    { id: "mikro-032", frage: "Was ist ein Virion?", optionen: ["Ein Enzym, das Viren zerstört", "Ein einzelnes Viruspartikel außerhalb des Wirts", "Eine besondere Bakterienart", "Ein Antikörper gegen Viren"], richtig: 1 },
+    { id: "mikro-033", frage: "In welcher Reihenfolge läuft die Replikation von Viren typischerweise ab?", optionen: ["Synthese, Penetration, Absorption, Freisetzung, Uncoating", "Absorption, Penetration, Uncoating, Replikation, Synthese, Freisetzung", "Freisetzung, Absorption, Synthese", "Uncoating, Freisetzung, Penetration"], richtig: 1 },
+    { id: "mikro-034", frage: "Was passiert bei einer lytischen Virusinfektion?", optionen: ["Die Wirtszelle überlebt dauerhaft", "Die betroffene Zelle platzt und die Viren werden freigesetzt", "Das Virus baut sich dauerhaft ins Genom ein, ohne Schaden", "Es kommt nie zur Vermehrung des Virus"], richtig: 1 },
+    { id: "mikro-035", frage: "Was beschreibt eine latente (lysogene) Virusinfektion, z.B. bei Herpes simplex?", optionen: ["Das Virus wird sofort komplett eliminiert", "Die Virusvermehrung ruht nach Einbau ins Genom, kann aber unter bestimmten Bedingungen reaktiviert werden", "Die Wirtszelle platzt sofort nach Infektion", "Es gibt keine Symptome, das Virus verschwindet nach kurzer Zeit von selbst"], richtig: 1 },
+    { id: "mikro-036", frage: "Wie wirken Virustatika?", optionen: ["Sie hemmen spezifisch virale Proteine, Enzyme oder Prozesse und damit die Replikation", "Sie töten Bakterien ab", "Sie stärken nur das Immunsystem allgemein", "Sie wirken ausschließlich vorbeugend, nie therapeutisch"], richtig: 0 },
+    { id: "mikro-037", frage: "Welche Aussage zu SARS-CoV-2 trifft zu?", optionen: ["Es ist ein unbehülltes DNA-Virus", "Es ist ein membranumhülltes RNA-Virus mit Spike-Proteinen, Hauptübertragung über Tröpfchen/Aerosole", "Es wird ausschließlich durch Insektenstiche übertragen", "Es gibt keine Impfung dagegen"], richtig: 1 },
+    { id: "mikro-038", frage: "Welche Viruserkrankung wird auch als 'Kissing Disease' bezeichnet und löst Pfeiffer'sches Drüsenfieber aus?", optionen: ["Herpes simplex", "Epstein-Barr-Virus (infektiöse Mononukleose)", "Varizella-Zoster-Virus", "Cytomegalie-Virus"], richtig: 1 },
+    { id: "mikro-039", frage: "Welches Virus löst sowohl Windpocken (Erstinfektion) als auch Gürtelrose (Zweitinfektion) aus?", optionen: ["Herpes-simplex-Virus", "Varizella-Zoster-Virus", "Cytomegalie-Virus", "Epstein-Barr-Virus"], richtig: 1 },
+    { id: "mikro-040", frage: "Warum wird bei Schwangeren häufig auf das Cytomegalie-Virus getestet?", optionen: ["Es verursacht bei der Mutter starke Symptome", "Es kann beim ungeborenen Kind Mikrozephalie, Behinderungen und Hörschäden auslösen", "Es ist hoch ansteckend für das Praxispersonal", "Es verursacht Fehlgeburten in fast 100% der Fälle"], richtig: 1 },
+    { id: "mikro-041", frage: "Welche Hepatitis-Form hat keine Impfung, verläuft sehr häufig chronisch (ca. 80%) und kann zu Leberzirrhose führen?", optionen: ["Hepatitis A", "Hepatitis B", "Hepatitis C", "Hepatitis E"], richtig: 2 },
+    { id: "mikro-042", frage: "Warum kann HIV nicht aus dem menschlichen Körper entfernt werden?", optionen: ["Es versteckt sich nur in der Haut", "Als Retrovirus baut es seinen genetischen Code dauerhaft ins menschliche Erbgut ein", "Es gibt keine Medikamente dagegen", "Es vermehrt sich zu schnell für jede Therapie"], richtig: 1 },
+    { id: "mikro-043", frage: "Was ist charakteristisch für Influenzaviren?", optionen: ["Sie mutieren häufig, wodurch keine dauerhafte Immunität entsteht", "Sie verursachen ausschließlich Hautkrankheiten", "Es gibt keine Schutzimpfung", "Sie befallen nur den Verdauungstrakt"], richtig: 0 },
+    { id: "mikro-044", frage: "Welche Aussage zu Pilzen als Krankheitserreger ist korrekt?", optionen: ["Sie sind grundsätzlich für jeden Menschen hochgefährlich", "Bei Gesunden verlaufen Mykosen meist unkritisch, bei immundefizienten Patienten treten häufiger Infektionen auf", "Pilze können den Menschen nie infizieren", "Pilze kommen nie natürlich im menschlichen Körper vor"], richtig: 1 },
+    { id: "mikro-045", frage: "Wie werden Pilze im DHS-System eingeteilt?", optionen: ["Dermatophyten, Hefen, Schimmelpilze", "Direkt, Horizontal, Sekundär", "Diploid, Haploid, Somatisch", "Dünn, Hoch, Sporen"], richtig: 0 },
+    { id: "mikro-046", frage: "Was begünstigt eine Candida-Infektion (Mundsoor)?", optionen: ["Ausschließlich junges Alter", "Abwehrschwäche, schlecht sitzende Prothesen, Chemotherapie, Rauchen", "Ausschließlich sportliche Aktivität", "Nur eine vegane Ernährung"], richtig: 1 },
+    { id: "mikro-047", frage: "Was ist ein Aspergillom in der Kieferhöhle häufig assoziiert mit?", optionen: ["Nikotinkonsum", "In die Kieferhöhle überpresstem Wurzelfüllmaterial nach rezidivierenden Sinusitiden", "Zahnspangen", "Fluoridmangel"], richtig: 1 },
+    { id: "mikro-048", frage: "Was ist ein Ektoparasit?", optionen: ["Ein Parasit, der im Blut lebt", "Ein Parasit, der auf Haut oder Haaren lebt", "Ein Parasit, der ausschließlich im Darm lebt", "Ein Parasit, der Pflanzen befällt"], richtig: 1 },
+    { id: "mikro-049", frage: "Wodurch wird Malaria übertragen?", optionen: ["Durch die Anopheles-Mücke", "Durch Zecken", "Durch verunreinigtes Trinkwasser", "Durch direkten Hautkontakt"], richtig: 0 },
+    { id: "mikro-050", frage: "Welches Tier gilt als Endwirt bei Toxoplasmose und warum ist die Erkrankung bei Schwangeren relevant?", optionen: ["Der Hund; verursacht bei der Mutter schwere Symptome", "Die Katze; kann beim ungeborenen Kind Schäden bis zur Blindheit verursachen", "Die Maus; ist für die Mutter tödlich", "Der Vogel; führt immer zu Fehlgeburten"], richtig: 1 },
+    { id: "mikro-051", frage: "Welche vier Hauptmechanismen der Abwehr von Mikroorganismen gibt es beim Menschen?", optionen: ["Nur Antibiotika und Impfung", "Physiologische Barrieren, unspezifische Entzündungsreaktion, Phagozytose, humorale/zelluläre Abwehr", "Nur Haut und Schleimhäute", "Nur weiße Blutkörperchen"], richtig: 1 },
+    { id: "mikro-052", frage: "Was zählt zu den klassischen Entzündungszeichen (lokal, unspezifisch)?", optionen: ["Rubor, Tumor, Calor, Dolor, Functio laesa", "Nur Schmerz und Rötung", "Fieber und Schüttelfrost", "Nur Schwellung"], richtig: 0 },
+    { id: "mikro-053", frage: "Was versteht man unter Phagozytose?", optionen: ["Die Produktion von Antikörpern durch B-Lymphozyten", "Die Aufnahme und Verdauung von Erregern durch spezialisierte Zellen (Phagozyten)", "Die Bildung von Impfstoffen", "Die Vermehrung von Viren in der Wirtszelle"], richtig: 1 },
+    { id: "mikro-054", frage: "Welcher Antikörper wird nach einer Infektion zuerst gebildet, bevor er nach etwa einer Woche von einem anderen abgelöst wird?", optionen: ["IgG wird zuerst gebildet, dann IgM", "IgM wird zuerst gebildet, dann von IgG abgelöst", "IgA wird zuerst und einzig gebildet", "IgE wird zuerst gebildet"], richtig: 1 },
+    { id: "mikro-055", frage: "Was ist der Unterschied zwischen aktiver und passiver Impfung?", optionen: ["Bei aktiver Impfung entwickelt das Immunsystem selbst Abwehr, bei passiver wird ein fertiges Immunserum gegeben", "Es gibt keinen Unterschied", "Passive Impfung wirkt lebenslang, aktive nur wenige Wochen", "Aktive Impfung wird nur bei Kindern angewendet"], richtig: 0 },
+    { id: "mikro-056", frage: "Was ist ein Beispiel für einen Lebendimpfstoff?", optionen: ["Hepatitis B", "Corona", "Masern, Mumps, Röteln", "Hepatitis A"], richtig: 2 },
+    { id: "mikro-057", frage: "Was ist der Unterschied zwischen bakteriostatischen und bakteriziden Antibiotika?", optionen: ["Beide töten Bakterien vollständig ab", "Bakteriostatische hemmen nur Wachstum/Vermehrung, bakterizide töten die Bakterien ab", "Bakteriostatische wirken nur gegen Viren", "Es gibt keinen Unterschied in der Wirkung"], richtig: 1 },
+    { id: "mikro-058", frage: "Was ist ein wichtiger Grund für die Entstehung von Antibiotikaresistenzen?", optionen: ["Zu häufiges Händewaschen", "Mangelnde Compliance des Patienten, fehlende Indikation, falsche Antibiotikawahl, Einsatz in Massentierhaltung", "Zu geringe Antibiotikamengen bei der Herstellung", "Antibiotika wirken grundsätzlich nie gegen Bakterien"], richtig: 1 },
+    { id: "mikro-059", frage: "Was unterscheidet eine endogene von einer exogenen Infektion?", optionen: ["Endogen kommt von außen, exogen von innen", "Endogene Infektion stammt aus der körpereigenen Flora, exogene wird von außen übertragen", "Es gibt keinen Unterschied", "Endogene Infektionen sind immer schwerer"], richtig: 1 },
+    { id: "mikro-060", frage: "Was versteht man unter der Inkubationszeit?", optionen: ["Die Zeit bis zur vollständigen Genesung", "Die Zeit zwischen Ansteckung und dem Auftreten erster Krankheitssymptome", "Die Dauer der Antibiotikatherapie", "Die Zeit, in der man ansteckend ist"], richtig: 1 },
+    { id: "mikro-061", frage: "Was ist der Unterschied zwischen Epidemie und Pandemie?", optionen: ["Beide bezeichnen dasselbe", "Epidemie ist örtlich/zeitlich begrenzt, Pandemie breitet sich über Länder/Kontinente aus", "Pandemie ist immer harmloser als Epidemie", "Epidemie betrifft nur Tiere"], richtig: 1 },
+    { id: "mikro-062", frage: "Was misst die Letalität einer Krankheit?", optionen: ["Die Ausbreitungsgeschwindigkeit", "Den Anteil der Erkrankten, die an der Krankheit versterben", "Die Anzahl der Neuinfektionen pro Tag", "Die Dauer der Erkrankung"], richtig: 1 },
+    { id: "mikro-063", frage: "Was ist der Unterschied zwischen Desinfektion und Sterilisation?", optionen: ["Beides ist identisch", "Desinfektion vermindert/macht Erreger unschädlich, Sterilisation tötet auch Sporen/Endosporen vollständig ab", "Desinfektion wirkt nur bei Viren, Sterilisation nur bei Bakterien", "Sterilisation ist schwächer als Desinfektion"], richtig: 1 },
+    { id: "mikro-064", frage: "Bei welcher Temperatur und wie lange wird beim Autoklavieren (Heißdampfsterilisation) typischerweise sterilisiert?", optionen: ["Ca. 50°C für 5 Minuten", "Ca. 121°C oder mehr für ca. 20 Minuten bei Überdruck", "Ca. 300°C für 1 Minute", "Zimmertemperatur für 24 Stunden"], richtig: 1 },
+    { id: "mikro-065", frage: "Woraus besteht der Zahnschmelz zu etwa 97% und wie widerstandsfähig ist er gegenüber Säure?", optionen: ["Aus organischem Material, sehr säureresistent", "Aus anorganischen Anteilen (v.a. Hydroxylapatit), löslich in Säuren unter pH 5,5", "Aus reinem Kalzium, unlöslich in jeder Säure", "Aus Kollagen, wie Dentin"], richtig: 1 },
+    { id: "mikro-066", frage: "In welchem pH-Bereich liegt Speichel im Ruhezustand und bei Stimulation normalerweise?", optionen: ["Zwischen 2 und 3", "Zwischen 6 und 7", "Zwischen 9 und 10", "Immer genau bei 7,0"], richtig: 1 },
+    { id: "mikro-067", frage: "Welche Funktion hat Lysozym im Speichel?", optionen: ["Es färbt Bakterien an", "Es hat antimikrobielle Aktivität durch Zerstörung der Zellmembran von Bakterien", "Es dient nur der Geschmackswahrnehmung", "Es verhindert die Speichelproduktion"], richtig: 1 },
+    { id: "mikro-068", frage: "Was ist die Pellikel und wie schnell bildet sie sich?", optionen: ["Eine feste Zahnfüllung, bildet sich über Wochen", "Ein dünner, bakterienfreier Film aus Speichelbestandteilen, bildet sich minutenschnell auf gereinigten Zähnen", "Eine Zahnstein-Ablagerung, dauert Monate", "Eine Krankheit des Zahnfleisches"], richtig: 1 },
+    { id: "mikro-069", frage: "Welche Funktion hat die Pellikel unter anderem?", optionen: ["Sie verhindert jegliche Bakterienanheftung vollständig", "Sie verringert Reibung/Abrasion und schützt vor erosiven Prozessen, ermöglicht aber auch Bakterienanheftung", "Sie tötet alle oralen Bakterien ab", "Sie hat ausschließlich negative Eigenschaften"], richtig: 1 },
+    { id: "mikro-070", frage: "Wie läuft die frühe Plaque-Entstehung typischerweise ab?", optionen: ["Sofortige Bildung eines dicken anaeroben Biofilms", "Nach 3-6 Stunden Pionierkeime (v.a. aerob), nach 6-12 Stunden Vermehrung und zunehmend anaerobe Mikroorganismen", "Plaque entsteht nur durch Zuckerkonsum, nicht durch Bakterien", "Plaque bildet sich erst nach mehreren Wochen"], richtig: 1 },
+    { id: "mikro-071", frage: "Welche Bakterien gelten typischerweise als Erstbesiedler (Pionierkeime) bei der Plaquebildung?", optionen: ["Vor allem Streptokokken und Aktinomyceten", "Vor allem Viren", "Vor allem Pilze", "Vor allem Parasiten"], richtig: 0 },
+    { id: "mikro-072", frage: "Was besagt die spezifische Plaquehypothese zur Kariesentstehung?", optionen: ["Karies entsteht unabhängig von Bakterien", "Karies wird spezifisch durch Streptococcus mutans bzw. Mutans-Streptokokken verursacht", "Karies wird nur durch Viren verursacht", "Karies hat ausschließlich genetische Ursachen"], richtig: 1 },
+    { id: "mikro-073", frage: "Was besagt die ökologische Plaquehypothese?", optionen: ["Nur ein einzelnes Bakterium ist verantwortlich", "Nicht nur Mikroorganismen, sondern auch die Umgebung/Milieubedingungen spielen eine entscheidende Rolle", "Die Ernährung spielt keine Rolle", "Karies entsteht rein zufällig"], richtig: 1 },
+    { id: "mikro-074", frage: "Welche primären Faktoren sind für die Kariesentstehung nötig?", optionen: ["Nur Zucker", "Krankheitsanfälliges Gewebe (Zahn), bakterieller Zahnbelag (Plaque), Zufuhr kariogener Substrate", "Nur schlechte Mundhygiene", "Nur genetische Veranlagung"], richtig: 1 },
+    { id: "mikro-075", frage: "Ab welchem pH-Wert beginnt die Demineralisation des Zahnschmelzes im Rahmen der Kariesentstehung?", optionen: ["Unter pH 5,5", "Unter pH 8", "Unter pH 9", "Erst unter pH 2"], richtig: 0 },
+    { id: "mikro-076", frage: "Welche ökologischen Bedingungen herrschen im subgingivalen Bereich (Sulkus), die Parodontitis begünstigen?", optionen: ["Aerobe Bedingungen mit viel Sauerstoff", "Anaerobe Bedingungen, geschützt vor Mundhygiene und Speichelspülung", "Sehr hohe Temperaturen", "Vollständig sterile Umgebung"], richtig: 1 },
+    { id: "mikro-077", frage: "Was unterscheidet direkte von indirekter Pathogenität bei Parodontitis-Erregern?", optionen: ["Beide sind identisch", "Direkte Pathogenität erfolgt durch bakterielle Enzyme/Toxine, indirekte durch die überschießende Entzündungsreaktion des Wirts selbst", "Direkte Pathogenität betrifft nur Viren", "Indirekte Pathogenität gibt es bei Parodontitis nicht"], richtig: 1 },
+    { id: "mikro-078", frage: "Welches Bakterium gilt als 'Keystone-Bakterium' bei destruktiver Parodontitis und ist bei Gesunden i.d.R. nicht vorhanden?", optionen: ["Streptococcus mutans", "Porphyromonas gingivalis", "Staphylococcus aureus", "Lactobacillus reuteri"], richtig: 1 },
+    { id: "mikro-079", frage: "Welcher parodontalpathogene Keim ist besonders mit juveniler/aggressiver Parodontitis assoziiert und kann von Eltern auf Kinder übertragen werden?", optionen: ["Aggregatibacter actinomycetemcomitans", "Tannerella forsythia", "Treponema denticola", "Fusobacterium"], richtig: 0 },
+    { id: "mikro-080", frage: "Warum ist Parodontitis eine multifaktorielle Erkrankung?", optionen: ["Weil nur ein einziges Bakterium sie auslöst", "Weil Bakterien allein keine destruktive Parodontitis auslösen können – Wirtsanfälligkeit, Ökologie, Rauchen, Erkrankungen etc. spielen zusammen", "Weil sie nur durch Viren verursacht wird", "Weil sie ausschließlich genetisch bedingt ist"], richtig: 1 },
+    { id: "mikro-081", frage: "Was sind Probiotika laut Definition?", optionen: ["Chemische Desinfektionsmittel", "Lebende Mikroorganismen, die in ausreichender Menge appliziert einen gesundheitlichen Nutzen bewirken", "Antibiotika der neuesten Generation", "Synthetische Konservierungsstoffe"], richtig: 1 },
+    { id: "mikro-082", frage: "Welcher Bakterienstamm wird häufig in der Erforschung von Probiotika bei Parodontitis genannt?", optionen: ["Streptococcus mutans", "Lactobacillus reuteri", "Porphyromonas gingivalis", "Treponema pallidum"], richtig: 1 },
+  ],
+};
+
+const PRUEFUNGSDATUM = new Date("2026-09-03T09:00:00");
+const PRUEFUNG_ANZAHL_FRAGEN = 50;
+const PRUEFUNG_ZEIT_SEK = 50 * 60;
+
+/* ============================================================
+   HILFSFUNKTIONEN
+   ============================================================ */
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function tageBisPruefung() {
+  const jetzt = new Date();
+  const diff = PRUEFUNGSDATUM.getTime() - jetzt.getTime();
+  return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+}
+
+function formatZeit(sek) {
+  const m = Math.floor(sek / 60);
+  const s = sek % 60;
+  return `${m}:${s.toString().padStart(2, "0")}`;
+}
+
+/* Fisher-Yates mit Optionen-Shuffle, damit "richtig" nicht immer an derselben Position steht */
+function fragenMitGemischtenOptionen(fragen) {
+  return fragen.map((f) => {
+    const idxArr = f.optionen.map((_, i) => i);
+    const gemischt = shuffle(idxArr);
+    return {
+      ...f,
+      optionen: gemischt.map((i) => f.optionen[i]),
+      richtig: gemischt.indexOf(f.richtig),
+    };
+  });
+}
+
+/* ============================================================
+   PERSISTENTER SPEICHER (window.storage)
+   ============================================================ */
+function useFortschritt() {
+  const [fortschritt, setFortschritt] = useState(null);
+  const [geladen, setGeladen] = useState(false);
+
+  useEffect(() => {
+    try {
+      const raw = window.localStorage.getItem("zmp-fortschritt");
+      if (raw) {
+        setFortschritt(JSON.parse(raw));
+      } else {
+        setFortschritt({ proThema: {}, pruefungsversuche: [] });
+      }
+    } catch (e) {
+      setFortschritt({ proThema: {}, pruefungsversuche: [] });
+    }
+    setGeladen(true);
+  }, []);
+
+  const speichern = useCallback(async (neu) => {
+    setFortschritt(neu);
+    try {
+      window.localStorage.setItem("zmp-fortschritt", JSON.stringify(neu));
+    } catch (e) {
+      // still keep in-memory state even if persistence fails
+    }
+  }, []);
+
+  return { fortschritt, geladen, speichern };
+}
+
+/* ============================================================
+   UI BAUSTEINE
+   ============================================================ */
+function RuhePulsRing({ prozent, groesse = 120, dicke = 10, farbe = "#1D4E4A", label, sublabel }) {
+  const radius = (groesse - dicke) / 2;
+  const umfang = 2 * Math.PI * radius;
+  const offset = umfang - (Math.min(100, Math.max(0, prozent)) / 100) * umfang;
+
+  return (
+    <div style={{ position: "relative", width: groesse, height: groesse }}>
+      <svg width={groesse} height={groesse} style={{ transform: "rotate(-90deg)" }}>
+        <circle
+          cx={groesse / 2}
+          cy={groesse / 2}
+          r={radius}
+          fill="none"
+          stroke="#E5E0D8"
+          strokeWidth={dicke}
+        />
+        <circle
+          cx={groesse / 2}
+          cy={groesse / 2}
+          r={radius}
+          fill="none"
+          stroke={farbe}
+          strokeWidth={dicke}
+          strokeDasharray={umfang}
+          strokeDashoffset={offset}
+          strokeLinecap="round"
+          style={{ transition: "stroke-dashoffset 0.6s ease" }}
+        />
+      </svg>
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div style={{ fontSize: groesse * 0.22, fontWeight: 700, color: "#2B2620", fontFamily: "'Newsreader', Georgia, serif" }}>
+          {label}
+        </div>
+        {sublabel && (
+          <div style={{ fontSize: groesse * 0.09, color: "#7A7264", marginTop: 2 }}>{sublabel}</div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function Knopf({ children, onClick, variant = "primary", style = {}, disabled = false, fullWidth = false }) {
+  const basis = {
+    border: "none",
+    borderRadius: 14,
+    padding: "16px 24px",
+    fontSize: 16,
+    fontWeight: 600,
+    cursor: disabled ? "default" : "pointer",
+    fontFamily: "'Inter', system-ui, sans-serif",
+    transition: "transform 0.12s ease, opacity 0.12s ease",
+    width: fullWidth ? "100%" : "auto",
+    opacity: disabled ? 0.5 : 1,
+    WebkitTapHighlightColor: "transparent",
+  };
+  const varianten = {
+    primary: { background: "#1D4E4A", color: "#FAF7F2" },
+    secondary: { background: "#EFEAE1", color: "#1D4E4A" },
+    ghost: { background: "transparent", color: "#7A7264", boxShadow: "none" },
+    akzent: { background: "#E8935F", color: "#2B2620" },
+  };
+  return (
+    <button
+      onClick={disabled ? undefined : onClick}
+      disabled={disabled}
+      onTouchStart={() => {}}
+      style={{ ...basis, ...varianten[variant], ...style }}
+      onMouseDown={(e) => { if (!disabled) e.currentTarget.style.transform = "scale(0.97)"; }}
+      onMouseUp={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
+      onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
+    >
+      {children}
+    </button>
+  );
+}
+
+/* ============================================================
+   SCREEN: START / DASHBOARD
+   ============================================================ */
+function StartScreen({ fortschritt, onWaehleThema, onStartPruefung }) {
+  const tage = tageBisPruefung();
+  const gesamtRichtig = Object.values(fortschritt.proThema).reduce(
+    (sum, t) => sum + (t.richtigGesamt || 0), 0
+  );
+  const gesamtBeantwortet = Object.values(fortschritt.proThema).reduce(
+    (sum, t) => sum + (t.beantwortetGesamt || 0), 0
+  );
+  const quote = gesamtBeantwortet > 0 ? Math.round((gesamtRichtig / gesamtBeantwortet) * 100) : 0;
+
+  return (
+    <div style={{ padding: "28px 20px 100px" }}>
+      <div style={{ marginBottom: 28 }}>
+        <div style={{ fontSize: 13, letterSpacing: 1.5, color: "#7A7264", textTransform: "uppercase", fontWeight: 600 }}>
+          ZMP Fortbildung
+        </div>
+        <h1 style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 30, fontWeight: 600, color: "#2B2620", margin: "4px 0 0" }}>
+          Hallo Schatzibär ❤️
+        </h1>
+      </div>
+
+      <div
+        style={{
+          background: "#1D4E4A",
+          borderRadius: 20,
+          padding: "22px 20px",
+          marginBottom: 20,
+          display: "flex",
+          alignItems: "center",
+          gap: 18,
+        }}
+      >
+        <RuhePulsRing
+          prozent={Math.min(100, (30 - tage) / 30 * 100)}
+          groesse={78}
+          dicke={7}
+          farbe="#E8935F"
+          label={tage}
+          sublabel="Tage"
+        />
+        <div>
+          <div style={{ color: "#FAF7F2", fontSize: 15, fontWeight: 600, marginBottom: 2 }}>
+            Bis zur Prüfung
+          </div>
+          <div style={{ color: "#C9DAD6", fontSize: 13, lineHeight: 1.5 }}>
+            03. September 2026 · 50 Fragen in 50 Min.
+          </div>
+        </div>
+      </div>
+
+      {gesamtBeantwortet > 0 && (
+        <div
+          style={{
+            background: "#FFFFFF",
+            borderRadius: 16,
+            padding: "16px 18px",
+            marginBottom: 24,
+            display: "flex",
+            alignItems: "center",
+            gap: 14,
+            border: "1px solid #EFEAE1",
+          }}
+        >
+          <RuhePulsRing prozent={quote} groesse={56} dicke={6} farbe="#1D4E4A" label={`${quote}%`} />
+          <div style={{ fontSize: 13, color: "#7A7264", lineHeight: 1.5 }}>
+            <strong style={{ color: "#2B2620" }}>{gesamtBeantwortet}</strong> Fragen geübt insgesamt · Trefferquote {quote}%
+          </div>
+        </div>
+      )}
+
+      <Knopf variant="akzent" fullWidth onClick={onStartPruefung} style={{ marginBottom: 28, padding: "18px 24px" }}>
+        Prüfungssimulation starten →
+      </Knopf>
+
+      <div style={{ fontSize: 13, letterSpacing: 1, color: "#7A7264", textTransform: "uppercase", fontWeight: 600, marginBottom: 12 }}>
+        Themengebiete
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        {THEMEN_META.map((thema) => {
+          const stat = fortschritt.proThema[thema.id];
+          const anzahlFragen = FRAGEN_DATEN[thema.id]?.length || 0;
+          const quoteThema = stat && stat.beantwortetGesamt > 0
+            ? Math.round((stat.richtigGesamt / stat.beantwortetGesamt) * 100)
+            : null;
+
+          return (
+            <button
+              key={thema.id}
+              onClick={() => !thema.kommendBald && onWaehleThema(thema.id)}
+              disabled={thema.kommendBald}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 14,
+                background: "#FFFFFF",
+                border: "1px solid #EFEAE1",
+                borderRadius: 16,
+                padding: "14px 16px",
+                cursor: thema.kommendBald ? "default" : "pointer",
+                opacity: thema.kommendBald ? 0.55 : 1,
+                textAlign: "left",
+                WebkitTapHighlightColor: "transparent",
+              }}
+            >
+              <div
+                style={{
+                  width: 44,
+                  height: 44,
+                  borderRadius: 12,
+                  background: thema.farbe,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "#FAF7F2",
+                  fontSize: 11,
+                  fontWeight: 700,
+                  flexShrink: 0,
+                }}
+              >
+                {thema.kurz}
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: 15, fontWeight: 600, color: "#2B2620" }}>{thema.name}</div>
+                <div style={{ fontSize: 12.5, color: "#7A7264", marginTop: 1 }}>
+                  {thema.kommendBald
+                    ? "Folgt in Kürze"
+                    : `${anzahlFragen} Fragen${quoteThema !== null ? ` · ${quoteThema}% Trefferquote` : ""}`}
+                </div>
+              </div>
+              {!thema.kommendBald && (
+                <div style={{ color: "#B8B0A2", fontSize: 20 }}>›</div>
+              )}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+/* ============================================================
+   SCREEN: THEMA-DETAIL (Lernmodus-Auswahl)
+   ============================================================ */
+function ThemaScreen({ themaId, fortschritt, onZurueck, onStartLernen }) {
+  const thema = THEMEN_META.find((t) => t.id === themaId);
+  const fragen = FRAGEN_DATEN[themaId] || [];
+  const stat = fortschritt.proThema[themaId];
+  const falscheIds = stat?.falscheFragenIds || [];
+  const anzahlWiederholen = falscheIds.filter((id) => fragen.some((f) => f.id === id)).length;
+
+  return (
+    <div style={{ padding: "20px 20px 100px" }}>
+      <button
+        onClick={onZurueck}
+        style={{ background: "none", border: "none", color: "#7A7264", fontSize: 15, padding: "8px 0", marginBottom: 8, cursor: "pointer", display: "flex", alignItems: "center", gap: 4 }}
+      >
+        ‹ Übersicht
+      </button>
+
+      <div
+        style={{
+          width: 56,
+          height: 56,
+          borderRadius: 16,
+          background: thema.farbe,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "#FAF7F2",
+          fontSize: 14,
+          fontWeight: 700,
+          marginBottom: 14,
+        }}
+      >
+        {thema.kurz}
+      </div>
+
+      <h1 style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 26, fontWeight: 600, color: "#2B2620", margin: "0 0 6px" }}>
+        {thema.name}
+      </h1>
+      <p style={{ color: "#7A7264", fontSize: 14, margin: "0 0 24px" }}>
+        {fragen.length} Fragen im Lernpool
+      </p>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+        <button
+          onClick={() => onStartLernen("alle")}
+          style={{ ...kartenStil }}
+        >
+          <div style={{ fontSize: 16, fontWeight: 600, color: "#2B2620", marginBottom: 3 }}>
+            Alle Fragen üben
+          </div>
+          <div style={{ fontSize: 13, color: "#7A7264" }}>
+            Zufällige Reihenfolge · {fragen.length} Fragen
+          </div>
+        </button>
+
+        <button
+          onClick={() => onStartLernen("30er")}
+          style={{ ...kartenStil }}
+        >
+          <div style={{ fontSize: 16, fontWeight: 600, color: "#2B2620", marginBottom: 3 }}>
+            Kurzrunde
+          </div>
+          <div style={{ fontSize: 13, color: "#7A7264" }}>
+            30 zufällige Fragen · für zwischendurch
+          </div>
+        </button>
+
+        <button
+          onClick={() => onStartLernen("falsche")}
+          disabled={anzahlWiederholen === 0}
+          style={{
+            ...kartenStil,
+            opacity: anzahlWiederholen === 0 ? 0.45 : 1,
+            cursor: anzahlWiederholen === 0 ? "default" : "pointer",
+          }}
+        >
+          <div style={{ fontSize: 16, fontWeight: 600, color: "#2B2620", marginBottom: 3 }}>
+            Nur bisher Falsche wiederholen
+          </div>
+          <div style={{ fontSize: 13, color: "#7A7264" }}>
+            {anzahlWiederholen === 0 ? "Noch keine offenen Fragen 🎉" : `${anzahlWiederholen} Fragen zum Auffrischen`}
+          </div>
+        </button>
+      </div>
+    </div>
+  );
+}
+
+const kartenStil = {
+  display: "block",
+  width: "100%",
+  textAlign: "left",
+  background: "#FFFFFF",
+  border: "1px solid #EFEAE1",
+  borderRadius: 16,
+  padding: "16px 18px",
+  cursor: "pointer",
+  WebkitTapHighlightColor: "transparent",
+};
+
+/* ============================================================
+   SCREEN: QUIZ (Lernmodus, ohne Zeitdruck)
+   ============================================================ */
+function QuizScreen({ themaId, modus, fortschritt, speichern, onFertig, onAbbrechen }) {
+  const alleFragen = FRAGEN_DATEN[themaId] || [];
+  const stat = fortschritt.proThema[themaId];
+  const falscheIds = stat?.falscheFragenIds || [];
+
+  const [fragenListe] = useState(() => {
+    let basis = alleFragen;
+    if (modus === "falsche") {
+      basis = alleFragen.filter((f) => falscheIds.includes(f.id));
+    } else if (modus === "30er") {
+      basis = shuffle(alleFragen).slice(0, Math.min(30, alleFragen.length));
+    } else {
+      basis = shuffle(alleFragen);
+    }
+    return fragenMitGemischtenOptionen(basis);
+  });
+
+  const [index, setIndex] = useState(0);
+  const [ausgewaehlt, setAusgewaehlt] = useState(null);
+  const [zeigeErgebnis, setZeigeErgebnis] = useState(false);
+  const [sitzungRichtig, setSitzungRichtig] = useState(0);
+  const [neueFalsche, setNeueFalsche] = useState([]);
+  const [neueRichtigeAusFalschen, setNeueRichtigeAusFalschen] = useState([]);
+
+  const frage = fragenListe[index];
+  const fortschrittProzent = ((index) / fragenListe.length) * 100;
+
+  const waehleAntwort = (i) => {
+    if (zeigeErgebnis) return;
+    setAusgewaehlt(i);
+    setZeigeErgebnis(true);
+    const istRichtig = i === frage.richtig;
+    if (istRichtig) {
+      setSitzungRichtig((s) => s + 1);
+      if (modus === "falsche") setNeueRichtigeAusFalschen((arr) => [...arr, frage.id]);
+    } else {
+      setNeueFalsche((arr) => [...arr, frage.id]);
+    }
+  };
+
+  const naechsteFrage = async () => {
+    if (index + 1 >= fragenListe.length) {
+      // Fortschritt speichern
+      const bisherStat = fortschritt.proThema[themaId] || { richtigGesamt: 0, beantwortetGesamt: 0, falscheFragenIds: [] };
+      let neueFalscheIds = Array.from(new Set([...(bisherStat.falscheFragenIds || []), ...neueFalsche]));
+      neueFalscheIds = neueFalscheIds.filter((id) => !neueRichtigeAusFalschen.includes(id));
+
+      const neuerStat = {
+        richtigGesamt: (bisherStat.richtigGesamt || 0) + sitzungRichtig,
+        beantwortetGesamt: (bisherStat.beantwortetGesamt || 0) + fragenListe.length,
+        falscheFragenIds: neueFalscheIds,
+        letzteSitzung: new Date().toISOString(),
+      };
+
+      const neuerFortschritt = {
+        ...fortschritt,
+        proThema: { ...fortschritt.proThema, [themaId]: neuerStat },
+      };
+      await speichern(neuerFortschritt);
+      onFertig({ richtig: sitzungRichtig, gesamt: fragenListe.length });
+      return;
+    }
+    setIndex((i) => i + 1);
+    setAusgewaehlt(null);
+    setZeigeErgebnis(false);
+  };
+
+  if (!frage) {
+    return (
+      <div style={{ padding: 40, textAlign: "center" }}>
+        <p style={{ color: "#7A7264" }}>Keine Fragen in dieser Auswahl.</p>
+        <Knopf onClick={onAbbrechen} variant="secondary">Zurück</Knopf>
+      </div>
+    );
+  }
+
+  return (
+    <div style={{ padding: "16px 20px 32px", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+        <button onClick={onAbbrechen} style={{ background: "none", border: "none", color: "#7A7264", fontSize: 22, cursor: "pointer", padding: 4 }}>
+          ×
+        </button>
+        <div style={{ flex: 1, height: 6, background: "#EFEAE1", borderRadius: 4, overflow: "hidden" }}>
+          <div style={{ width: `${fortschrittProzent}%`, height: "100%", background: "#1D4E4A", transition: "width 0.3s ease", borderRadius: 4 }} />
+        </div>
+        <div style={{ fontSize: 13, color: "#7A7264", fontWeight: 600, minWidth: 44, textAlign: "right" }}>
+          {index + 1}/{fragenListe.length}
+        </div>
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <div
+          style={{
+            background: "#FFFFFF",
+            borderRadius: 20,
+            padding: "26px 22px",
+            marginBottom: 20,
+            border: "1px solid #EFEAE1",
+          }}
+        >
+          <div style={{ fontSize: 12, fontWeight: 700, color: "#1D4E4A", letterSpacing: 1, marginBottom: 10, textTransform: "uppercase" }}>
+            Frage {index + 1}
+          </div>
+          <div style={{ fontSize: 18, fontWeight: 600, color: "#2B2620", lineHeight: 1.45, fontFamily: "'Newsreader', Georgia, serif" }}>
+            {frage.frage}
+          </div>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {frage.optionen.map((opt, i) => {
+            let bg = "#FFFFFF";
+            let border = "1px solid #EFEAE1";
+            let farbe = "#2B2620";
+            if (zeigeErgebnis) {
+              if (i === frage.richtig) {
+                bg = "#E9F2ED";
+                border = "1.5px solid #4A8B72";
+                farbe = "#2C5E48";
+              } else if (i === ausgewaehlt) {
+                bg = "#FBEBE7";
+                border = "1.5px solid #C1584A";
+                farbe = "#8C3A2F";
+              } else {
+                bg = "#FAF9F6";
+                farbe = "#B8B0A2";
+              }
+            }
+            return (
+              <button
+                key={i}
+                onClick={() => waehleAntwort(i)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                  textAlign: "left",
+                  background: bg,
+                  border,
+                  borderRadius: 14,
+                  padding: "14px 16px",
+                  fontSize: 15,
+                  color: farbe,
+                  cursor: zeigeErgebnis ? "default" : "pointer",
+                  lineHeight: 1.4,
+                  WebkitTapHighlightColor: "transparent",
+                  transition: "background 0.15s ease, border 0.15s ease",
+                }}
+              >
+                <span
+                  style={{
+                    width: 26,
+                    height: 26,
+                    borderRadius: "50%",
+                    background: zeigeErgebnis && i === frage.richtig ? "#4A8B72" : zeigeErgebnis && i === ausgewaehlt ? "#C1584A" : "#EFEAE1",
+                    color: zeigeErgebnis && (i === frage.richtig || i === ausgewaehlt) ? "#fff" : "#7A7264",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 12,
+                    fontWeight: 700,
+                    flexShrink: 0,
+                  }}
+                >
+                  {zeigeErgebnis && i === frage.richtig ? "✓" : zeigeErgebnis && i === ausgewaehlt ? "✗" : String.fromCharCode(65 + i)}
+                </span>
+                {opt}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {zeigeErgebnis && (
+        <div style={{ marginTop: 20 }}>
+          <Knopf variant="primary" fullWidth onClick={naechsteFrage}>
+            {index + 1 >= fragenListe.length ? "Runde abschließen" : "Weiter"}
+          </Knopf>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ============================================================
+   SCREEN: LERNMODUS-ERGEBNIS
+   ============================================================ */
+function ErgebnisScreen({ ergebnis, onZurueck }) {
+  const prozent = Math.round((ergebnis.richtig / ergebnis.gesamt) * 100);
+  const bestanden = prozent >= 60;
+  const nachricht =
+    bestanden ? "Sei stolz auf dich, du schaffst das!" :
+    prozent >= 40 ? "Gut unterwegs." :
+    "Dranbleiben, das wird noch.";
+
+  return (
+    <div style={{ padding: "60px 24px", display: "flex", flexDirection: "column", alignItems: "center", minHeight: "100vh", justifyContent: "center" }}>
+      <RuhePulsRing prozent={prozent} groesse={160} dicke={12} farbe="#1D4E4A" label={`${prozent}%`} sublabel={`${ergebnis.richtig}/${ergebnis.gesamt}`} />
+      <h2 style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 24, marginTop: 28, marginBottom: 6, color: "#2B2620" }}>
+        {nachricht}
+      </h2>
+      <p style={{ color: "#7A7264", fontSize: 14, marginBottom: 8, textAlign: "center" }}>
+        {ergebnis.gesamt - ergebnis.richtig > 0
+          ? `${ergebnis.gesamt - ergebnis.richtig} Fragen kommen in "Falsche wiederholen" wieder dran.`
+          : "Alle Fragen richtig beantwortet!"}
+      </p>
+      {bestanden && (
+        <p style={{ color: "#E8935F", fontSize: 14, fontWeight: 600, marginBottom: 28, textAlign: "center" }}>
+          Jetzt erstmal eine IQOS-Pause!
+        </p>
+      )}
+      {!bestanden && <div style={{ marginBottom: 28 }} />}
+      <Knopf variant="primary" onClick={onZurueck} fullWidth style={{ maxWidth: 320 }}>
+        Zur Übersicht
+      </Knopf>
+    </div>
+  );
+}
+
+/* ============================================================
+   SCREEN: PRÜFUNGSSIMULATION (mit Timer, 50 Fragen)
+   ============================================================ */
+function PruefungsIntroScreen({ onStart, onAbbrechen }) {
+  const gesamtFragenVerfuegbar = Object.values(FRAGEN_DATEN).reduce((s, arr) => s + arr.length, 0);
+
+  return (
+    <div style={{ padding: "24px 20px 100px" }}>
+      <button onClick={onAbbrechen} style={{ background: "none", border: "none", color: "#7A7264", fontSize: 15, padding: "8px 0", marginBottom: 20, cursor: "pointer" }}>
+        ‹ Zurück
+      </button>
+
+      <h1 style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 27, fontWeight: 600, color: "#2B2620", margin: "0 0 8px" }}>
+        Prüfungssimulation
+      </h1>
+      <p style={{ color: "#7A7264", fontSize: 14.5, lineHeight: 1.6, marginBottom: 26 }}>
+        So nah wie möglich am echten Prüfungsgefühl: {PRUEFUNG_ANZAHL_FRAGEN} Fragen aus allen Themengebieten, {PRUEFUNG_ZEIT_SEK / 60} Minuten Zeit, kein Zurückspringen.
+      </p>
+
+      <div style={{ background: "#FFFFFF", border: "1px solid #EFEAE1", borderRadius: 16, padding: "18px 20px", marginBottom: 14 }}>
+        <Zeile label="Fragen" wert={`${PRUEFUNG_ANZAHL_FRAGEN}`} />
+        <Zeile label="Zeit" wert={`${PRUEFUNG_ZEIT_SEK / 60} Minuten`} />
+        <Zeile label="Verfügbarer Fragenpool" wert={`${gesamtFragenVerfuegbar} Fragen`} letzte />
+      </div>
+
+      {gesamtFragenVerfuegbar < PRUEFUNG_ANZAHL_FRAGEN && (
+        <div style={{ background: "#FFF7ED", border: "1px solid #F0D9B5", borderRadius: 14, padding: "14px 16px", marginBottom: 22, fontSize: 13.5, color: "#8C6D3A", lineHeight: 1.5 }}>
+          Aktuell sind erst {gesamtFragenVerfuegbar} Fragen hinterlegt (nur Mikrobiologie). Die Simulation nutzt vorerst diese Fragen — mit weiteren Themen wird sie automatisch vollständiger.
+        </div>
+      )}
+
+      <Knopf variant="akzent" fullWidth onClick={onStart} style={{ padding: "18px 24px" }}>
+        Prüfung jetzt starten
+      </Knopf>
+    </div>
+  );
+}
+
+function Zeile({ label, wert, letzte }) {
+  return (
+    <div style={{ display: "flex", justifyContent: "space-between", padding: "8px 0", borderBottom: letzte ? "none" : "1px solid #F3EFE8" }}>
+      <span style={{ fontSize: 14, color: "#7A7264" }}>{label}</span>
+      <span style={{ fontSize: 14, fontWeight: 600, color: "#2B2620" }}>{wert}</span>
+    </div>
+  );
+}
+
+function PruefungsScreen({ onFertig, onAbbrechen }) {
+  const [fragenListe] = useState(() => {
+    const alle = Object.values(FRAGEN_DATEN).flat();
+    const auswahl = shuffle(alle).slice(0, Math.min(PRUEFUNG_ANZAHL_FRAGEN, alle.length));
+    return fragenMitGemischtenOptionen(auswahl);
+  });
+  const [index, setIndex] = useState(0);
+  const [antworten, setAntworten] = useState({});
+  const [restZeit, setRestZeit] = useState(PRUEFUNG_ZEIT_SEK);
+  const [beendet, setBeendet] = useState(false);
+
+  useEffect(() => {
+    if (beendet) return;
+    if (restZeit <= 0) {
+      abschliessen();
+      return;
+    }
+    const t = setTimeout(() => setRestZeit((z) => z - 1), 1000);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [restZeit, beendet]);
+
+  const frage = fragenListe[index];
+
+  const waehleAntwort = (i) => {
+    setAntworten((a) => ({ ...a, [index]: i }));
+  };
+
+  const abschliessen = () => {
+    setBeendet(true);
+    const richtig = fragenListe.reduce((sum, f, i) => sum + (antworten[i] === f.richtig ? 1 : 0), 0);
+    onFertig({ richtig, gesamt: fragenListe.length, fragenListe, antworten });
+  };
+
+  const zeitKnapp = restZeit < 300; // letzte 5 Minuten
+
+  if (!frage) return null;
+
+  return (
+    <div style={{ padding: "16px 20px 32px", minHeight: "100vh", display: "flex", flexDirection: "column" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18 }}>
+        <button onClick={onAbbrechen} style={{ background: "none", border: "none", color: "#7A7264", fontSize: 22, cursor: "pointer", padding: 4 }}>
+          ×
+        </button>
+        <div style={{ flex: 1, height: 6, background: "#EFEAE1", borderRadius: 4, overflow: "hidden" }}>
+          <div style={{ width: `${(index / fragenListe.length) * 100}%`, height: "100%", background: "#1D4E4A", borderRadius: 4 }} />
+        </div>
+        <div
+          style={{
+            fontSize: 13,
+            fontWeight: 700,
+            color: zeitKnapp ? "#C1584A" : "#2B2620",
+            minWidth: 52,
+            textAlign: "right",
+            fontVariantNumeric: "tabular-nums",
+          }}
+        >
+          {formatZeit(restZeit)}
+        </div>
+      </div>
+
+      <div style={{ fontSize: 12.5, color: "#7A7264", marginBottom: 14, fontWeight: 600 }}>
+        Frage {index + 1} von {fragenListe.length}
+      </div>
+
+      <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <div style={{ background: "#FFFFFF", borderRadius: 20, padding: "26px 22px", marginBottom: 20, border: "1px solid #EFEAE1" }}>
+          <div style={{ fontSize: 18, fontWeight: 600, color: "#2B2620", lineHeight: 1.45, fontFamily: "'Newsreader', Georgia, serif" }}>
+            {frage.frage}
+          </div>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+          {frage.optionen.map((opt, i) => {
+            const gewaehlt = antworten[index] === i;
+            return (
+              <button
+                key={i}
+                onClick={() => waehleAntwort(i)}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 12,
+                  textAlign: "left",
+                  background: gewaehlt ? "#EAF1EE" : "#FFFFFF",
+                  border: gewaehlt ? "1.5px solid #1D4E4A" : "1px solid #EFEAE1",
+                  borderRadius: 14,
+                  padding: "14px 16px",
+                  fontSize: 15,
+                  color: "#2B2620",
+                  cursor: "pointer",
+                  lineHeight: 1.4,
+                  WebkitTapHighlightColor: "transparent",
+                }}
+              >
+                <span
+                  style={{
+                    width: 26,
+                    height: 26,
+                    borderRadius: "50%",
+                    background: gewaehlt ? "#1D4E4A" : "#EFEAE1",
+                    color: gewaehlt ? "#fff" : "#7A7264",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 12,
+                    fontWeight: 700,
+                    flexShrink: 0,
+                  }}
+                >
+                  {String.fromCharCode(65 + i)}
+                </span>
+                {opt}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div style={{ display: "flex", gap: 10, marginTop: 20 }}>
+        {index > 0 && (
+          <Knopf variant="secondary" onClick={() => setIndex((i) => i - 1)} style={{ flex: 1 }}>
+            Zurück
+          </Knopf>
+        )}
+        <Knopf
+          variant="primary"
+          onClick={() => {
+            if (index + 1 >= fragenListe.length) abschliessen();
+            else setIndex((i) => i + 1);
+          }}
+          style={{ flex: 2 }}
+        >
+          {index + 1 >= fragenListe.length ? "Prüfung abgeben" : "Weiter"}
+        </Knopf>
+      </div>
+    </div>
+  );
+}
+
+function PruefungsErgebnisScreen({ ergebnis, onZurueck }) {
+  const prozent = Math.round((ergebnis.richtig / ergebnis.gesamt) * 100);
+  const bestanden = prozent >= 60; // Orientierungswert, ggf. anpassen
+  const [zeigeDetails, setZeigeDetails] = useState(false);
+
+  return (
+    <div style={{ padding: "50px 20px 100px", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <RuhePulsRing
+        prozent={prozent}
+        groesse={170}
+        dicke={13}
+        farbe={bestanden ? "#1D4E4A" : "#C1584A"}
+        label={`${prozent}%`}
+        sublabel={`${ergebnis.richtig}/${ergebnis.gesamt}`}
+      />
+      <h2 style={{ fontFamily: "'Newsreader', Georgia, serif", fontSize: 25, marginTop: 26, marginBottom: 8, color: "#2B2620", textAlign: "center" }}>
+        {bestanden ? "Sei stolz auf dich, du schaffst das!" : "Prüfung abgeschlossen"}
+      </h2>
+      <p style={{ color: "#7A7264", fontSize: 14, marginBottom: 6, textAlign: "center", maxWidth: 320, lineHeight: 1.6 }}>
+        Das ist eine Orientierung, kein offizielles Ergebnis. Nutze die Auswertung, um zu sehen, wo noch Lücken sind.
+      </p>
+      {bestanden && (
+        <p style={{ color: "#E8935F", fontSize: 14, fontWeight: 600, marginBottom: 22, textAlign: "center" }}>
+          Jetzt erstmal eine IQOS-Pause!
+        </p>
+      )}
+      {!bestanden && <div style={{ marginBottom: 22 }} />}
+
+      <Knopf variant="secondary" fullWidth style={{ maxWidth: 320, marginBottom: 12 }} onClick={() => setZeigeDetails((v) => !v)}>
+        {zeigeDetails ? "Details ausblenden" : "Falsch beantwortete Fragen ansehen"}
+      </Knopf>
+      <Knopf variant="primary" fullWidth style={{ maxWidth: 320 }} onClick={onZurueck}>
+        Zur Übersicht
+      </Knopf>
+
+      {zeigeDetails && (
+        <div style={{ marginTop: 28, width: "100%", maxWidth: 480 }}>
+          {ergebnis.fragenListe.map((f, i) => {
+            const richtig = ergebnis.antworten[i] === f.richtig;
+            if (richtig) return null;
+            return (
+              <div key={f.id} style={{ background: "#FFFFFF", border: "1px solid #EFEAE1", borderRadius: 14, padding: "14px 16px", marginBottom: 10 }}>
+                <div style={{ fontSize: 14, fontWeight: 600, color: "#2B2620", marginBottom: 8, fontFamily: "'Newsreader', Georgia, serif" }}>
+                  {f.frage}
+                </div>
+                <div style={{ fontSize: 13, color: "#C1584A", marginBottom: 4 }}>
+                  Deine Antwort: {ergebnis.antworten[i] !== undefined ? f.optionen[ergebnis.antworten[i]] : "(nicht beantwortet)"}
+                </div>
+                <div style={{ fontSize: 13, color: "#2C5E48" }}>
+                  Richtig: {f.optionen[f.richtig]}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ============================================================
+   HAUPT-APP
+   ============================================================ */
+export default function App() {
+  const { fortschritt, geladen, speichern } = useFortschritt();
+  const [screen, setScreen] = useState("start"); // start | thema | quiz | ergebnis | pruefung-intro | pruefung | pruefung-ergebnis
+  const [aktivesThema, setAktivesThema] = useState(null);
+  const [aktiverModus, setAktiverModus] = useState(null);
+  const [letztesErgebnis, setLetztesErgebnis] = useState(null);
+  const [letztesPruefungsErgebnis, setLetztesPruefungsErgebnis] = useState(null);
+
+  if (!geladen) {
+    return (
+      <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#FAF7F2" }}>
+        <div style={{ color: "#7A7264", fontSize: 14 }}>Lädt…</div>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      style={{
+        minHeight: "100vh",
+        background: "#FAF7F2",
+        fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
+        maxWidth: 480,
+        margin: "0 auto",
+        position: "relative",
+      }}
+    >
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+        * { box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+        button { font-family: inherit; }
+      `}</style>
+
+      {screen === "start" && (
+        <StartScreen
+          fortschritt={fortschritt}
+          onWaehleThema={(id) => { setAktivesThema(id); setScreen("thema"); }}
+          onStartPruefung={() => setScreen("pruefung-intro")}
+        />
+      )}
+
+      {screen === "thema" && (
+        <ThemaScreen
+          themaId={aktivesThema}
+          fortschritt={fortschritt}
+          onZurueck={() => setScreen("start")}
+          onStartLernen={(modus) => { setAktiverModus(modus); setScreen("quiz"); }}
+        />
+      )}
+
+      {screen === "quiz" && (
+        <QuizScreen
+          themaId={aktivesThema}
+          modus={aktiverModus}
+          fortschritt={fortschritt}
+          speichern={speichern}
+          onFertig={(erg) => { setLetztesErgebnis(erg); setScreen("ergebnis"); }}
+          onAbbrechen={() => setScreen("thema")}
+        />
+      )}
+
+      {screen === "ergebnis" && (
+        <ErgebnisScreen ergebnis={letztesErgebnis} onZurueck={() => setScreen("start")} />
+      )}
+
+      {screen === "pruefung-intro" && (
+        <PruefungsIntroScreen
+          onStart={() => setScreen("pruefung")}
+          onAbbrechen={() => setScreen("start")}
+        />
+      )}
+
+      {screen === "pruefung" && (
+        <PruefungsScreen
+          onFertig={(erg) => { setLetztesPruefungsErgebnis(erg); setScreen("pruefung-ergebnis"); }}
+          onAbbrechen={() => setScreen("start")}
+        />
+      )}
+
+      {screen === "pruefung-ergebnis" && (
+        <PruefungsErgebnisScreen ergebnis={letztesPruefungsErgebnis} onZurueck={() => setScreen("start")} />
+      )}
+    </div>
+  );
+}
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
+</html>
