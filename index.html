@@ -45,23 +45,20 @@ const THEMEN_META = [{
   kurz: "MIKRO",
   farbe: "#1D4E4A"
 }, {
-  id: "thema2",
-  name: "Themengebiet 2",
-  kurz: "TH2",
-  farbe: "#5B6B8C",
-  kommendBald: true
+  id: "anatomie",
+  name: "Anatomie",
+  kurz: "ANAT",
+  farbe: "#5B6B8C"
 }, {
-  id: "thema3",
-  name: "Themengebiet 3",
-  kurz: "TH3",
-  farbe: "#7A5C61",
-  kommendBald: true
+  id: "zahnhartsubstanz",
+  name: "Zahnhartsubstanz & Zahnentwicklung",
+  kurz: "ZAHN",
+  farbe: "#7A5C61"
 }, {
-  id: "thema4",
-  name: "Themengebiet 4",
-  kurz: "TH4",
-  farbe: "#8C7355",
-  kommendBald: true
+  id: "allgemeinmedizin",
+  name: "Allgemeinmedizin & Mundschleimhaut",
+  kurz: "ALLG",
+  farbe: "#8C7355"
 }, {
   id: "thema5",
   name: "Themengebiet 5",
@@ -479,6 +476,804 @@ const FRAGEN_DATEN = {
     id: "mikro-082",
     frage: "Welcher Bakterienstamm wird häufig in der Erforschung von Probiotika bei Parodontitis genannt?",
     optionen: ["Streptococcus mutans", "Lactobacillus reuteri", "Porphyromonas gingivalis", "Treponema pallidum"],
+    richtig: 1
+  }],
+  anatomie: [{
+    id: "anat-001",
+    frage: "Was gehört zur makroskopischen und mikroskopischen Anatomie als Lehre?",
+    optionen: ["Nur die Lehre von Krankheiten", "Die Lehre vom Aufbau des menschlichen Körpers", "Nur die Lehre von Medikamenten", "Die Lehre von psychischen Vorgängen"],
+    richtig: 1
+  }, {
+    id: "anat-002",
+    frage: "Wie viele Knochen bilden ungefähr das menschliche Skelett?",
+    optionen: ["circa 100", "circa 150", "circa 210", "circa 300"],
+    richtig: 2
+  }, {
+    id: "anat-003",
+    frage: "Was passiert ständig am Knochen durch funktionelle Anpassung?",
+    optionen: ["Nichts, Knochen bleibt lebenslang unverändert", "Ständiger Auf- und Abbau, circa 10% der Knochensubstanz wird jährlich ersetzt", "Nur Abbau, nie Aufbau", "Nur in der Kindheit findet Umbau statt"],
+    richtig: 1
+  }, {
+    id: "anat-004",
+    frage: "Welche Zellen sind für den Knochenabbau zuständig?",
+    optionen: ["Osteoblasten", "Osteoklasten", "Odontoblasten", "Fibroblasten"],
+    richtig: 1
+  }, {
+    id: "anat-005",
+    frage: "Was unterscheidet Synarthrosen von Diarthrosen?",
+    optionen: ["Synarthrosen haben einen Gelenkspalt, Diarthrosen nicht", "Synarthrosen haben keinen Gelenkspalt und kaum Beweglichkeit, Diarthrosen (echte Gelenke) haben einen Gelenkspalt", "Es gibt keinen Unterschied", "Diarthrosen kommen nur im Schädel vor"],
+    richtig: 1
+  }, {
+    id: "anat-006",
+    frage: "Was ist eine Syndesmose?",
+    optionen: ["Eine Verbindung über straffes kollagenes Bindegewebe, z.B. Schädelnähte bei Säuglingen", "Ein echtes Gelenk mit Gelenkspalt", "Eine Muskelverbindung", "Ein Nerv im Kiefergelenk"],
+    richtig: 0
+  }, {
+    id: "anat-007",
+    frage: "Woraus besteht der Blutkreislauf?",
+    optionen: ["Nur aus dem Herzen", "Aus Arterien, Venen, Herz und Mikrozirkulation", "Nur aus Arterien und Venen", "Nur aus dem Lymphsystem"],
+    richtig: 1
+  }, {
+    id: "anat-008",
+    frage: "Was unterscheidet Arterien von Venen im Wandbau?",
+    optionen: ["Arterien sind weitlumiger und dünnwandiger als Venen", "Venen sind weitlumiger und dünnwandiger, Arterien haben eine stärker ausgeprägte Muskelschicht (Media)", "Es gibt keinen Unterschied", "Nur Arterien besitzen Klappen"],
+    richtig: 1
+  }, {
+    id: "anat-009",
+    frage: "Wozu dienen die Klappen in den Venen?",
+    optionen: ["Um den Blutdruck zu erhöhen", "Um den Rückfluss des Blutes zu vermeiden", "Um Sauerstoff aufzunehmen", "Um das Blut zu filtern"],
+    richtig: 1
+  }, {
+    id: "anat-010",
+    frage: "Wie werden die Schädelknochen fachsprachlich unterteilt?",
+    optionen: ["Nur in Viscerocranium", "In Neurocranium (Hirnschädel) und Viscerocranium (Gesichtsschädel)", "Nur in Neurocranium", "In Ober- und Unterschädel"],
+    richtig: 1
+  }, {
+    id: "anat-011",
+    frage: "Was sind Fontanellen?",
+    optionen: ["Verknöcherte Bereiche des Schädels bei Erwachsenen", "Bindegewebige Nahtstellen (Syndesmosen) bei Neugeborenen, die dem Schädelwachstum mit dem Gehirn dienen", "Teile des Kiefergelenks", "Muskeln im Gesicht"],
+    richtig: 1
+  }, {
+    id: "anat-012",
+    frage: "Wann verschließen sich die Fontanellen ungefähr?",
+    optionen: ["Sofort nach der Geburt", "Nach 3 bis 36 Lebensmonaten", "Erst im Erwachsenenalter", "Sie verschließen sich nie vollständig"],
+    richtig: 1
+  }, {
+    id: "anat-013",
+    frage: "Wozu dienen die Nasennebenhöhlen (Sinus paranasales)?",
+    optionen: ["Zur Speichelproduktion", "Zur Gewichtsersparnis durch pneumatisierte (mit Luft gefüllte) Knochen", "Zur Blutbildung", "Zur Hörfunktion"],
+    richtig: 1
+  }, {
+    id: "anat-014",
+    frage: "Welche Bewegungen kann der Unterkiefer im Kiefergelenk ausführen?",
+    optionen: ["Nur Rotation", "Nur Gleiten", "Gleiten und Rotieren, es ist ein Doppelgelenk", "Der Unterkiefer kann sich im Gelenk nicht bewegen"],
+    richtig: 2
+  }, {
+    id: "anat-015",
+    frage: "Welche Funktion hat der M. masseter?",
+    optionen: ["Öffnet den Mund", "Schließt den Mund (\"Zubeißen\")", "Ist für die Zungenbewegung zuständig", "Steuert die Mimik"],
+    richtig: 1
+  }, {
+    id: "anat-016",
+    frage: "Welcher Muskel zieht den Unterkiefer nach vorne (beidseitig) bzw. bewirkt bei einseitiger Kontraktion eine Seitwärtsbewegung?",
+    optionen: ["M. masseter", "M. pterygoideus medialis", "M. pterygoideus lateralis", "N. facialis"],
+    richtig: 2
+  }, {
+    id: "anat-017",
+    frage: "Was unterscheidet motorische von sensiblen Nerven?",
+    optionen: ["Motorische Nerven steuern Muskeln, sensible Nerven leiten Empfindungen (Schmerz, Berührung, Temperatur) weiter", "Es gibt keinen Unterschied", "Nur motorische Nerven kommen im Kopf vor", "Sensible Nerven steuern ausschließlich die Muskulatur"],
+    richtig: 0
+  }, {
+    id: "anat-018",
+    frage: "Was ist typisch für eine periphere Facialisparese?",
+    optionen: ["Ausfall der ipsilateralen mimischen Muskulatur", "Vollständiger Sensibilitätsverlust im ganzen Körper", "Ausschließlich Geschmacksverlust", "Sie betrifft nur die Zunge"],
+    richtig: 0
+  }, {
+    id: "anat-019",
+    frage: "In wie viele Endäste teilt sich der N. trigeminus (5. Hirnnerv)?",
+    optionen: ["In zwei Äste", "In drei Äste (u.a. N. maxillaris, N. mandibularis)", "In vier Äste", "Er teilt sich nicht auf"],
+    richtig: 1
+  }, {
+    id: "anat-020",
+    frage: "Welches Versorgungsgebiet hat die A. maxillaris unter anderem?",
+    optionen: ["Nur die Zunge", "Oberkiefer mit Zähnen, harter Gaumen, Kaumuskulatur", "Nur die Haut des Gesichts", "Nur den Unterkiefer"],
+    richtig: 1
+  }, {
+    id: "anat-021",
+    frage: "Welche Arterie versorgt den Unterkiefer mit Zähnen?",
+    optionen: ["A. lingualis", "A. facialis", "A. alveolaris inferior", "A. infraorbitalis"],
+    richtig: 2
+  }, {
+    id: "anat-022",
+    frage: "Was transportiert das Arteriensystem?",
+    optionen: ["Sauerstoffarmes Blut zum Herzen", "Sauerstoffreiches Blut vom Herzen zu den Geweben, bei höherem Blutdruck als das Venensystem", "Nur Lymphflüssigkeit", "Nur Speichel"],
+    richtig: 1
+  }, {
+    id: "anat-023",
+    frage: "Welche Funktion hat das Lymphsystem?",
+    optionen: ["Es transportiert nur sauerstoffreiches Blut", "Es ist ein Gefäßsystem mit Filterstationen (Lymphknoten), das flüssige und feste Stoffe aus dem Gewebe sammelt", "Es hat einen höheren Blutdruck als das Arteriensystem", "Es produziert Speichel"],
+    richtig: 1
+  }, {
+    id: "anat-024",
+    frage: "Worauf deuten geschwollene Lymphknoten häufig hin?",
+    optionen: ["Auf eine Infektion", "Auf einen niedrigen Blutdruck", "Auf Karies", "Auf eine Allergie gegen Metalle"],
+    richtig: 0
+  }, {
+    id: "anat-025",
+    frage: "Wie viele große, paarig angelegte Speicheldrüsen gibt es?",
+    optionen: ["Zwei", "Drei (Glandula parotis, submandibularis, sublingualis)", "Vier", "Fünf"],
+    richtig: 1
+  }, {
+    id: "anat-026",
+    frage: "Wo mündet der Ductus parotideus (Ausführungsgang der Ohrspeicheldrüse)?",
+    optionen: ["Unter der Zunge", "Im Vestibulum oris gegenüber dem 2. Molar, nachdem er den M. buccinator durchbricht", "Direkt am Zahnfleischrand der Frontzähne", "Am Gaumen"],
+    richtig: 1
+  }, {
+    id: "anat-027",
+    frage: "Wodurch neigt der Ductus submandibularis besonders zur Verstopfung durch Speichelsteine?",
+    optionen: ["Durch seinen sehr kurzen, geraden Verlauf", "Durch seinen gewundenen Verlauf", "Weil er nie Speichel transportiert", "Weil er außerhalb der Mundhöhle mündet"],
+    richtig: 1
+  }, {
+    id: "anat-028",
+    frage: "Welche Funktion hat die Mundschleimhaut in der Mundhöhle?",
+    optionen: ["Selbstreinigung der Mundhöhle und Nahrungsverteilung", "Ausschließlich Geschmackswahrnehmung", "Nur mechanischer Schutz ohne weitere Funktion", "Blutbildung"],
+    richtig: 0
+  }, {
+    id: "anat-029",
+    frage: "Wodurch wird die Zunge motorisch innerviert?",
+    optionen: ["N. trigeminus", "N. facialis", "N. hypoglossus (N. XII)", "N. mandibularis"],
+    richtig: 2
+  }, {
+    id: "anat-030",
+    frage: "Über welche Arterie erfolgt die Blutversorgung der Zunge?",
+    optionen: ["A. maxillaris", "A. lingualis (aus A. carotis externa)", "A. facialis allein", "A. infraorbitalis"],
+    richtig: 1
+  }, {
+    id: "anat-031",
+    frage: "Welche Zungenpapillen sind für die Wahrnehmung von süß, sauer, salzig, bitter und umami sowie Druck/Temperatur zuständig?",
+    optionen: ["Papillae filiformes", "Papillae fungiformes", "Papillae valatae (vallatae) ausschließlich", "Nur die Zungenwurzel"],
+    richtig: 1
+  }, {
+    id: "anat-032",
+    frage: "Was trennt der Sulcus terminalis der Zunge?",
+    optionen: ["Die Zunge sagittal in zwei Hälften", "Das vordere vom hinteren Zungendrittel", "Zungenspitze von Zungenkörper", "Nichts, er ist funktionslos"],
+    richtig: 1
+  }, {
+    id: "anat-033",
+    frage: "Welche Aussage zur Gingiva ist korrekt?",
+    optionen: ["Sie besteht aus vier Geweben: Wurzelzement, Desmodont, Alveolarknochen und Schmelz", "Sie umschließt als epitheliale Manschette den Zahnhals", "Sie hat keine Funktion beim Zahnhalt", "Sie ist Teil des Zahnschmelzes"],
+    richtig: 1
+  }, {
+    id: "anat-034",
+    frage: "Was bedeutet der Begriff \"Parodontium\" ursprünglich?",
+    optionen: ["\"Im Zahn\"", "\"Neben dem Zahn\" (aus dem Altgriechischen)", "\"Über dem Zahn\"", "\"Unter der Zunge\""],
+    richtig: 1
+  }, {
+    id: "anat-035",
+    frage: "Woraus besteht das Parodontium?",
+    optionen: ["Nur aus der Gingiva", "Aus vier Geweben: Gingiva, Desmodont, Wurzelzement und Alveolarknochen", "Nur aus Schmelz und Dentin", "Aus zwei Geweben: Zahnschmelz und Pulpa"],
+    richtig: 1
+  }, {
+    id: "anat-036",
+    frage: "Wie hoch ist ungefähr der anorganische Anteil des Zahnschmelzes?",
+    optionen: ["circa 50%", "circa 70%", "circa 98% (vor allem Hydroxylapatit)", "circa 20%"],
+    richtig: 2
+  }, {
+    id: "anat-037",
+    frage: "Was zeigen die Retzius-Streifen im Zahnschmelz an?",
+    optionen: ["Sie sind Zeichen für Karies", "Hypomineralisierte Bereiche/Ruhephasen der Ameloblasten, im Durchlichtmikroskop erkennbar", "Sie kommen nur im Dentin vor", "Sie zeigen die Zahnfarbe an"],
+    richtig: 1
+  }, {
+    id: "anat-038",
+    frage: "Was zeigen die Hunter-Schreger-Streifen im Schmelz?",
+    optionen: ["Gewellter Verlauf der Prismen, sichtbar durch abwechselnd dunkle und helle Streifen im Längsschnitt", "Sie sind ein Zeichen für Zahnfleischentzündung", "Sie kommen ausschließlich im Wurzelzement vor", "Sie sind für die Zahnfarbe verantwortlich"],
+    richtig: 0
+  }, {
+    id: "anat-039",
+    frage: "Wie hoch ist der anorganische Mineralgehalt von Dentin ungefähr, und wie unterscheidet es sich vom Schmelz?",
+    optionen: ["Circa 70%, im Gegensatz zum Schmelz ein lebendes, weniger mineralisiertes Gewebe", "Circa 98%, mehr mineralisiert als Schmelz", "Dentin enthält keine Mineralien", "Dentin und Schmelz haben identischen Mineralgehalt"],
+    richtig: 0
+  }, {
+    id: "anat-040",
+    frage: "Was sind Owen-Linien im Dentin?",
+    optionen: ["Normale, gesunde Wachstumslinien ohne Bedeutung", "Stark hypomineralisierte Bereiche, die Allgemeinerkrankungen im Kindesalter widerspiegeln können", "Linien, die nur im Zahnschmelz vorkommen", "Linien, die die Zahnwurzel begrenzen"],
+    richtig: 1
+  }, {
+    id: "anat-041",
+    frage: "Was kennzeichnet die Neonatallinie im Dentin?",
+    optionen: ["Sie kommt nur bei Erwachsenen vor", "Eine hypomineralisierte Ruhepause der Odontoblasten (circa 15 Tage) rund um die Geburt, sichtbar bei Milchzähnen und ersten Molaren", "Sie hat nichts mit der Geburt zu tun", "Sie beschreibt eine Krankheit des Zahnfleisches"],
+    richtig: 1
+  }, {
+    id: "anat-042",
+    frage: "Was ist das Saumepithel und welche Funktion hat es?",
+    optionen: ["Ein einschichtiges Epithel ohne besondere Funktion", "Ein zweischichtiges Epithel (mitotisch aktives Stratum basale, inaktives Stratum suprabasale), das als Abwehrmechanismus gegen Bakterien dient", "Teil des Alveolarknochens", "Ein Teil der Zahnpulpa"],
+    richtig: 1
+  }, {
+    id: "anat-043",
+    frage: "Wodurch ist die Dentinoberfläche überdeckt und wie dick ist diese Schicht ungefähr?",
+    optionen: ["Von Schmelz, circa 100 µm", "Von Zement, circa 10 µm dick", "Von Gingiva, circa 1 mm", "Von keiner zusätzlichen Schicht"],
+    richtig: 1
+  }, {
+    id: "anat-044",
+    frage: "Was ist die Funktion des azellulären Fremdfaserzements?",
+    optionen: ["Verankerung durch einstrahlende Sharpey'sche Fasern aus dem Desmodont", "Bildung von neuem Schmelz", "Es hat keine bekannte Funktion und keine Fasern", "Es dient der Nervenversorgung des Zahnes"],
+    richtig: 0
+  }, {
+    id: "anat-045",
+    frage: "Wie viele Gewebeschichten der Lamina propria der Gingiva werden unterschieden?",
+    optionen: ["Nur eine Schicht", "Stratum papillare und Stratum reticulare", "Drei Schichten", "Fünf Schichten"],
+    richtig: 1
+  }],
+  zahnhartsubstanz: [{
+    id: "zahnhart-001",
+    frage: "Was ist eine Besonderheit des Wurzelzements im Vergleich zu anderen Zahnhartsubstanzen?",
+    optionen: ["Er enthält die meisten Mineralien aller Zahnhartsubstanzen", "Er ist die Zahnhartsubstanz mit den wenigsten Mineralien und ohne Blutgefäße/Nerven", "Er wird als einziger Zahnbestandteil ständig komplett erneuert", "Er enthält keine Zellen"],
+    richtig: 1
+  }, {
+    id: "zahnhart-002",
+    frage: "Sollte Wurzelzement bei der professionellen Zahnreinigung (PZR) entfernt werden?",
+    optionen: ["Ja, immer vollständig", "Nein, er soll nicht entfernt werden", "Nur bei jungen Patienten", "Nur im koronalen Drittel"],
+    richtig: 1
+  }, {
+    id: "zahnhart-003",
+    frage: "In welchem Bereich kann sich Wurzelzement neu bilden?",
+    optionen: ["Im koronalen Drittel", "Im apikalen, aber nicht im koronalen Wurzeldrittel", "Er kann sich nirgends neu bilden", "Nur im Zahnhalsbereich"],
+    richtig: 1
+  }, {
+    id: "zahnhart-004",
+    frage: "Wozu dient Wurzelzement funktionell?",
+    optionen: ["Zur Lichtbrechung im Zahn", "Zur Verankerung der desmodontalen (Sharpey'schen) Fasern", "Zur Speichelproduktion", "Zur Schmelzbildung"],
+    richtig: 1
+  }, {
+    id: "zahnhart-005",
+    frage: "Wodurch ist das Saumepithel mit dem Zahn verbunden?",
+    optionen: ["Durch Muskelfasern", "Durch Hemidesmosomen, die \"epitheliales Attachment\" genannt werden", "Durch Blutgefäße", "Durch Nervenfasern"],
+    richtig: 1
+  }, {
+    id: "zahnhart-006",
+    frage: "Womit \"verkleben\" die Hemidesmosomen das Saumepithel?",
+    optionen: ["Nur mit dem Zahnschmelz", "Mit dem Zahnschmelz und dem Wurzelzement", "Nur mit dem Alveolarknochen", "Nur mit dem Dentin"],
+    richtig: 1
+  }, {
+    id: "zahnhart-007",
+    frage: "Was passiert mit dem Alveolarknochen bei Druck auf den Zahn?",
+    optionen: ["Der Knochen wird ständig auf- und umgebaut, Druck führt zu Abbau", "Der Knochen bleibt vollständig unverändert", "Druck führt ausschließlich zu Knochenaufbau", "Der Alveolarknochen reagiert nicht auf mechanische Reize"],
+    richtig: 0
+  }, {
+    id: "zahnhart-008",
+    frage: "Welche Funktion hat das Desmodont (parodontales Ligament)?",
+    optionen: ["Es wandelt Druck auf den Zahn in Zug auf den Knochen um und ist etwa 0,02 mm breit", "Es bildet den Zahnschmelz", "Es hat keine mechanische Funktion", "Es transportiert nur Sauerstoff"],
+    richtig: 0
+  }, {
+    id: "zahnhart-009",
+    frage: "Was zählt laut den Materialien zum Parodontium?",
+    optionen: ["Nur die Gingiva", "Wurzelzement, Desmodont und Alveolarknochen (sowie Gingiva)", "Nur Schmelz und Dentin", "Nur der Alveolarknochen"],
+    richtig: 1
+  }, {
+    id: "zahnhart-010",
+    frage: "Wofür stehen die Richtungsbezeichnungen \"mesial\" und \"distal\"?",
+    optionen: ["Mesial = zur Mitte hin, distal = nach hinten hin", "Mesial = nach oben, distal = nach unten", "Mesial = zur Lippe hin, distal = zum Gaumen hin", "Es sind Synonyme ohne Unterschied"],
+    richtig: 0
+  }, {
+    id: "zahnhart-011",
+    frage: "In welchen Stadien läuft die Zahnentwicklung (Odontogenese) ab?",
+    optionen: ["Nur ein einziges Stadium", "Leisten-, Knospen-, Kappen-, Glocken- und Zahnhartsubstanzstadium", "Nur Kappen- und Glockenstadium", "Schmelz-, Dentin- und Zementstadium"],
+    richtig: 1
+  }, {
+    id: "zahnhart-012",
+    frage: "Was entsteht aus dem Zahnschmelzorgan (A) der Zahnknospe?",
+    optionen: ["Dentin", "Zahnschmelz", "Zementoblasten", "Odontoblasten"],
+    richtig: 1
+  }, {
+    id: "zahnhart-013",
+    frage: "Was entsteht aus der Zahnpapille (B) der Zahnknospe?",
+    optionen: ["Zahnschmelz", "Dentin", "Wurzelzement", "Alveolarknochen"],
+    richtig: 1
+  }, {
+    id: "zahnhart-014",
+    frage: "Was entsteht aus dem Zahnfollikel (C) der Zahnknospe?",
+    optionen: ["Nur Zahnschmelz", "Zementoblasten, Osteoblasten und Fibroblasten", "Nur Dentin", "Ausschließlich Nervengewebe"],
+    richtig: 1
+  }, {
+    id: "zahnhart-015",
+    frage: "Von welchem Keimblatt stammt der Zellhaufen ab, aus dem die Zahnbildung hervorgeht?",
+    optionen: ["Mesoderm", "Ektoderm (äußeres Keimblatt)", "Endoderm", "Aus keinem Keimblatt"],
+    richtig: 1
+  }, {
+    id: "zahnhart-016",
+    frage: "Wie hoch ist der anorganische Anteil des Zahnschmelzes ungefähr laut Zahnentwicklungslehre?",
+    optionen: ["70%", "95% (3% Wasser)", "50%", "20%"],
+    richtig: 1
+  }, {
+    id: "zahnhart-017",
+    frage: "Von welchen Zellen wird der Zahnschmelz gebildet?",
+    optionen: ["Von Odontoblasten", "Von Adamantoblasten (Ameloblasten)", "Von Fibroblasten", "Von Osteoklasten"],
+    richtig: 1
+  }, {
+    id: "zahnhart-018",
+    frage: "Welche Aussage zu prismenfreiem Schmelz trifft zu?",
+    optionen: ["Prismenfreier Schmelz kommt bei Milchzähnen, in Fissuren und im zervikalen Bereich vor", "Der gesamte Schmelz ist immer prismenfrei", "Prismenfreier Schmelz kommt nur bei bleibenden Zähnen vor", "Prismenfreier Schmelz existiert nicht"],
+    richtig: 0
+  }, {
+    id: "zahnhart-019",
+    frage: "Welche Vitamine und Mineralstoffe beeinflussen die Zahnentwicklung besonders?",
+    optionen: ["Nur Vitamin B12", "Calcium, Phosphor, Fluorid sowie Vitamin A, C und D", "Nur Eisen", "Ausschließlich Vitamin C"],
+    richtig: 1
+  }, {
+    id: "zahnhart-020",
+    frage: "Wozu dient die wellenförmige \"Hunter-Schreger-Streifung\" im Schmelz funktionell?",
+    optionen: ["Sie verhindert die Schmelzspaltung während der Kautätigkeit", "Sie ist rein kosmetisch ohne Funktion", "Sie dient der Zahnfarbe", "Sie erhöht die Löslichkeit des Schmelzes in Säure"],
+    richtig: 0
+  }, {
+    id: "zahnhart-021",
+    frage: "Wodurch entstehen die Retzius-Streifen (Wachstumslinien) im Schmelz?",
+    optionen: ["Durch Karies", "Durch Mineralisationswechsel/Ruhepausen der Ameloblasten", "Durch mechanische Abnutzung", "Sie entstehen zufällig ohne biologische Ursache"],
+    richtig: 1
+  }, {
+    id: "zahnhart-022",
+    frage: "Was sind Perikymatien?",
+    optionen: ["Vertiefungen an der Zahnoberfläche, die im Querschnitt als Schmelzbildungsfehler durch Mineralisationswechsel auftreten", "Krankheitserreger im Mund", "Ein anderer Name für Karies", "Teile des Wurzelzements"],
+    richtig: 0
+  }, {
+    id: "zahnhart-023",
+    frage: "Wie hoch ist der anorganische Mineralgehalt von Dentin ungefähr (in der Zahnentwicklungslehre)?",
+    optionen: ["98%", "70% (20% organisch, 10% Wasser)", "30%", "100%"],
+    richtig: 1
+  }, {
+    id: "zahnhart-024",
+    frage: "Wovon wird Dentin gebildet?",
+    optionen: ["Von Ameloblasten", "Von Odontoblasten", "Von Fibroblasten", "Von Osteoklasten"],
+    richtig: 1
+  }, {
+    id: "zahnhart-025",
+    frage: "Welche Eigenschaft hat Kollagen im Dentin?",
+    optionen: ["Hohe Zugfestigkeit, nicht dehnbar", "Sehr elastisch und dehnbar", "Es hat keine strukturelle Funktion", "Es kommt nur im Schmelz vor"],
+    richtig: 0
+  }, {
+    id: "zahnhart-026",
+    frage: "Wie viele Arten von Dentin werden unterschieden?",
+    optionen: ["Zwei: nur Primär- und Sekundärdentin", "Drei: Primär-, Sekundär- und Tertiär-/Reizdentin", "Nur eine Art", "Fünf Arten"],
+    richtig: 1
+  }, {
+    id: "zahnhart-027",
+    frage: "Wann wird Primärdentin gebildet?",
+    optionen: ["Erst im Erwachsenenalter", "Bis zum abgeschlossenen Wurzelwachstum", "Nur als Reaktion auf einen Reiz", "Ausschließlich vor der Geburt"],
+    richtig: 1
+  }, {
+    id: "zahnhart-028",
+    frage: "Wie verhält sich die Bildung von Sekundärdentin im Laufe des Lebens?",
+    optionen: ["Es wird ein Leben lang gebildet, lässt im Alter aber nach", "Es wird nur in der Kindheit gebildet", "Es wird nie gebildet", "Es entsteht ausschließlich durch Karies"],
+    richtig: 0
+  }, {
+    id: "zahnhart-029",
+    frage: "Wodurch entsteht Tertiär-/Reizdentin?",
+    optionen: ["Als Reaktion auf einen äußeren Reiz (z.B. Karies, Präparation)", "Nur während des Zahndurchbruchs", "Es entsteht spontan ohne äußeren Anlass", "Nur bei Milchzähnen"],
+    richtig: 0
+  }, {
+    id: "zahnhart-030",
+    frage: "Was ist eine Rezession im parodontalen Kontext?",
+    optionen: ["Zahnfleischwachstum", "Attachmentverlust / Rückgang der parodontalen Gewebe", "Zahnschmelzbildung", "Eine Form von Karies"],
+    richtig: 1
+  }, {
+    id: "zahnhart-031",
+    frage: "Welche Ursache für eine Rezession wird als \"traumatisch\" bezeichnet?",
+    optionen: ["Bänderzug", "Falsche Putztechnik oder kieferorthopädische Behandlung (KFO)", "Zu dicke attached Gingiva", "Genetische Veranlagung"],
+    richtig: 1
+  }, {
+    id: "zahnhart-032",
+    frage: "Was ist bei der Rezession der aussagekräftigste Messwert?",
+    optionen: ["Die Zahnfarbe", "Die Sondierungstiefe", "Die Zahnzahl", "Der Speichelfluss"],
+    richtig: 1
+  }, {
+    id: "zahnhart-033",
+    frage: "Welche klassischen Entzündungszeichen werden am Zahn/Zahnfleisch beschrieben?",
+    optionen: ["Nur Schmerz", "Calor (Hitze), Dolor (Schmerz), Tumor (Schwellung), Rubor (Rötung), Functio laesa (eingeschränkte Funktion)", "Nur Schwellung und Rötung", "Nur Fieber"],
+    richtig: 1
+  }, {
+    id: "zahnhart-034",
+    frage: "Woraus entwickelt sich die Pulpa (Zahnmark) embryologisch?",
+    optionen: ["Aus Mesenchymzellen zu Odontoblasten", "Aus Zahnschmelz", "Aus Alveolarknochen", "Aus Speicheldrüsengewebe"],
+    richtig: 0
+  }, {
+    id: "zahnhart-035",
+    frage: "Welche Bestandteile finden sich in der Pulpa?",
+    optionen: ["Nur Zahnschmelz", "Bindegewebe, Nerven, Blutgefäße, Lymphgefäße", "Ausschließlich Knochenzellen", "Nur Speichel"],
+    richtig: 1
+  }, {
+    id: "zahnhart-036",
+    frage: "Hat Karies eine erbliche (genetische) Ursache?",
+    optionen: ["Ja, Karies ist rein erblich bedingt", "Nein, Karies hat laut den Unterlagen nichts mit Vererbung zu tun", "Nur bei Milchzähnen", "Nur bei Erwachsenen"],
+    richtig: 1
+  }, {
+    id: "zahnhart-037",
+    frage: "Was bezeichnet ECC (Early Childhood Caries)?",
+    optionen: ["Eine Kariesform, die nur bei Erwachsenen auftritt", "Frühkindliche Karies durch Demineralisation durch süße oder saure Flüssigkeiten, häufig zwischen dem 6. und 36. Lebensmonat", "Eine Form von Zahnfehlstellung", "Eine Wurzelkanalbehandlung"],
+    richtig: 1
+  }, {
+    id: "zahnhart-038",
+    frage: "Was kann eine thermische Schädigung der Pulpa verursachen?",
+    optionen: ["Vakuolenbildung und im schlimmsten Fall Pulpanekrose", "Sofortige vollständige Heilung", "Zahnschmelzverdickung", "Keine bekannten Auswirkungen"],
+    richtig: 0
+  }, {
+    id: "zahnhart-039",
+    frage: "Welche Zellen bilden Wurzelzement (Zementogenese)?",
+    optionen: ["Odontoblasten", "Zementoblasten (aus Zahnfollikel bzw. benachbartem Knochen)", "Ameloblasten", "Osteoklasten"],
+    richtig: 1
+  }, {
+    id: "zahnhart-040",
+    frage: "Woraus besteht der Zahnhalteapparat (Parodontium) laut der Zahnentwicklungslehre?",
+    optionen: ["Zahnfleisch, Zahnzement, Zahnfach (Alveole) und Wurzelhaut", "Nur aus Zahnschmelz", "Nur aus der Pulpa", "Aus Speicheldrüsen und Muskulatur"],
+    richtig: 0
+  }, {
+    id: "zahnhart-041",
+    frage: "Welche Funktion hat Speichel unter anderem?",
+    optionen: ["Remineralisation, Spülfunktion, Pufferkapazität und Immunabwehr", "Ausschließlich Geschmackswahrnehmung", "Nur mechanischer Schutz ohne chemische Funktion", "Zerstörung von Zahnschmelz"],
+    richtig: 0
+  }, {
+    id: "zahnhart-042",
+    frage: "Wie hoch ist der Wasseranteil im Speichel ungefähr?",
+    optionen: ["circa 50%", "circa 99,5%", "circa 70%", "circa 20%"],
+    richtig: 1
+  }, {
+    id: "zahnhart-043",
+    frage: "Was bewirkt das freie Fluoridion im Speichel?",
+    optionen: ["Es wirkt remineralisierend und hemmt Enzyme der Glykolyse in der Plaque", "Es fördert ausschließlich die Demineralisation", "Es hat keine Wirkung auf den Zahnschmelz", "Es zerstört die Speicheldrüsen"],
+    richtig: 0
+  }, {
+    id: "zahnhart-044",
+    frage: "Was versteht man unter Xerostomie?",
+    optionen: ["Übermäßigen Speichelfluss", "Mundtrockenheit durch verringerten Speichelfluss (Fließrate in Ruhe unter 0,1 ml/min)", "Eine Form von Karies", "Eine Zahnfehlstellung"],
+    richtig: 1
+  }, {
+    id: "zahnhart-045",
+    frage: "Wovon hängt die Speichelpufferkapazität hauptsächlich ab?",
+    optionen: ["Von der Zahnfarbe", "Von Menge und Konzentration des Bicarbonats", "Vom Körpergewicht", "Von der Anzahl der Zähne"],
+    richtig: 1
+  }, {
+    id: "zahnhart-046",
+    frage: "Was ist Anodontie?",
+    optionen: ["Übermäßig viele Zähne", "Keine Zähne angelegt", "Zu große Zähne", "Eine Form von Karies"],
+    richtig: 1
+  }, {
+    id: "zahnhart-047",
+    frage: "Was versteht man unter Hypodontie?",
+    optionen: ["Alle Zähne sind zu groß", "Es sind teilweise Zähne nicht angelegt", "Es gibt zu viele Zähne", "Alle Zähne fehlen vollständig"],
+    richtig: 1
+  }, {
+    id: "zahnhart-048",
+    frage: "Was ist die Molaren-Inzisiven-Hypomineralisation (MIH)?",
+    optionen: ["Eine Störung der Schmelzmineralisation durch ungenügende Calcium- und Phosphateinlagerung, betroffen sind meist Frontzähne und Molaren", "Eine Erkrankung, die nur die Wurzel betrifft", "Eine reine Verfärbung ohne Substanzverlust", "Eine Form von Parodontitis"],
+    richtig: 0
+  }, {
+    id: "zahnhart-049",
+    frage: "Was ist Amelogenesis imperfecta?",
+    optionen: ["Eine erworbene Krankheit durch schlechte Mundhygiene", "Eine genetisch bedingte Schmelzfehlbildung, die generalisiert (am ganzen Gebiss) auftritt, bei normaler Dentinstruktur", "Eine Form von Karies", "Eine Erkrankung des Zahnfleisches"],
+    richtig: 1
+  }, {
+    id: "zahnhart-050",
+    frage: "Was kennzeichnet einen Turner-Zahn?",
+    optionen: ["Eine symmetrisch verteilte Erkrankung aller Zähne", "Eine meist durch Trauma verursachte, nicht-symmetrisch verteilte Veränderung, oft am Frontzahn, von Opazität bis Hypoplasie", "Eine natürliche Zahnfarbe ohne pathologischen Hintergrund", "Eine Erkrankung, die nur die Zahnwurzel betrifft"],
+    richtig: 1
+  }, {
+    id: "zahnhart-051",
+    frage: "Was ist eine Erosion der Zahnhartsubstanz?",
+    optionen: ["Ein bakteriell bedingter Substanzverlust", "Ein oberflächlicher Verlust von Zahnhartsubstanz ohne Bakterienbeteiligung, meist durch Säuren verursacht", "Eine reine Verfärbung ohne Substanzverlust", "Ausschließlich genetisch bedingt"],
+    richtig: 1
+  }, {
+    id: "zahnhart-052",
+    frage: "Was unterscheidet Abrasion von Erosion?",
+    optionen: ["Abrasion wird durch Reibung verursacht (z.B. Zahnpasta, Zahnbürste), Erosion durch Säuren – beide ohne Bakterienbeteiligung", "Abrasion wird durch Bakterien verursacht", "Es gibt keinen Unterschied", "Erosion wird durch Reibung, Abrasion durch Säuren verursacht"],
+    richtig: 0
+  }, {
+    id: "zahnhart-053",
+    frage: "Was verursacht Attrition der Zahnhartsubstanz?",
+    optionen: ["Säureeinwirkung", "Okklusionskontakt (Zahn-zu-Zahn-Kontakt), betrifft häufig Prämolaren und Molaren", "Falsche Zahnpasta", "Bakterien"],
+    richtig: 1
+  }, {
+    id: "zahnhart-054",
+    frage: "Was misst der BEWE-Index (Basic Erosive Wear Examination)?",
+    optionen: ["Den Grad der Parodontitis", "Das Ausmaß von Zahnschmelzverlust durch Erosion, eingeteilt in Sextanten", "Die Anzahl der Karieszähne", "Die Speichelmenge"],
+    richtig: 1
+  }],
+  allgemeinmedizin: [{
+    id: "allgmed-001",
+    frage: "Wofür steht die Abkürzung im Ablauf \"Anamnese > Befund > Diagnose > Therapie\"?",
+    optionen: ["Es ist die typische Reihenfolge des diagnostischen Vorgehens", "Es sind vier unabhängige, austauschbare Schritte", "Diagnose kommt immer zuerst", "Anamnese ist optional"],
+    richtig: 0
+  }, {
+    id: "allgmed-002",
+    frage: "Was gehört zur allgemeinen Anamnese?",
+    optionen: ["Nur familiäre Erkrankungen", "Erkrankungen, die Einfluss auf die Behandlung haben können (Medikamente, Allergien, Klappenersatz, Diabetes etc.)", "Nur die aktuelle Beschwerde des Patienten", "Ausschließlich die Zahngeschichte"],
+    richtig: 1
+  }, {
+    id: "allgmed-003",
+    frage: "Was erfasst die Familienanamnese?",
+    optionen: ["Aktuelle Beschwerden des Patienten", "Vorerkrankungen, die bereits in der Familie aufgetreten sind (vererbbar)", "Nur Medikamenteneinnahme", "Nur zahnärztliche Vorbehandlungen"],
+    richtig: 1
+  }, {
+    id: "allgmed-004",
+    frage: "In wie viel Prozent der Notfallsituationen ist die Anamnese an der Erstdiagnose beteiligt?",
+    optionen: ["circa 10%", "circa 50%", "circa 85%", "100%"],
+    richtig: 2
+  }, {
+    id: "allgmed-005",
+    frage: "Was unterscheidet den Soforttyp von einer Spättyp-Allergie?",
+    optionen: ["Beim Soforttyp reagiert der Körper unmittelbar bei Zweitkontakt heftig, beim Spättyp erst Tage/Wochen nach Kontakt", "Es gibt keinen Unterschied", "Spättyp-Allergien sind immer gefährlicher", "Soforttyp betrifft nur die Haut"],
+    richtig: 0
+  }, {
+    id: "allgmed-006",
+    frage: "Welche Allergietyp-Klassifikation macht ungefähr 90% aller Allergien aus?",
+    optionen: ["Typ IV", "Typ I (Soforttyp, anaphylaktische Reaktion)", "Typ II", "Typ III"],
+    richtig: 1
+  }, {
+    id: "allgmed-007",
+    frage: "Was ist typisch für eine Typ-IV-Allergie (verzögerter Typ)?",
+    optionen: ["Sie tritt innerhalb von Sekunden auf", "T-Zell-vermittelte Reaktion nach 24-72 Stunden, z.B. allergisches Kontaktekzem", "Sie wird ausschließlich durch Nahrungsmittel ausgelöst", "Sie ist identisch mit dem Soforttyp"],
+    richtig: 1
+  }, {
+    id: "allgmed-008",
+    frage: "Welche Sofortmaßnahmen gehören zur Therapie einer Typ-I-Allergie (anaphylaktische Reaktion)?",
+    optionen: ["Allergenzufuhr stoppen, Notruf, Lagerung je nach Symptomatik, ggf. Adrenalin und Antihistaminika", "Nur Abwarten ohne Intervention", "Sofortige zahnärztliche Behandlung fortsetzen", "Nur eine Wunddesinfektion"],
+    richtig: 0
+  }, {
+    id: "allgmed-009",
+    frage: "Was unterscheidet Diabetes Typ 1 von Typ 2?",
+    optionen: ["Typ 1 ist absoluter Insulinmangel durch Untergang der Beta-Zellen (3-5% Häufigkeit), Typ 2 ist reaktiver Insulinmangel (über 90% Häufigkeit)", "Beide Typen sind identisch in Ursache und Häufigkeit", "Typ 2 ist immer angeboren", "Typ 1 betrifft nur ältere Menschen"],
+    richtig: 0
+  }, {
+    id: "allgmed-010",
+    frage: "Was zeigt der HbA1c-Wert bei Diabetes an, und welcher Zusammenhang besteht zu Parodontitis?",
+    optionen: ["Er hat keinen Bezug zur Mundgesundheit", "Das \"Blutzuckergedächtnis\" – je höher der HbA1c-Wert, desto höher das Risiko für eine Parodontitis", "Er misst ausschließlich den Blutdruck", "Ein hoher HbA1c-Wert senkt das Parodontitisrisiko"],
+    richtig: 1
+  }, {
+    id: "allgmed-011",
+    frage: "Wie sollte bei Diabetikern mit der Medikamenteneinnahme in der zahnärztlichen Behandlung umgegangen werden?",
+    optionen: ["Medikamente sollten grundsätzlich abgesetzt werden", "Medikamenteneinnahme in üblicher Weise fortführen, keine Nahrungskarenz", "Insulin sollte verdoppelt werden", "Es spielt keine Rolle"],
+    richtig: 1
+  }, {
+    id: "allgmed-012",
+    frage: "Welche oralen Symptome können bei Diabetes auftreten?",
+    optionen: ["Keine, Diabetes hat keinen Einfluss auf die Mundhöhle", "Verstärkte Gingivitis/Parodontitis, Mundtrockenheit, Candida, Burning-Mouth-Syndrom", "Nur Karies", "Nur Zahnverlust"],
+    richtig: 1
+  }, {
+    id: "allgmed-013",
+    frage: "Welche Medikamentengruppe steht bei Osteoporose in Zusammenhang mit dem Risiko einer Kiefernekrose?",
+    optionen: ["Antibiotika", "Antiresorptiva (u.a. Bisphosphonate, Alendronat, Ibandronat)", "Schmerzmittel", "Antihistaminika"],
+    richtig: 1
+  }, {
+    id: "allgmed-014",
+    frage: "Gibt es bei Osteoporose-Patienten mit oraler Antiresorptiva-Einnahme eine Einschränkung bei zahnmedizinischen Prophylaxebehandlungen?",
+    optionen: ["Ja, jegliche Prophylaxebehandlung ist verboten", "Nein, keine Einschränkung bei zahnmedizinischen Prophylaxebehandlungen (bei oraler Einnahme)", "Nur Zahnreinigung ist erlaubt, keine anderen Maßnahmen", "Nur bei Frauen gibt es Einschränkungen"],
+    richtig: 1
+  }, {
+    id: "allgmed-015",
+    frage: "Bei welchen zahnärztlichen Eingriffen ist bei Osteoporose-Patienten unter Antiresorptiva besondere Vorsicht (Cave) geboten?",
+    optionen: ["Bei Prophylaxebehandlungen", "Bei Extraktion und anderen chirurgischen Behandlungen", "Beim Zähneputzen", "Bei der Anamnese"],
+    richtig: 1
+  }, {
+    id: "allgmed-016",
+    frage: "Was ist charakteristisch für eine Blutgerinnungsstörung?",
+    optionen: ["Blutungen, die zu lang, zu stark oder ohne erkennbaren Anlass auftreten", "Immer eine sofort tödliche Erkrankung", "Sie betrifft nur ältere Menschen", "Sie hat keinen Einfluss auf zahnärztliche Behandlungen"],
+    richtig: 0
+  }, {
+    id: "allgmed-017",
+    frage: "Was gilt bei zahnärztlichen Prophylaxebehandlungen bei Patienten mit Blutgerinnungsstörung/Antikoagulanzieneinnahme?",
+    optionen: ["Antikoagulanzien sollten vom Zahnarzt eigenmächtig reduziert werden", "Keine Einschränkung bei streng supragingivaler Instrumentierung, Antikoagulanzien keinesfalls eigenmächtig reduzieren", "Die Behandlung muss immer abgesagt werden", "Es sind keine besonderen Maßnahmen nötig"],
+    richtig: 1
+  }, {
+    id: "allgmed-018",
+    frage: "Welche klinischen Zeichen deuten auf eine Blutgerinnungsstörung hin?",
+    optionen: ["Häufiges Nasenbluten, Zahnfleischbluten, schnelle/starke Hämatombildung", "Ausschließlich Fieber", "Nur Kopfschmerzen", "Nur Mundtrockenheit"],
+    richtig: 0
+  }, {
+    id: "allgmed-019",
+    frage: "Was besagt die S3-Leitlinie zur zahnärztlichen Chirurgie unter oraler Antikoagulation grundsätzlich in Bezug auf das Vorgehen?",
+    optionen: ["Es gibt eine klare Leitlinie, die Rücksprache mit dem behandelnden Arzt und angepasstes Vorgehen empfiehlt", "Es gibt keinerlei Empfehlungen für diese Patientengruppe", "Antikoagulanzien müssen immer abgesetzt werden", "Es sind keine besonderen Maßnahmen notwendig"],
+    richtig: 0
+  }, {
+    id: "allgmed-020",
+    frage: "Welche Maßnahmen zur erweiterten Blutstillung werden bei Blutungsneigung genannt?",
+    optionen: ["Lokale Kompression, resorbierbare Hämostyptika, Naht, Mundspülung mit Tranexamsäure", "Nur Abwarten ohne Intervention", "Sofortige systemische Antibiotikagabe", "Es gibt keine speziellen Maßnahmen"],
+    richtig: 0
+  }, {
+    id: "allgmed-021",
+    frage: "Was ist eine bakterielle Endokarditis?",
+    optionen: ["Eine harmlose, nicht behandlungsbedürftige Erkrankung", "Eine durch einen infektiösen Streuherd im Bereich der Herzinnenhaut/Herzklappen verursachte, unbehandelt potenziell tödliche Erkrankung", "Eine reine Hauterkrankung", "Eine Erkrankung der Lunge"],
+    richtig: 1
+  }, {
+    id: "allgmed-022",
+    frage: "Welche zahnärztlichen Eingriffe gelten als Risikoprozeduren für eine bakterielle Endokarditis?",
+    optionen: ["Nur professionelle Zahnreinigung ohne jede Blutung", "Eingriffe mit Manipulation an Gingiva, periapikaler Zahnregion oder Perforation der oralen Mukosa", "Nur die Anamnese", "Röntgenaufnahmen"],
+    richtig: 1
+  }, {
+    id: "allgmed-023",
+    frage: "Wie wird die Antibiotikaprophylaxe zur Endokarditisprophylaxe bei Erwachsenen zeitlich vor dem Eingriff verabreicht?",
+    optionen: ["Erst nach dem Eingriff", "30-60 Minuten vor der Behandlung", "Eine Woche vorher", "Sie wird immer erst 2 Stunden nach dem Eingriff gegeben"],
+    richtig: 1
+  }, {
+    id: "allgmed-024",
+    frage: "Welche Patientengruppe hat laut den Materialien die höchste Wahrscheinlichkeit eines schweren/letalen Verlaufs einer infektiösen Endokarditis?",
+    optionen: ["Patienten mit Klappenersatz oder überstandener Endokarditis", "Alle Patienten über 18 Jahre", "Nur Diabetiker", "Nur Raucher"],
+    richtig: 0
+  }, {
+    id: "allgmed-025",
+    frage: "Was ist Angina pectoris?",
+    optionen: ["Eine Form von Karies", "Anfallsartiger Brustschmerz durch eine vorübergehende Durchblutungsstörung des Herzens", "Eine Erkrankung der Mundschleimhaut", "Eine Allergieform"],
+    richtig: 1
+  }, {
+    id: "allgmed-026",
+    frage: "Warum kann Angina pectoris zahnärztlich relevant sein?",
+    optionen: ["Sie hat nie Bezug zur Zahnmedizin", "Sie kann sich mit zahnschmerzähnlichen Beschwerden im Unterkiefer äußern, wodurch Patienten fälschlich zuerst den Zahnarzt aufsuchen", "Sie verursacht ausschließlich Zahnverfärbungen", "Sie tritt nur bei Kindern auf"],
+    richtig: 1
+  }, {
+    id: "allgmed-027",
+    frage: "Wie lange sollten nach einem Herzinfarkt keine elektiven (planbaren) zahnärztlichen Eingriffe erfolgen?",
+    optionen: ["1 Woche", "6 Monate", "Es gibt keine zeitliche Einschränkung", "5 Jahre"],
+    richtig: 1
+  }, {
+    id: "allgmed-028",
+    frage: "Was gilt bei der Lokalanästhesie nach Herzinfarkt bezüglich Adrenalinzusatz?",
+    optionen: ["Beliebig viel Adrenalin ist erlaubt", "Nicht mehr Adrenalinzusatz als 1:200.000", "Adrenalin ist grundsätzlich verboten", "Adrenalin spielt keine Rolle"],
+    richtig: 1
+  }, {
+    id: "allgmed-029",
+    frage: "Was zeichnet Multiple Sklerose aus?",
+    optionen: ["Eine chronisch entzündliche Erkrankung des zentralen Nervensystems, häufiger bei Frauen, Erkrankungsalter meist 20-40 Jahre", "Eine reine Alterserkrankung", "Eine bakterielle Infektion", "Eine Erkrankung, die nur Männer betrifft"],
+    richtig: 0
+  }, {
+    id: "allgmed-030",
+    frage: "Welche Symptomgruppen können bei Parkinson auftreten?",
+    optionen: ["Nur psychische Symptome", "Motorische (Tremor), sensorische, vegetative und psychische Störungen", "Nur Sehstörungen", "Ausschließlich Sprachstörungen"],
+    richtig: 1
+  }, {
+    id: "allgmed-031",
+    frage: "Worauf sollte bei Patienten mit Antidepressiva-Einnahme im Zusammenhang mit Lokalanästhesie geachtet werden?",
+    optionen: ["Es gibt keine Wechselwirkungen zu beachten", "Achtung bei intravasaler (i.v.) Gabe im Zusammenhang mit Lokalanästhesie", "Antidepressiva verstärken nur die Zahnschmelzbildung", "Es sind keine Vorsichtsmaßnahmen nötig"],
+    richtig: 1
+  }, {
+    id: "allgmed-032",
+    frage: "Wofür besteht bei Patienten mit Demenz/Parkinson/MS ein besonders erhöhtes Risiko?",
+    optionen: ["Für Wurzelkaries und Parodontitis", "Für Herzinfarkt ausschließlich", "Für Allergien", "Für Osteoporose ausschließlich"],
+    richtig: 0
+  }, {
+    id: "allgmed-033",
+    frage: "Welche Medikamentengruppen können zu Mundtrockenheit führen?",
+    optionen: ["Nur Antibiotika", "U.a. Antihistaminika, Antihypertensiva, Diuretika, Psychopharmaka, Sedativa", "Ausschließlich Vitamine", "Keine Medikamente verursachen Mundtrockenheit"],
+    richtig: 1
+  }, {
+    id: "allgmed-034",
+    frage: "Welche Medikamentengruppen können zu einer Gingivahyperplasie (Zahnfleischwucherung) führen?",
+    optionen: ["Nur Schmerzmittel", "U.a. bestimmte Antiepileptika (Phenytoin), Immunsuppressiva (Cyclosporin) und Kalziumkanalblocker (Nifedipin, Amlodipin)", "Nur Vitamine", "Ausschließlich Antibiotika"],
+    richtig: 1
+  }, {
+    id: "allgmed-035",
+    frage: "Welche orale Nebenwirkung kann bei Patienten mit inhalativen Kortikoid-Präparaten (z.B. bei Asthma) auftreten?",
+    optionen: ["Candidiasis", "Zahnschmelzverlust", "Zahnverfärbung als einzige Nebenwirkung", "Keine oralen Nebenwirkungen möglich"],
+    richtig: 0
+  }, {
+    id: "allgmed-036",
+    frage: "Was gehört zu den Routinemethoden der Befunderhebung?",
+    optionen: ["Nur Röntgen", "Inspektion, Palpation, Perkussion, Vitalitätsprüfung, Lockerungsgrad, Okklusion", "Nur eine Blutuntersuchung", "Ausschließlich die Anamnese"],
+    richtig: 1
+  }, {
+    id: "allgmed-037",
+    frage: "Wie wird bei der extraoralen Untersuchung die Motorik geprüft?",
+    optionen: ["Durch Aufforderung, die Nase zu rümpfen oder den Mund zu spitzen", "Durch Abtasten der Zähne", "Durch eine Blutuntersuchung", "Motorik wird nicht extraoral geprüft"],
+    richtig: 0
+  }, {
+    id: "allgmed-038",
+    frage: "Was wird bei der Prüfung der Sensibilität untersucht?",
+    optionen: ["Nur die Zahnfarbe", "Stumpf-Spitz-Diskrimination, Zwei-Punkt-Diskrimination, ggf. Anästhesie/Hypästhesie/Hyperästhesie/Parästhesie", "Nur der Blutdruck", "Die Kaukraft"],
+    richtig: 1
+  }, {
+    id: "allgmed-039",
+    frage: "Was ist Leukoplakie?",
+    optionen: ["Eine rote, abwischbare Veränderung der Mundschleimhaut", "Eine weißliche, nicht abwischbare Veränderung der Mundschleimhaut, die als fakultative Präkanzerose gilt", "Eine harmlose, immer temporäre Verfärbung", "Eine Form von Karies"],
+    richtig: 1
+  }, {
+    id: "allgmed-040",
+    frage: "Welche Leukoplakie-Form gilt im Allgemeinen als harmlos, welche hat Entartungspotential?",
+    optionen: ["Plane Leukoplakien sind im Allgemeinen harmlos, erosive und verruköse haben Entartungspotential", "Alle Leukoplakieformen sind gleich gefährlich", "Plane Leukoplakien sind immer bösartig", "Es gibt nur eine Form von Leukoplakie"],
+    richtig: 0
+  }, {
+    id: "allgmed-041",
+    frage: "Was ist der Oraler Lichen Planus (OLP)?",
+    optionen: ["Eine reine Pilzinfektion", "Eine Autoimmunerkrankung mit weißlichen, streifenartigen Schleimhautveränderungen (Wickham-Streifen), die eine Präkanzerose darstellt", "Eine harmlose anatomische Variante ohne Krankheitswert", "Eine Form von Karies"],
+    richtig: 1
+  }, {
+    id: "allgmed-042",
+    frage: "Was ist eine Erythroplakie und wie unterscheidet sie sich von der Leukoplakie in Bezug auf das Entartungsrisiko?",
+    optionen: ["Sie ist das Pendant zur Leukoplakie, gerötet statt weiß, und entartet häufiger als die Leukoplakie", "Sie hat kein Entartungsrisiko", "Sie ist immer harmlos", "Sie kommt nur bei Kindern vor"],
+    richtig: 0
+  }, {
+    id: "allgmed-043",
+    frage: "Was ist eine Candidose (Candidiasis) der Mundhöhle?",
+    optionen: ["Eine bakterielle Infektion", "Eine Pilzinfektion, auch Soor genannt, begünstigt durch Antibiotika, Glukokortikoide oder Zytostatika", "Eine genetische Fehlbildung", "Eine Form von Zahnstein"],
+    richtig: 1
+  }, {
+    id: "allgmed-044",
+    frage: "Wodurch werden Papillome der Mundschleimhaut verursacht?",
+    optionen: ["Durch Vitaminmangel", "Durch humanes Papilloma Virus (HPV)", "Durch mechanische Reibung allein", "Durch Bakterien"],
+    richtig: 1
+  }, {
+    id: "allgmed-045",
+    frage: "Was unterscheidet Low-risk- von High-risk-HPV bezüglich Papillomen?",
+    optionen: ["Low-risk hat kein Malignitätspotential, High-risk erhöht das Risiko für ein Karzinom des Mund-/Rachenraums", "Beide sind gleich gefährlich", "High-risk-HPV ist immer harmlos", "Es gibt keinen Unterschied zwischen den beiden Typen"],
+    richtig: 0
+  }, {
+    id: "allgmed-046",
+    frage: "Was ist die schwarze Haarzunge?",
+    optionen: ["Eine bösartige Tumorerkrankung", "Hypertrophie und Hyperkeratose der Papillae filiformes, symptomlos, gelegentlich durch Antibiotika/Zytostatika", "Eine Form von Karies", "Eine Infektionskrankheit durch Bakterien"],
+    richtig: 1
+  }, {
+    id: "allgmed-047",
+    frage: "Was ist das Kaposi-Sarkom im Kontext der Mundschleimhaut?",
+    optionen: ["Eine harmlose Zungenveränderung", "Eine AIDS-assoziierte, aggressive Tumorerkrankung, die auch die Mundhöhle betreffen kann", "Eine Form von Zahnfleischbluten", "Eine allergische Reaktion"],
+    richtig: 1
+  }, {
+    id: "allgmed-048",
+    frage: "Was kennzeichnet die Lingua plicata (Faltenzunge)?",
+    optionen: ["Verstärkte Faltenbildung, vererblich, meist keine funktionelle Beeinträchtigung", "Eine bösartige Erkrankung mit hoher Entartungsrate", "Sie ist immer ein Zeichen für eine akute Infektion", "Sie kommt ausschließlich bei Rauchern vor"],
+    richtig: 0
+  }, {
+    id: "allgmed-049",
+    frage: "Wie äußert sich die Lingua geographica (Landkartenzunge)?",
+    optionen: ["Als gleichmäßig raue Zungenoberfläche ohne Farbveränderung", "Als runde/girlandenförmige helle, rote oder rosafarbene Flecken mit grauweißen Säumen durch Abstoßung der Papillae filiformes", "Als dauerhafte Schwarzfärbung der Zunge", "Als Zahnverlust"],
+    richtig: 1
+  }, {
+    id: "allgmed-050",
+    frage: "Was ist eine Cheilitis angularis (Mundwinkelrhagade)?",
+    optionen: ["Eine lokale Kontaktdermatitis/Infektion (z.B. durch Candida albicans) an den Mundwinkeln", "Eine Erkrankung ausschließlich der Zunge", "Eine Form von Karies", "Eine reine Zahnfehlstellung"],
+    richtig: 0
+  }, {
+    id: "allgmed-051",
+    frage: "Wie geht man bei nicht abwischbaren weißen Schleimhautveränderungen (Verdacht auf OLP) praktisch vor?",
+    optionen: ["Sofortige Extraktion aller Zähne", "Bürstenzytologie oder Probeinzision/Exzision zur histopathologischen Diagnosesicherung", "Keine Maßnahme notwendig", "Nur eine Röntgenaufnahme"],
+    richtig: 1
+  }, {
+    id: "allgmed-052",
+    frage: "Wie geht man bei abwischbaren Schleimhautveränderungen (Verdacht auf Candidiasis) praktisch vor?",
+    optionen: ["Mikrobiologische Untersuchung (Abstrich) bei Verdacht auf Pilze/Viren", "Sofortige Operation", "Es ist keine Diagnostik notwendig", "Nur eine Blutuntersuchung"],
+    richtig: 0
+  }, {
+    id: "allgmed-053",
+    frage: "Wann sollte an eine Überweisung zum Spezialisten gedacht werden?",
+    optionen: ["Nie, der Zahnarzt behandelt alles selbst", "Bei unklaren oder therapieresistenten Befunden sowie bei systemischen Erkrankungen mit oralen Symptomen", "Nur bei Zahnschmerzen", "Nur bei Kindern"],
+    richtig: 1
+  }, {
+    id: "allgmed-054",
+    frage: "Was ist die generelle Konsequenz von Mundschleimhautveränderungen für die zahnärztliche Prophylaxebehandlung?",
+    optionen: ["Gründliche Inspektion der Mundhöhle und ggf. zahnärztliche Abklärung VOR der Prophylaxebehandlung", "Mundschleimhautveränderungen spielen für die Prophylaxe keine Rolle", "Die Behandlung muss immer sofort abgebrochen werden", "Es ist grundsätzlich keine Reaktion erforderlich"],
+    richtig: 0
+  }, {
+    id: "allgmed-055",
+    frage: "Was besagt das HIV-Übertragungsrisiko bei einer Nadelstichverletzung (NSV) ungefähr?",
+    optionen: ["Es liegt bei unter 0,3%", "Es liegt bei über 90%", "Es gibt kein Übertragungsrisiko", "Es liegt bei genau 50%"],
+    richtig: 0
+  }, {
+    id: "allgmed-056",
+    frage: "Wie sollte bei einer Nadelstichverletzung als Erstmaßnahme vorgegangen werden?",
+    optionen: ["Wunde abbinden und Blutfluss stoppen", "Spontanen Blutfluss nicht unterbinden, nicht abbinden, mit Wasser und Seife spülen, zusätzlich Antiseptikum", "Wunde ignorieren", "Sofortige Wundnaht ohne weitere Maßnahmen"],
+    richtig: 1
+  }, {
+    id: "allgmed-057",
+    frage: "Wird HIV durch Tröpfcheninfektion übertragen?",
+    optionen: ["Ja, HIV wird hauptsächlich durch Tröpfcheninfektion übertragen", "Nein, keine Tröpfcheninfektion bei HIV", "Nur bei engem Kontakt über mehrere Stunden", "Nur beim Husten"],
+    richtig: 1
+  }, {
+    id: "allgmed-058",
+    frage: "Welche Hepatitisform ist laut den Materialien am häufigsten (HB > HA > HC > HD, HE)?",
+    optionen: ["Hepatitis E", "Hepatitis B", "Hepatitis D", "Hepatitis C"],
+    richtig: 1
+  }, {
+    id: "allgmed-059",
+    frage: "Besteht zwischen den einzelnen Hepatitisformen eine Kreuzimmunität?",
+    optionen: ["Ja, vollständige Kreuzimmunität", "Nein, keine Kreuzimmunität zwischen den Hepatitisformen", "Nur zwischen Hepatitis A und B", "Nur bei geimpften Personen"],
+    richtig: 1
+  }, {
+    id: "allgmed-060",
+    frage: "Worauf sollte bei der zahnärztlichen Behandlung von Patienten mit Hepatitis besonders geachtet werden?",
+    optionen: ["Auf nichts Besonderes", "Zurückhaltende Verordnung von Medikamenten, die über die Leber verstoffwechselt werden, sowie strikte Hygiene", "Nur auf die Zahnfarbe", "Auf besonders viel Fluoridgabe"],
     richtig: 1
   }]
 };
