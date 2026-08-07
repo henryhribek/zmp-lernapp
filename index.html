@@ -70,47 +70,47 @@ const FRAGEN_DATEN = {
   mikrobiologie: [{
     id: "mikro-001",
     frage: "Was versteht man unter dem Begriff 'Mikrobiom'?",
-    optionen: ["Nur die schädlichen Bakterien im Körper", "Die Gesamtheit aller Mikroorganismen, die auf und in uns leben", "Ein Gerät zur Untersuchung von Bakterien", "Die Anzahl der Viren im Blut"],
-    richtig: 1
+    optionen: ["Die Gesamtheit aller Mikroorganismen, die auf und in uns leben", "Die Gesamtheit aller roten und weißen Blutkörperchen im Blut", "Ein spezielles Gerät zur mikroskopischen Untersuchung von Bakterien", "Eine Sammlung häufig verschriebener Antibiotika-Wirkstoffe"],
+    richtig: 0
   }, {
     id: "mikro-002",
     frage: "Welche zwei Hauptaufbauformen von Zellen gibt es bei Mikroorganismen?",
-    optionen: ["Groß- und Kleinzellen", "Prokaryoten und Eukaryoten", "Aerobe und anaerobe Zellen", "Gram-positive und Gram-negative Zellen"],
+    optionen: ["Aerobe Zellen und anaerobe Zellen", "Prokaryoten und Eukaryoten", "Gramnegative Zellen und grampositive Zellen", "Kokkenförmige Zellen und stäbchenförmige Zellen"],
     richtig: 1
   }, {
     id: "mikro-003",
     frage: "Was trifft auf Prokaryoten zu?",
-    optionen: ["Sie besitzen einen echten, membranumschlossenen Zellkern", "Sie haben mehrere Chromosomen im Zellkern", "Ihr Erbgut liegt als ringförmiges Chromosom frei im Cytoplasma vor", "Sie sind grundsätzlich größer als Eukaryoten"],
+    optionen: ["Sie besitzen stets zwei getrennte, membranumschlossene Zellkerne", "Sie sind in aller Regel deutlich größer als vergleichbare Eukaryoten", "Ihr Erbgut liegt als ringförmiges Chromosom frei im Cytoplasma vor", "Sie kommen ausschließlich innerhalb des menschlichen Körpers vor"],
     richtig: 2
   }, {
     id: "mikro-004",
     frage: "Wer entdeckte im 17. Jahrhundert Mikroorganismen und Zellen?",
-    optionen: ["Robert Koch und Louis Pasteur", "Robert Hooke und Antoni van Leeuwenhoek", "Alexander Fleming", "Charles Darwin"],
-    richtig: 1
+    optionen: ["Robert Hooke und Antoni van Leeuwenhoek", "Robert Koch und Louis Pasteur", "Alexander Fleming und Paul Ehrlich", "Charles Darwin und Gregor Mendel"],
+    richtig: 0
   }, {
     id: "mikro-005",
     frage: "Was besagen die Koch'schen Postulate?",
-    optionen: ["Regeln zur Antibiotika-Dosierung", "Ein Verfahren zur Sterilisation von Instrumenten", "Kriterien zum Nachweis, dass ein bestimmter Erreger eine bestimmte Krankheit auslöst", "Die Einteilung der Bakterien nach Form"],
-    richtig: 2
+    optionen: ["Regeln zur korrekten Dosierung verschiedener Antibiotikaklassen", "Kriterien zum Nachweis, dass ein Erreger eine bestimmte Krankheit auslöst", "Ein standardisiertes Verfahren zur Sterilisation zahnärztlicher Instrumente", "Eine Systematik zur Einteilung von Bakterien nach ihrer äußeren Form"],
+    richtig: 1
   }, {
     id: "mikro-006",
     frage: "Wofür dient die Gramfärbung?",
-    optionen: ["Zur Bestimmung der Bakteriengröße", "Zur Differenzierung von Bakterien anhand des Zellwandaufbaus", "Zum Nachweis von Viren", "Zur Messung des Sauerstoffbedarfs"],
-    richtig: 1
+    optionen: ["Zur genauen Bestimmung der individuellen Bakteriengröße", "Zum direkten mikroskopischen Nachweis von Viruspartikeln", "Zur Differenzierung von Bakterien anhand ihres Zellwandaufbaus", "Zur Messung des Sauerstoffbedarfs einer Bakterienkultur"],
+    richtig: 2
   }, {
     id: "mikro-007",
     frage: "Welche Farbe zeigen grampositive Bakterien nach der Gramfärbung?",
-    optionen: ["Rot", "Grün", "Blau/violett", "Gelb"],
-    richtig: 2
+    optionen: ["Ein kräftiges Gelb", "Ein deutliches Rot", "Ein sattes Grün", "Ein Blau bis Violett"],
+    richtig: 3
   }, {
     id: "mikro-008",
     frage: "Was ist ein Plasmid?",
-    optionen: ["Ein Bestandteil der Zellwand", "Eine extrachromosomale DNA-Struktur im Bakterium", "Ein Enzym zur DNA-Reparatur", "Die äußere Schutzhülle des Bakteriums"],
-    richtig: 1
+    optionen: ["Eine extrachromosomale DNA-Struktur innerhalb des Bakteriums", "Ein fester Bestandteil der äußeren bakteriellen Zellwand", "Ein spezialisiertes Enzym zur Reparatur von DNA-Schäden", "Die schützende Kapselhülle um manche Bakterienarten"],
+    richtig: 0
   }, {
     id: "mikro-009",
     frage: "Welche Aussage zu Endosporen ist korrekt?",
-    optionen: ["Sie kommen nur bei Viren vor", "Sie sind sehr hitzeempfindlich", "Sie ermöglichen Bakterien das Überleben unter ungünstigen Bedingungen", "Sie sind für die Fortbewegung des Bakteriums zuständig"],
+    optionen: ["Sie treten ausschließlich bei Viren und niemals bei Bakterien auf", "Sie reagieren äußerst empfindlich auf Hitze und Trockenheit", "Sie ermöglichen Bakterien das Überleben unter ungünstigen Bedingungen", "Sie dienen in erster Linie der aktiven Fortbewegung des Bakteriums"],
     richtig: 2
   }, {
     id: "mikro-010",
@@ -120,22 +120,22 @@ const FRAGEN_DATEN = {
   }, {
     id: "mikro-011",
     frage: "Was unterscheidet aerobe von anaeroben Bakterien?",
-    optionen: ["Ihre Größe", "Ihr Bedarf bzw. ihre Toleranz gegenüber Sauerstoff", "Ihre Farbe nach Gramfärbung", "Ihre Vermehrungsgeschwindigkeit"],
+    optionen: ["Ihre charakteristische Farbe nach erfolgter Gramfärbung", "Ihr Bedarf bzw. ihre Toleranz gegenüber Sauerstoff", "Ihre jeweilige Vermehrungsgeschwindigkeit im Nährmedium", "Ihre grundsätzliche Fähigkeit zur Bildung von Sporen"],
     richtig: 1
   }, {
     id: "mikro-012",
     frage: "Wie vermehren sich Bakterien?",
-    optionen: ["Geschlechtlich durch Verschmelzung zweier Zellen", "Ungeschlechtlich durch Zellteilung", "Nur durch Sporenbildung", "Durch Knospung wie bei Hefen"],
-    richtig: 1
+    optionen: ["Geschlechtlich durch die Verschmelzung zweier Einzelzellen", "Durch Knospung, ähnlich wie bei bestimmten Hefearten", "Ungeschlechtlich durch einfache Zellteilung", "Ausschließlich durch die Bildung widerstandsfähiger Sporen"],
+    richtig: 2
   }, {
     id: "mikro-013",
     frage: "Was beschreibt die Konjugation bei Bakterien?",
-    optionen: ["Aufnahme freier DNA aus der Umgebung", "Gentransfer durch Viren (Bakteriophagen)", "Direkter genetischer Austausch zwischen zwei Bakterien, die sich verbinden", "Zellteilung zur Vermehrung"],
+    optionen: ["Die passive Aufnahme freier DNA aus der Umgebung", "Den Gentransfer mithilfe eines Bakteriophagen (Virus)", "Den direkten genetischen Austausch zwischen zwei verbundenen Bakterien", "Die gewöhnliche Zellteilung zur bakteriellen Vermehrung"],
     richtig: 2
   }, {
     id: "mikro-014",
     frage: "Was beschreibt die Transduktion bei Bakterien?",
-    optionen: ["Direkter Kontakt zweier Bakterien", "Gentransfer durch Bakteriophagen (Viren)", "Aufnahme freier DNA aus zerfallenen Zellen", "Zellteilung"],
+    optionen: ["Den direkten physischen Kontakt zweier benachbarter Bakterien", "Den Gentransfer mithilfe eines Bakteriophagen (Virus)", "Die passive Aufnahme freier DNA aus zerfallenen Zellen", "Die einfache Zellteilung zur bakteriellen Vermehrung"],
     richtig: 1
   }, {
     id: "mikro-015",
@@ -145,27 +145,27 @@ const FRAGEN_DATEN = {
   }, {
     id: "mikro-016",
     frage: "Wie trägt Streptococcus mutans zur Kariesentstehung bei?",
-    optionen: ["Er zerstört direkt den Zahnschmelz durch Enzyme", "Er bildet aus Kohlenhydraten Milchsäure, was zu einem pH-Abfall und Demineralisation führt", "Er verhindert die Bildung von Plaque", "Er produziert ausschließlich Sauerstoff"],
+    optionen: ["Er zerstört den Zahnschmelz direkt durch spezielle Enzyme", "Er bildet aus Kohlenhydraten Milchsäure, was zu Demineralisation führt", "Er verhindert aktiv die Entstehung von bakteriellem Zahnbelag", "Er produziert überwiegend Sauerstoff innerhalb des Biofilms"],
     richtig: 1
   }, {
     id: "mikro-017",
     frage: "Was ist typisch für Scharlach?",
-    optionen: ["Es betrifft ausschließlich Erwachsene", "Es wird durch Viren verursacht", "Typischer feinfleckiger Hautausschlag und 'Himbeerzunge', Mund-Kinn-Bereich bleibt frei", "Es ist nicht mit Antibiotika behandelbar"],
+    optionen: ["Er betrifft nach heutigem Kenntnisstand ausschließlich Erwachsene", "Er wird durch ein hochansteckendes Virus verursacht", "Feinfleckiger Hautausschlag und Himbeerzunge, Mund-Kinn-Bereich bleibt frei", "Er ist grundsätzlich nicht mit Antibiotika behandelbar"],
     richtig: 2
   }, {
     id: "mikro-018",
     frage: "Welche Erkrankung wird durch Neisseria gonorrhoeae verursacht?",
-    optionen: ["Tuberkulose", "Gonorrhoe ('Tripper')", "Listeriose", "Botulismus"],
+    optionen: ["Tuberkulose", "Gonorrhoe", "Listeriose", "Botulismus"],
     richtig: 1
   }, {
     id: "mikro-019",
     frage: "Worauf sollten Schwangere im Hinblick auf Listerien besonders achten?",
-    optionen: ["Keine Kohlenhydrate essen", "Kein Verzehr von nicht pasteurisierten Lebensmitteln (z.B. Rohmilchkäse)", "Keine körperliche Anstrengung", "Keine Zahnbehandlungen während der Schwangerschaft"],
+    optionen: ["Auf eine ausreichende tägliche Kohlenhydratzufuhr", "Kein Verzehr nicht pasteurisierter Lebensmittel wie Rohmilchkäse", "Auf regelmäßige, moderate körperliche Anstrengung", "Auf den grundsätzlichen Verzicht zahnärztlicher Behandlungen"],
     richtig: 1
   }, {
     id: "mikro-020",
-    frage: "Welche Krankheit wird durch Mycobacterium tuberculosis verursacht und betrifft vor allem welches Organ?",
-    optionen: ["Tuberkulose, vor allem die Lunge", "Lepra, vor allem die Haut", "Tetanus, vor allem die Muskulatur", "Botulismus, vor allem das Nervensystem"],
+    frage: "Welche Krankheit wird durch Mycobacterium tuberculosis verursacht und welches Organ betrifft sie vor allem?",
+    optionen: ["Tuberkulose, vor allem die Lunge", "Lepra, vor allem die äußere Haut", "Tetanus, vor allem die Skelettmuskulatur", "Botulismus, vor allem das zentrale Nervensystem"],
     richtig: 0
   }, {
     id: "mikro-021",
@@ -175,302 +175,302 @@ const FRAGEN_DATEN = {
   }, {
     id: "mikro-022",
     frage: "Wodurch wird Keuchhusten (Pertussis) verursacht und wie verläuft er typischerweise?",
-    optionen: ["Durch Bordetella pertussis, mit anhaltenden stakkatoartigen Hustenattacken", "Durch Legionellen, mit hohem Fieber", "Durch Salmonellen, mit Durchfall", "Durch Helicobacter, mit Magenschmerzen"],
+    optionen: ["Durch Bordetella pertussis, mit stakkatoartigen Hustenattacken", "Durch Legionellen, mit anhaltend hohem Fieber", "Durch Salmonellen, mit starkem wässrigem Durchfall", "Durch Helicobacter, mit chronischen Magenschmerzen"],
     richtig: 0
   }, {
     id: "mikro-023",
     frage: "Wie erfolgt die Ansteckung mit Legionellen typischerweise?",
-    optionen: ["Über verunreinigtes Trinkwasser beim Trinken", "Durch Einatmen von keimhaltigen Aerosolen (z.B. Dusche, Klimaanlage)", "Durch Tröpfcheninfektion von Mensch zu Mensch", "Durch Zeckenstiche"],
+    optionen: ["Durch das direkte Trinken von verunreinigtem Trinkwasser", "Durch Einatmen keimhaltiger Aerosole, z.B. aus Dusche oder Klimaanlage", "Durch direkte Tröpfcheninfektion von Mensch zu Mensch", "Durch den Stich einer infizierten Zecke im Freien"],
     richtig: 1
   }, {
     id: "mikro-024",
-    frage: "Welches Bakterium ist an der Entstehung von Magenschleimhauterkrankungen und Geschwüren beteiligt und kann bei Nichtbehandlung zu einem Tumor führen?",
-    optionen: ["Helicobacter pylori", "Salmonella", "Legionella", "Bordetella"],
+    frage: "Welches Bakterium ist an der Entstehung von Magenschleimhauterkrankungen beteiligt und kann unbehandelt zu einem Tumor führen?",
+    optionen: ["Helicobacter pylori", "Salmonella enterica", "Legionella pneumophila", "Bordetella pertussis"],
     richtig: 0
   }, {
     id: "mikro-025",
     frage: "Welcher Erreger verursacht Syphilis?",
-    optionen: ["Treponema (pallidum)", "Borrelia burgdorferi", "Neisseria gonorrhoeae", "Mycoplasma pneumoniae"],
+    optionen: ["Treponema pallidum", "Borrelia burgdorferi", "Neisseria gonorrhoeae", "Mycoplasma pneumoniae"],
     richtig: 0
   }, {
     id: "mikro-026",
     frage: "Wodurch wird die Lyme-Borreliose übertragen?",
-    optionen: ["Durch Geschlechtsverkehr", "Durch Zecken", "Durch Tröpfcheninfektion", "Durch verunreinigtes Wasser"],
+    optionen: ["Durch ungeschützten Geschlechtsverkehr mit Infizierten", "Durch den Stich einer infizierten Zecke", "Durch direkte Tröpfcheninfektion beim Husten", "Durch verunreinigtes, keimbelastetes Trinkwasser"],
     richtig: 1
   }, {
     id: "mikro-027",
     frage: "Was ist bei der Unterscheidung von FSME und Borreliose zu beachten?",
-    optionen: ["Beide werden durch dasselbe Bakterium verursacht", "FSME wird durch ein Virus übertragen, gegen Borreliose gibt es keine Impfung", "Gegen beide gibt es eine Impfung", "Beide werden durch Mücken übertragen"],
+    optionen: ["Beide Erkrankungen werden durch dasselbe Bakterium verursacht", "FSME wird viral übertragen, gegen Borreliose gibt es keine Impfung", "Gegen beide Erkrankungen existiert eine wirksame Schutzimpfung", "Beide werden ausschließlich durch Mückenstiche übertragen"],
     richtig: 1
   }, {
     id: "mikro-028",
     frage: "Was sind Actinomyceten und wo befinden sie sich primär?",
-    optionen: ["Grampositive Stäbchen/Fäden, primärer Lebensraum ist die Mundhöhle", "Gramnegative Kokken, primär im Darm", "Viren, primär im Blut", "Pilze, primär auf der Haut"],
+    optionen: ["Grampositive Stäbchen, primärer Lebensraum ist die Mundhöhle", "Gramnegative Kokken, primär im menschlichen Darmtrakt", "Virusarten, die primär im menschlichen Blut zirkulieren", "Pilzarten, die sich primär auf der äußeren Haut ansiedeln"],
     richtig: 0
   }, {
     id: "mikro-029",
     frage: "Was ist eine Aktinomykose?",
-    optionen: ["Eine Viruserkrankung der Atemwege", "Eine 'Strahlenpilzkrankheit' mit Abszess- und Fistelbildung, häufig zervikofazial", "Eine Pilzinfektion der Haut", "Eine Allergie gegen Bakterien"],
+    optionen: ["Eine hochansteckende Viruserkrankung der oberen Atemwege", "Eine Strahlenpilzkrankheit mit Abszess- und Fistelbildung, oft zervikofazial", "Eine oberflächliche Pilzinfektion der äußeren Kopfhaut", "Eine allergische Reaktion auf bestimmte grampositive Bakterien"],
     richtig: 1
   }, {
     id: "mikro-030",
     frage: "Wie groß sind Viren im Vergleich zu Bakterien?",
-    optionen: ["Viren sind deutlich größer als Bakterien", "Viren sind mit 8-800nm deutlich kleiner und nur im Elektronenmikroskop sichtbar", "Viren und Bakterien sind etwa gleich groß", "Viren haben keine definierte Größe"],
+    optionen: ["Deutlich größer als die meisten bekannten Bakterienarten", "Mit 8 bis 800 nm deutlich kleiner, nur elektronenmikroskopisch sichtbar", "In etwa gleich groß wie durchschnittlich große Bakterien", "Ihre Größe schwankt derart stark, dass sie unbestimmbar ist"],
     richtig: 1
   }, {
     id: "mikro-031",
     frage: "Warum benötigen Viren eine Wirtszelle?",
-    optionen: ["Sie haben keinen eigenen Stoffwechsel und keine eigene Replikation", "Sie können sich nicht bewegen", "Sie brauchen Sauerstoff aus der Wirtszelle", "Sie sind zu groß, um selbstständig zu wachsen"],
+    optionen: ["Sie besitzen keinen eigenen Stoffwechsel und keine eigene Replikation", "Sie können sich ohne eine Wirtszelle grundsätzlich nicht fortbewegen", "Sie benötigen den Sauerstoff der Wirtszelle für ihr Überleben", "Sie sind schlicht zu groß für ein eigenständiges Wachstum"],
     richtig: 0
   }, {
     id: "mikro-032",
     frage: "Was ist ein Virion?",
-    optionen: ["Ein Enzym, das Viren zerstört", "Ein einzelnes Viruspartikel außerhalb des Wirts", "Eine besondere Bakterienart", "Ein Antikörper gegen Viren"],
+    optionen: ["Ein spezielles Enzym, das gezielt Viruspartikel zerstört", "Ein einzelnes, vollständiges Viruspartikel außerhalb des Wirts", "Eine besonders aggressive, hochpathogene Bakterienart", "Ein spezifischer Antikörper, der sich gegen Viren richtet"],
     richtig: 1
   }, {
     id: "mikro-033",
     frage: "In welcher Reihenfolge läuft die Replikation von Viren typischerweise ab?",
-    optionen: ["Synthese, Penetration, Absorption, Freisetzung, Uncoating", "Absorption, Penetration, Uncoating, Replikation, Synthese, Freisetzung", "Freisetzung, Absorption, Synthese", "Uncoating, Freisetzung, Penetration"],
+    optionen: ["Synthese, dann Penetration, danach Absorption, zuletzt Freisetzung", "Absorption, Penetration, Uncoating, Synthese, Freisetzung", "Freisetzung, danach erst Absorption und abschließend Synthese", "Uncoating, gefolgt von sofortiger Freisetzung ohne weitere Schritte"],
     richtig: 1
   }, {
     id: "mikro-034",
     frage: "Was passiert bei einer lytischen Virusinfektion?",
-    optionen: ["Die Wirtszelle überlebt dauerhaft", "Die betroffene Zelle platzt und die Viren werden freigesetzt", "Das Virus baut sich dauerhaft ins Genom ein, ohne Schaden", "Es kommt nie zur Vermehrung des Virus"],
+    optionen: ["Die befallene Wirtszelle überlebt die Infektion dauerhaft unbeschadet", "Die betroffene Zelle platzt, wobei die neuen Viren freigesetzt werden", "Das Virus baut sich dauerhaft ins Genom ein, ohne die Zelle zu schädigen", "Es kommt in diesem speziellen Fall nie zur eigentlichen Virusvermehrung"],
     richtig: 1
   }, {
     id: "mikro-035",
     frage: "Was beschreibt eine latente (lysogene) Virusinfektion, z.B. bei Herpes simplex?",
-    optionen: ["Das Virus wird sofort komplett eliminiert", "Die Virusvermehrung ruht nach Einbau ins Genom, kann aber unter bestimmten Bedingungen reaktiviert werden", "Die Wirtszelle platzt sofort nach Infektion", "Es gibt keine Symptome, das Virus verschwindet nach kurzer Zeit von selbst"],
+    optionen: ["Das Virus wird durch das Immunsystem sofort vollständig eliminiert", "Die Virusvermehrung ruht nach Genom-Einbau, kann aber reaktivieren", "Die betroffene Wirtszelle platzt unmittelbar nach der Erstinfektion", "Es treten überhaupt keine Symptome auf, das Virus verschwindet von selbst"],
     richtig: 1
   }, {
     id: "mikro-036",
     frage: "Wie wirken Virustatika?",
-    optionen: ["Sie hemmen spezifisch virale Proteine, Enzyme oder Prozesse und damit die Replikation", "Sie töten Bakterien ab", "Sie stärken nur das Immunsystem allgemein", "Sie wirken ausschließlich vorbeugend, nie therapeutisch"],
+    optionen: ["Sie hemmen gezielt virale Proteine, Enzyme oder Replikationsschritte", "Sie töten in erster Linie krankheitsauslösende Bakterien im Körper ab", "Sie stärken lediglich das körpereigene Immunsystem ganz allgemein", "Sie wirken grundsätzlich nur vorbeugend, niemals therapeutisch"],
     richtig: 0
   }, {
     id: "mikro-037",
     frage: "Welche Aussage zu SARS-CoV-2 trifft zu?",
-    optionen: ["Es ist ein unbehülltes DNA-Virus", "Es ist ein membranumhülltes RNA-Virus mit Spike-Proteinen, Hauptübertragung über Tröpfchen/Aerosole", "Es wird ausschließlich durch Insektenstiche übertragen", "Es gibt keine Impfung dagegen"],
+    optionen: ["Es handelt sich um ein unbehülltes DNA-Virus ohne Oberflächenproteine", "Ein umhülltes RNA-Virus mit Spike-Proteinen, Übertragung über Tröpfchen", "Es wird nach aktuellem Wissensstand ausschließlich durch Insekten übertragen", "Gegen dieses Virus existiert bislang keine zugelassene Impfung"],
     richtig: 1
   }, {
     id: "mikro-038",
-    frage: "Welche Viruserkrankung wird auch als 'Kissing Disease' bezeichnet und löst Pfeiffer'sches Drüsenfieber aus?",
-    optionen: ["Herpes simplex", "Epstein-Barr-Virus (infektiöse Mononukleose)", "Varizella-Zoster-Virus", "Cytomegalie-Virus"],
+    frage: "Welche Viruserkrankung wird auch als 'Kissing Disease' bezeichnet und löst das Pfeiffer'sche Drüsenfieber aus?",
+    optionen: ["Das Herpes-simplex-Virus", "Das Epstein-Barr-Virus", "Das Varizella-Zoster-Virus", "Das Cytomegalie-Virus"],
     richtig: 1
   }, {
     id: "mikro-039",
-    frage: "Welches Virus löst sowohl Windpocken (Erstinfektion) als auch Gürtelrose (Zweitinfektion) aus?",
-    optionen: ["Herpes-simplex-Virus", "Varizella-Zoster-Virus", "Cytomegalie-Virus", "Epstein-Barr-Virus"],
+    frage: "Welches Virus löst sowohl Windpocken als auch Gürtelrose aus?",
+    optionen: ["Das Herpes-simplex-Virus", "Das Varizella-Zoster-Virus", "Das Cytomegalie-Virus", "Das Epstein-Barr-Virus"],
     richtig: 1
   }, {
     id: "mikro-040",
     frage: "Warum wird bei Schwangeren häufig auf das Cytomegalie-Virus getestet?",
-    optionen: ["Es verursacht bei der Mutter starke Symptome", "Es kann beim ungeborenen Kind Mikrozephalie, Behinderungen und Hörschäden auslösen", "Es ist hoch ansteckend für das Praxispersonal", "Es verursacht Fehlgeburten in fast 100% der Fälle"],
+    optionen: ["Es verursacht bei der werdenden Mutter typischerweise starke Symptome", "Es kann beim ungeborenen Kind Schäden bis zur Taubheit auslösen", "Es ist besonders für das gesamte zahnärztliche Praxispersonal ansteckend", "Eine Infektion führt in praktisch allen Fällen zu einer Fehlgeburt"],
     richtig: 1
   }, {
     id: "mikro-041",
-    frage: "Welche Hepatitis-Form hat keine Impfung, verläuft sehr häufig chronisch (ca. 80%) und kann zu Leberzirrhose führen?",
+    frage: "Welche Hepatitis-Form hat keine Impfung, verläuft häufig chronisch und kann zu Leberzirrhose führen?",
     optionen: ["Hepatitis A", "Hepatitis B", "Hepatitis C", "Hepatitis E"],
     richtig: 2
   }, {
     id: "mikro-042",
     frage: "Warum kann HIV nicht aus dem menschlichen Körper entfernt werden?",
-    optionen: ["Es versteckt sich nur in der Haut", "Als Retrovirus baut es seinen genetischen Code dauerhaft ins menschliche Erbgut ein", "Es gibt keine Medikamente dagegen", "Es vermehrt sich zu schnell für jede Therapie"],
+    optionen: ["Es versteckt sich dauerhaft ausschließlich in oberflächlichen Hautzellen", "Als Retrovirus baut es sein Erbgut dauerhaft ins Wirtsgenom ein", "Es existieren bis heute schlicht keine wirksamen antiviralen Medikamente", "Es vermehrt sich zu schnell für jede bislang bekannte Therapieform"],
     richtig: 1
   }, {
     id: "mikro-043",
     frage: "Was ist charakteristisch für Influenzaviren?",
-    optionen: ["Sie mutieren häufig, wodurch keine dauerhafte Immunität entsteht", "Sie verursachen ausschließlich Hautkrankheiten", "Es gibt keine Schutzimpfung", "Sie befallen nur den Verdauungstrakt"],
+    optionen: ["Sie mutieren häufig, wodurch keine dauerhafte Immunität entsteht", "Sie verursachen nach aktuellem Wissensstand ausschließlich Hautkrankheiten", "Gegen sie existiert bislang keine wirksame Schutzimpfung", "Sie befallen typischerweise ausschließlich den Verdauungstrakt"],
     richtig: 0
   }, {
     id: "mikro-044",
     frage: "Welche Aussage zu Pilzen als Krankheitserreger ist korrekt?",
-    optionen: ["Sie sind grundsätzlich für jeden Menschen hochgefährlich", "Bei Gesunden verlaufen Mykosen meist unkritisch, bei immundefizienten Patienten treten häufiger Infektionen auf", "Pilze können den Menschen nie infizieren", "Pilze kommen nie natürlich im menschlichen Körper vor"],
+    optionen: ["Sie sind grundsätzlich für jeden gesunden Menschen hochgefährlich", "Bei immundefizienten Patienten treten Mykosen deutlich häufiger auf", "Pilze können einen gesunden Menschen grundsätzlich nie infizieren", "Pilze kommen niemals natürlich im menschlichen Körper vor"],
     richtig: 1
   }, {
     id: "mikro-045",
     frage: "Wie werden Pilze im DHS-System eingeteilt?",
-    optionen: ["Dermatophyten, Hefen, Schimmelpilze", "Direkt, Horizontal, Sekundär", "Diploid, Haploid, Somatisch", "Dünn, Hoch, Sporen"],
+    optionen: ["Dermatophyten, Hefen, Schimmelpilze", "Direkt, horizontal und sekundär übertragbare Pilzformen", "Diploide, haploide und somatische Pilzformen", "Dünne, hohe und sporenbildende Pilzformen"],
     richtig: 0
   }, {
     id: "mikro-046",
     frage: "Was begünstigt eine Candida-Infektion (Mundsoor)?",
-    optionen: ["Ausschließlich junges Alter", "Abwehrschwäche, schlecht sitzende Prothesen, Chemotherapie, Rauchen", "Ausschließlich sportliche Aktivität", "Nur eine vegane Ernährung"],
+    optionen: ["Ein nach heutigem Kenntnisstand ausschließlich junges Lebensalter", "Abwehrschwäche, schlecht sitzende Prothesen, Chemotherapie, Rauchen", "Regelmäßige und intensive sportliche Betätigung", "Eine konsequent durchgeführte vegane Ernährungsweise"],
     richtig: 1
   }, {
     id: "mikro-047",
     frage: "Was ist ein Aspergillom in der Kieferhöhle häufig assoziiert mit?",
-    optionen: ["Nikotinkonsum", "In die Kieferhöhle überpresstem Wurzelfüllmaterial nach rezidivierenden Sinusitiden", "Zahnspangen", "Fluoridmangel"],
+    optionen: ["Einem langjährigen, regelmäßigen Nikotinkonsum", "Überpresstem Wurzelfüllmaterial nach rezidivierenden Sinusitiden", "Dem längerfristigen Tragen einer festsitzenden Zahnspange", "Einem über Jahre bestehenden ausgeprägten Fluoridmangel"],
     richtig: 1
   }, {
     id: "mikro-048",
     frage: "Was ist ein Ektoparasit?",
-    optionen: ["Ein Parasit, der im Blut lebt", "Ein Parasit, der auf Haut oder Haaren lebt", "Ein Parasit, der ausschließlich im Darm lebt", "Ein Parasit, der Pflanzen befällt"],
+    optionen: ["Ein Parasit, der ausschließlich innerhalb des Blutkreislaufs lebt", "Ein Parasit, der auf Haut oder Haaren lebt", "Ein Parasit, der ausschließlich im menschlichen Darm siedelt", "Ein Parasit, der ausschließlich Pflanzen und deren Wurzeln befällt"],
     richtig: 1
   }, {
     id: "mikro-049",
     frage: "Wodurch wird Malaria übertragen?",
-    optionen: ["Durch die Anopheles-Mücke", "Durch Zecken", "Durch verunreinigtes Trinkwasser", "Durch direkten Hautkontakt"],
+    optionen: ["Durch den Stich der weiblichen Anopheles-Mücke", "Durch den Biss einer mit Erregern infizierten Zecke", "Durch verunreinigtes, keimbelastetes Trinkwasser", "Durch direkten Hautkontakt mit einer erkrankten Person"],
     richtig: 0
   }, {
     id: "mikro-050",
-    frage: "Welches Tier gilt als Endwirt bei Toxoplasmose und warum ist die Erkrankung bei Schwangeren relevant?",
-    optionen: ["Der Hund; verursacht bei der Mutter schwere Symptome", "Die Katze; kann beim ungeborenen Kind Schäden bis zur Blindheit verursachen", "Die Maus; ist für die Mutter tödlich", "Der Vogel; führt immer zu Fehlgeburten"],
+    frage: "Welches Tier gilt als Endwirt bei Toxoplasmose und warum ist das bei Schwangeren relevant?",
+    optionen: ["Der Hund, er verursacht bei der Mutter meist schwere Symptome", "Die Katze, kann beim ungeborenen Kind Schäden bis zur Blindheit verursachen", "Die Maus, die Infektion verläuft für die Mutter meist tödlich", "Der Vogel, eine Infektion führt praktisch immer zur Fehlgeburt"],
     richtig: 1
   }, {
     id: "mikro-051",
     frage: "Welche vier Hauptmechanismen der Abwehr von Mikroorganismen gibt es beim Menschen?",
-    optionen: ["Nur Antibiotika und Impfung", "Physiologische Barrieren, unspezifische Entzündungsreaktion, Phagozytose, humorale/zelluläre Abwehr", "Nur Haut und Schleimhäute", "Nur weiße Blutkörperchen"],
+    optionen: ["Ausschließlich die gezielte Antibiotikagabe und vorbeugende Impfung", "Barrieren, Entzündungsreaktion, Phagozytose, humorale/zelluläre Abwehr", "Ausschließlich Haut und Schleimhäute als rein mechanische Barriere", "Ausschließlich die weißen Blutkörperchen im zirkulierenden Blut"],
     richtig: 1
   }, {
     id: "mikro-052",
-    frage: "Was zählt zu den klassischen Entzündungszeichen (lokal, unspezifisch)?",
-    optionen: ["Rubor, Tumor, Calor, Dolor, Functio laesa", "Nur Schmerz und Rötung", "Fieber und Schüttelfrost", "Nur Schwellung"],
+    frage: "Was zählt zu den klassischen Entzündungszeichen?",
+    optionen: ["Rubor, Tumor, Calor, Dolor und Functio laesa", "Ausschließlich lokaler Schmerz und sichtbare Hautrötung", "Ausschließlich allgemeines Fieber und begleitender Schüttelfrost", "Ausschließlich eine tastbare, lokal begrenzte Schwellung"],
     richtig: 0
   }, {
     id: "mikro-053",
     frage: "Was versteht man unter Phagozytose?",
-    optionen: ["Die Produktion von Antikörpern durch B-Lymphozyten", "Die Aufnahme und Verdauung von Erregern durch spezialisierte Zellen (Phagozyten)", "Die Bildung von Impfstoffen", "Die Vermehrung von Viren in der Wirtszelle"],
+    optionen: ["Die gezielte Produktion von Antikörpern durch B-Lymphozyten", "Die Aufnahme und Verdauung von Erregern durch spezialisierte Phagozyten", "Die im Labor gezielt gesteuerte Herstellung von Impfstoffen", "Die eigenständige Vermehrung von Viren innerhalb der Wirtszelle"],
     richtig: 1
   }, {
     id: "mikro-054",
-    frage: "Welcher Antikörper wird nach einer Infektion zuerst gebildet, bevor er nach etwa einer Woche von einem anderen abgelöst wird?",
-    optionen: ["IgG wird zuerst gebildet, dann IgM", "IgM wird zuerst gebildet, dann von IgG abgelöst", "IgA wird zuerst und einzig gebildet", "IgE wird zuerst gebildet"],
+    frage: "Welcher Antikörper wird nach einer Infektion zuerst gebildet, bevor er nach etwa einer Woche abgelöst wird?",
+    optionen: ["IgG wird als erster Antikörper gebildet, danach folgt IgM", "IgM wird zuerst gebildet, dann nach und nach von IgG abgelöst", "IgA wird als erster und zugleich einziger Antikörper gebildet", "IgE wird als alleiniger Antikörper unmittelbar zuerst gebildet"],
     richtig: 1
   }, {
     id: "mikro-055",
     frage: "Was ist der Unterschied zwischen aktiver und passiver Impfung?",
-    optionen: ["Bei aktiver Impfung entwickelt das Immunsystem selbst Abwehr, bei passiver wird ein fertiges Immunserum gegeben", "Es gibt keinen Unterschied", "Passive Impfung wirkt lebenslang, aktive nur wenige Wochen", "Aktive Impfung wird nur bei Kindern angewendet"],
+    optionen: ["Bei aktiver Impfung entwickelt der Körper selbst Abwehr, bei passiver wird Serum gegeben", "Zwischen beiden Impfarten besteht in Wirkung und Ablauf praktisch kein Unterschied", "Die passive Impfung wirkt lebenslang, die aktive dagegen nur wenige Wochen", "Die aktive Impfung wird grundsätzlich ausschließlich bei Kindern angewendet"],
     richtig: 0
   }, {
     id: "mikro-056",
     frage: "Was ist ein Beispiel für einen Lebendimpfstoff?",
-    optionen: ["Hepatitis B", "Corona", "Masern, Mumps, Röteln", "Hepatitis A"],
+    optionen: ["Die übliche Hepatitis-B-Impfung", "Die zugelassene Corona-Impfung", "Die Masern-Mumps-Röteln-Impfung", "Die übliche Hepatitis-A-Impfung"],
     richtig: 2
   }, {
     id: "mikro-057",
     frage: "Was ist der Unterschied zwischen bakteriostatischen und bakteriziden Antibiotika?",
-    optionen: ["Beide töten Bakterien vollständig ab", "Bakteriostatische hemmen nur Wachstum/Vermehrung, bakterizide töten die Bakterien ab", "Bakteriostatische wirken nur gegen Viren", "Es gibt keinen Unterschied in der Wirkung"],
+    optionen: ["Beide Wirkstoffgruppen töten Bakterien in jedem Fall vollständig ab", "Bakteriostatische hemmen das Wachstum, bakterizide töten die Bakterien", "Bakteriostatische Antibiotika wirken grundsätzlich ausschließlich gegen Viren", "Zwischen beiden Wirkarten besteht in der Praxis kein relevanter Unterschied"],
     richtig: 1
   }, {
     id: "mikro-058",
     frage: "Was ist ein wichtiger Grund für die Entstehung von Antibiotikaresistenzen?",
-    optionen: ["Zu häufiges Händewaschen", "Mangelnde Compliance des Patienten, fehlende Indikation, falsche Antibiotikawahl, Einsatz in Massentierhaltung", "Zu geringe Antibiotikamengen bei der Herstellung", "Antibiotika wirken grundsätzlich nie gegen Bakterien"],
+    optionen: ["Ein zu häufiges und besonders gründliches Händewaschen im Alltag", "Mangelnde Compliance, falsche Indikation, Einsatz in Massentierhaltung", "Eine grundsätzlich zu geringe industrielle Antibiotikaherstellungsmenge", "Der Umstand, dass Antibiotika generell nie gegen Bakterien wirken"],
     richtig: 1
   }, {
     id: "mikro-059",
     frage: "Was unterscheidet eine endogene von einer exogenen Infektion?",
-    optionen: ["Endogen kommt von außen, exogen von innen", "Endogene Infektion stammt aus der körpereigenen Flora, exogene wird von außen übertragen", "Es gibt keinen Unterschied", "Endogene Infektionen sind immer schwerer"],
+    optionen: ["Endogene Infektionen gelangen grundsätzlich von außen in den Körper", "Endogene Infektionen stammen aus der körpereigenen Flora", "Zwischen beiden Infektionsarten besteht praktisch kein relevanter Unterschied", "Endogene Infektionen verlaufen grundsätzlich immer deutlich schwerer"],
     richtig: 1
   }, {
     id: "mikro-060",
     frage: "Was versteht man unter der Inkubationszeit?",
-    optionen: ["Die Zeit bis zur vollständigen Genesung", "Die Zeit zwischen Ansteckung und dem Auftreten erster Krankheitssymptome", "Die Dauer der Antibiotikatherapie", "Die Zeit, in der man ansteckend ist"],
+    optionen: ["Die gesamte Zeitspanne bis zur vollständigen Genesung des Patienten", "Die Zeit zwischen Ansteckung und dem Auftreten erster Krankheitssymptome", "Die übliche Standarddauer einer vollständigen Antibiotikatherapie", "Die Zeitspanne, in der ein Patient noch aktiv ansteckend ist"],
     richtig: 1
   }, {
     id: "mikro-061",
     frage: "Was ist der Unterschied zwischen Epidemie und Pandemie?",
-    optionen: ["Beide bezeichnen dasselbe", "Epidemie ist örtlich/zeitlich begrenzt, Pandemie breitet sich über Länder/Kontinente aus", "Pandemie ist immer harmloser als Epidemie", "Epidemie betrifft nur Tiere"],
+    optionen: ["Beide Begriffe bezeichnen in der Praxis im Grunde dasselbe Phänomen", "Epidemie ist örtlich begrenzt, Pandemie breitet sich über Kontinente aus", "Eine Pandemie verläuft grundsätzlich deutlich harmloser als eine Epidemie", "Der Begriff Epidemie betrifft ausschließlich Tierpopulationen weltweit"],
     richtig: 1
   }, {
     id: "mikro-062",
     frage: "Was misst die Letalität einer Krankheit?",
-    optionen: ["Die Ausbreitungsgeschwindigkeit", "Den Anteil der Erkrankten, die an der Krankheit versterben", "Die Anzahl der Neuinfektionen pro Tag", "Die Dauer der Erkrankung"],
+    optionen: ["Wie schnell sich eine Krankheit innerhalb der Bevölkerung ausbreitet", "Den Anteil der Erkrankten, die an der Krankheit versterben", "Die täglich neu gemeldete Anzahl an bestätigten Neuinfektionen", "Die durchschnittliche Erkrankungsdauer in Tagen bis zur Genesung"],
     richtig: 1
   }, {
     id: "mikro-063",
     frage: "Was ist der Unterschied zwischen Desinfektion und Sterilisation?",
-    optionen: ["Beides ist identisch", "Desinfektion vermindert/macht Erreger unschädlich, Sterilisation tötet auch Sporen/Endosporen vollständig ab", "Desinfektion wirkt nur bei Viren, Sterilisation nur bei Bakterien", "Sterilisation ist schwächer als Desinfektion"],
+    optionen: ["Beide Verfahren sind in Ziel und Wirkung praktisch völlig identisch", "Desinfektion vermindert Erreger, Sterilisation tötet auch Sporen ab", "Desinfektion wirkt ausschließlich gegen Viren, Sterilisation nur gegen Bakterien", "Eine Sterilisation ist in ihrer Wirkung grundsätzlich schwächer als eine Desinfektion"],
     richtig: 1
   }, {
     id: "mikro-064",
-    frage: "Bei welcher Temperatur und wie lange wird beim Autoklavieren (Heißdampfsterilisation) typischerweise sterilisiert?",
-    optionen: ["Ca. 50°C für 5 Minuten", "Ca. 121°C oder mehr für ca. 20 Minuten bei Überdruck", "Ca. 300°C für 1 Minute", "Zimmertemperatur für 24 Stunden"],
+    frage: "Bei welcher Temperatur und wie lange wird beim Autoklavieren typischerweise sterilisiert?",
+    optionen: ["Bei etwa 50°C für rund 5 Minuten ohne zusätzlichen Druck", "Bei etwa 121°C oder mehr für circa 20 Minuten bei Überdruck", "Bei etwa 300°C für lediglich eine Minute unter Normaldruck", "Bei gewöhnlicher Zimmertemperatur über einen vollen Tag hinweg"],
     richtig: 1
   }, {
     id: "mikro-065",
     frage: "Woraus besteht der Zahnschmelz zu etwa 97% und wie widerstandsfähig ist er gegenüber Säure?",
-    optionen: ["Aus organischem Material, sehr säureresistent", "Aus anorganischen Anteilen (v.a. Hydroxylapatit), löslich in Säuren unter pH 5,5", "Aus reinem Kalzium, unlöslich in jeder Säure", "Aus Kollagen, wie Dentin"],
+    optionen: ["Aus organischem Material, dadurch besonders säureresistent", "Aus anorganischen Anteilen, löslich in Säuren unter pH 5,5", "Aus reinem Kalzium, dadurch unlöslich in praktisch jeder Säure", "Aus Kollagenfasern, ganz ähnlich wie das darunterliegende Dentin"],
     richtig: 1
   }, {
     id: "mikro-066",
     frage: "In welchem pH-Bereich liegt Speichel im Ruhezustand und bei Stimulation normalerweise?",
-    optionen: ["Zwischen 2 und 3", "Zwischen 6 und 7", "Zwischen 9 und 10", "Immer genau bei 7,0"],
+    optionen: ["Typischerweise zwischen etwa pH 2 und pH 3", "Typischerweise zwischen etwa pH 6 und pH 7", "Typischerweise zwischen etwa pH 9 und pH 10", "Konstant und unveränderlich bei genau pH 7,0"],
     richtig: 1
   }, {
     id: "mikro-067",
     frage: "Welche Funktion hat Lysozym im Speichel?",
-    optionen: ["Es färbt Bakterien an", "Es hat antimikrobielle Aktivität durch Zerstörung der Zellmembran von Bakterien", "Es dient nur der Geschmackswahrnehmung", "Es verhindert die Speichelproduktion"],
+    optionen: ["Es färbt Bakterien für die mikroskopische Untersuchung sichtbar an", "Es zerstört durch antimikrobielle Wirkung die Zellmembran von Bakterien", "Es dient in erster Linie der reinen Geschmackswahrnehmung", "Es unterdrückt aktiv und gezielt die gesamte Speichelproduktion"],
     richtig: 1
   }, {
     id: "mikro-068",
     frage: "Was ist die Pellikel und wie schnell bildet sie sich?",
-    optionen: ["Eine feste Zahnfüllung, bildet sich über Wochen", "Ein dünner, bakterienfreier Film aus Speichelbestandteilen, bildet sich minutenschnell auf gereinigten Zähnen", "Eine Zahnstein-Ablagerung, dauert Monate", "Eine Krankheit des Zahnfleisches"],
+    optionen: ["Eine feste zahnärztliche Füllung, die sich über mehrere Wochen aufbaut", "Ein dünner, bakterienfreier Speichelfilm, bildet sich minutenschnell", "Eine harte Zahnstein-Ablagerung, die typischerweise Monate zur Bildung braucht", "Eine eigenständige, chronisch verlaufende Erkrankung des Zahnfleisches"],
     richtig: 1
   }, {
     id: "mikro-069",
     frage: "Welche Funktion hat die Pellikel unter anderem?",
-    optionen: ["Sie verhindert jegliche Bakterienanheftung vollständig", "Sie verringert Reibung/Abrasion und schützt vor erosiven Prozessen, ermöglicht aber auch Bakterienanheftung", "Sie tötet alle oralen Bakterien ab", "Sie hat ausschließlich negative Eigenschaften"],
+    optionen: ["Sie verhindert grundsätzlich jegliche Anheftung von Bakterien vollständig", "Sie verringert Abrasion und schützt vor erosiven Prozessen", "Sie tötet sämtliche in der Mundhöhle vorhandenen Bakterien zuverlässig ab", "Sie hat für den betroffenen Zahn ausschließlich negative Eigenschaften"],
     richtig: 1
   }, {
     id: "mikro-070",
     frage: "Wie läuft die frühe Plaque-Entstehung typischerweise ab?",
-    optionen: ["Sofortige Bildung eines dicken anaeroben Biofilms", "Nach 3-6 Stunden Pionierkeime (v.a. aerob), nach 6-12 Stunden Vermehrung und zunehmend anaerobe Mikroorganismen", "Plaque entsteht nur durch Zuckerkonsum, nicht durch Bakterien", "Plaque bildet sich erst nach mehreren Wochen"],
+    optionen: ["Es bildet sich unmittelbar ein dicker, rein anaerober Biofilm", "Nach 3-6 Stunden Pionierkeime, danach zunehmend anaerobe Keime", "Plaque entsteht ausschließlich durch reinen, isolierten Zuckerkonsum", "Eine erste sichtbare Plaquebildung dauert normalerweise mehrere Wochen"],
     richtig: 1
   }, {
     id: "mikro-071",
-    frage: "Welche Bakterien gelten typischerweise als Erstbesiedler (Pionierkeime) bei der Plaquebildung?",
-    optionen: ["Vor allem Streptokokken und Aktinomyceten", "Vor allem Viren", "Vor allem Pilze", "Vor allem Parasiten"],
+    frage: "Welche Bakterien gelten typischerweise als Erstbesiedler bei der Plaquebildung?",
+    optionen: ["Vor allem Streptokokken und Aktinomyceten", "Vor allem verschiedene, weitverbreitete Virenarten", "Vor allem unterschiedliche Schimmelpilzarten", "Vor allem verschiedene, im Mund lebende Parasitenarten"],
     richtig: 0
   }, {
     id: "mikro-072",
     frage: "Was besagt die spezifische Plaquehypothese zur Kariesentstehung?",
-    optionen: ["Karies entsteht unabhängig von Bakterien", "Karies wird spezifisch durch Streptococcus mutans bzw. Mutans-Streptokokken verursacht", "Karies wird nur durch Viren verursacht", "Karies hat ausschließlich genetische Ursachen"],
+    optionen: ["Karies entsteht nach dieser Hypothese unabhängig von jeglicher Bakterienbesiedlung", "Karies wird spezifisch durch Mutans-Streptokokken verursacht", "Karies wird nach dieser Hypothese ausschließlich durch bestimmte Viren verursacht", "Karies hat nach dieser Hypothese ausschließlich rein genetische Ursachen"],
     richtig: 1
   }, {
     id: "mikro-073",
     frage: "Was besagt die ökologische Plaquehypothese?",
-    optionen: ["Nur ein einzelnes Bakterium ist verantwortlich", "Nicht nur Mikroorganismen, sondern auch die Umgebung/Milieubedingungen spielen eine entscheidende Rolle", "Die Ernährung spielt keine Rolle", "Karies entsteht rein zufällig"],
+    optionen: ["Nach dieser Hypothese ist ausschließlich ein einzelnes Bakterium verantwortlich", "Neben Mikroorganismen spielen auch die Milieubedingungen eine entscheidende Rolle", "Die individuelle Ernährung spielt bei der Kariesentstehung keine relevante Rolle", "Karies entsteht nach dieser Hypothese im Wesentlichen rein zufällig"],
     richtig: 1
   }, {
     id: "mikro-074",
     frage: "Welche primären Faktoren sind für die Kariesentstehung nötig?",
-    optionen: ["Nur Zucker", "Krankheitsanfälliges Gewebe (Zahn), bakterieller Zahnbelag (Plaque), Zufuhr kariogener Substrate", "Nur schlechte Mundhygiene", "Nur genetische Veranlagung"],
+    optionen: ["Nach heutigem Verständnis ausschließlich eine hohe tägliche Zuckerzufuhr", "Anfälliges Zahngewebe, bakterieller Belag und kariogene Substrate", "Nach heutigem Verständnis ausschließlich eine unzureichende Mundhygiene", "Nach heutigem Verständnis ausschließlich eine erbliche Veranlagung"],
     richtig: 1
   }, {
     id: "mikro-075",
-    frage: "Ab welchem pH-Wert beginnt die Demineralisation des Zahnschmelzes im Rahmen der Kariesentstehung?",
-    optionen: ["Unter pH 5,5", "Unter pH 8", "Unter pH 9", "Erst unter pH 2"],
+    frage: "Ab welchem pH-Wert beginnt die Demineralisation des Zahnschmelzes?",
+    optionen: ["Unterhalb eines pH-Wertes von 5,5", "Unterhalb eines pH-Wertes von 8", "Unterhalb eines pH-Wertes von 9", "Erst unterhalb eines sehr niedrigen pH-Wertes von 2"],
     richtig: 0
   }, {
     id: "mikro-076",
-    frage: "Welche ökologischen Bedingungen herrschen im subgingivalen Bereich (Sulkus), die Parodontitis begünstigen?",
-    optionen: ["Aerobe Bedingungen mit viel Sauerstoff", "Anaerobe Bedingungen, geschützt vor Mundhygiene und Speichelspülung", "Sehr hohe Temperaturen", "Vollständig sterile Umgebung"],
+    frage: "Welche ökologischen Bedingungen im Sulkus begünstigen Parodontitis?",
+    optionen: ["Aerobe Bedingungen mit reichlich verfügbarem Sauerstoffangebot", "Anaerobe Bedingungen, geschützt vor Mundhygiene und Speichelfluss", "Durchgehend sehr hohe, konstante lokale Temperaturen", "Eine vollständig sterile, praktisch keimfreie subgingivale Umgebung"],
     richtig: 1
   }, {
     id: "mikro-077",
     frage: "Was unterscheidet direkte von indirekter Pathogenität bei Parodontitis-Erregern?",
-    optionen: ["Beide sind identisch", "Direkte Pathogenität erfolgt durch bakterielle Enzyme/Toxine, indirekte durch die überschießende Entzündungsreaktion des Wirts selbst", "Direkte Pathogenität betrifft nur Viren", "Indirekte Pathogenität gibt es bei Parodontitis nicht"],
+    optionen: ["Beide Formen der Pathogenität sind letztlich funktionell identisch", "Direkte erfolgt durch bakterielle Enzyme/Toxine, indirekte durch die Wirtsreaktion", "Eine direkte Pathogenität betrifft nach dieser Definition grundsätzlich nur Viren", "Eine indirekte Pathogenität existiert bei Parodontitis nach diesem Modell nicht"],
     richtig: 1
   }, {
     id: "mikro-078",
-    frage: "Welches Bakterium gilt als 'Keystone-Bakterium' bei destruktiver Parodontitis und ist bei Gesunden i.d.R. nicht vorhanden?",
+    frage: "Welches Bakterium gilt als Keystone-Bakterium bei destruktiver Parodontitis?",
     optionen: ["Streptococcus mutans", "Porphyromonas gingivalis", "Staphylococcus aureus", "Lactobacillus reuteri"],
     richtig: 1
   }, {
     id: "mikro-079",
-    frage: "Welcher parodontalpathogene Keim ist besonders mit juveniler/aggressiver Parodontitis assoziiert und kann von Eltern auf Kinder übertragen werden?",
-    optionen: ["Aggregatibacter actinomycetemcomitans", "Tannerella forsythia", "Treponema denticola", "Fusobacterium"],
+    frage: "Welcher Keim ist besonders mit juveniler/aggressiver Parodontitis assoziiert und von Eltern übertragbar?",
+    optionen: ["Aggregatibacter actinomycetemcomitans", "Tannerella forsythia", "Treponema denticola", "Fusobacterium nucleatum"],
     richtig: 0
   }, {
     id: "mikro-080",
     frage: "Warum ist Parodontitis eine multifaktorielle Erkrankung?",
-    optionen: ["Weil nur ein einziges Bakterium sie auslöst", "Weil Bakterien allein keine destruktive Parodontitis auslösen können – Wirtsanfälligkeit, Ökologie, Rauchen, Erkrankungen etc. spielen zusammen", "Weil sie nur durch Viren verursacht wird", "Weil sie ausschließlich genetisch bedingt ist"],
+    optionen: ["Weil nach diesem Verständnis ausschließlich ein einziges Bakterium sie auslöst", "Weil Wirtsanfälligkeit, Ökologie und Rauchen im Zusammenspiel wirken", "Weil sie nach diesem Verständnis ausschließlich durch Viren verursacht wird", "Weil sie nach diesem Verständnis ausschließlich rein genetisch bedingt ist"],
     richtig: 1
   }, {
     id: "mikro-081",
     frage: "Was sind Probiotika laut Definition?",
-    optionen: ["Chemische Desinfektionsmittel", "Lebende Mikroorganismen, die in ausreichender Menge appliziert einen gesundheitlichen Nutzen bewirken", "Antibiotika der neuesten Generation", "Synthetische Konservierungsstoffe"],
+    optionen: ["Chemische Desinfektionsmittel für den zahnärztlichen Gebrauch", "Lebende Mikroorganismen mit gesundheitlichem Nutzen bei ausreichender Menge", "Antibiotika einer besonders neu entwickelten pharmazeutischen Generation", "Rein synthetische, künstlich hergestellte Konservierungsstoffe"],
     richtig: 1
   }, {
     id: "mikro-082",
@@ -481,17 +481,17 @@ const FRAGEN_DATEN = {
   anatomie: [{
     id: "anat-001",
     frage: "Was gehört zur makroskopischen und mikroskopischen Anatomie als Lehre?",
-    optionen: ["Nur die Lehre von Krankheiten", "Die Lehre vom Aufbau des menschlichen Körpers", "Nur die Lehre von Medikamenten", "Die Lehre von psychischen Vorgängen"],
-    richtig: 1
+    optionen: ["Die Lehre vom Aufbau des menschlichen Körpers", "Die Lehre von der Entstehung und dem Verlauf von Krankheiten", "Die Lehre von der Wirkung und Dosierung von Medikamenten", "Die Lehre von psychischen und seelischen Vorgängen"],
+    richtig: 0
   }, {
     id: "anat-002",
     frage: "Wie viele Knochen bilden ungefähr das menschliche Skelett?",
-    optionen: ["circa 100", "circa 150", "circa 210", "circa 300"],
+    optionen: ["circa 100 Knochen", "circa 150 Knochen", "circa 210 Knochen", "circa 300 Knochen"],
     richtig: 2
   }, {
     id: "anat-003",
     frage: "Was passiert ständig am Knochen durch funktionelle Anpassung?",
-    optionen: ["Nichts, Knochen bleibt lebenslang unverändert", "Ständiger Auf- und Abbau, circa 10% der Knochensubstanz wird jährlich ersetzt", "Nur Abbau, nie Aufbau", "Nur in der Kindheit findet Umbau statt"],
+    optionen: ["Der Knochen bleibt über das gesamte Leben hinweg vollständig unverändert", "Ständiger Auf- und Abbau, circa 10% der Knochensubstanz wird jährlich ersetzt", "Es findet ausschließlich Abbau statt, niemals ein aktiver Aufbau", "Ein aktiver Umbau findet ausschließlich während der Kindheit statt"],
     richtig: 1
   }, {
     id: "anat-004",
@@ -501,779 +501,779 @@ const FRAGEN_DATEN = {
   }, {
     id: "anat-005",
     frage: "Was unterscheidet Synarthrosen von Diarthrosen?",
-    optionen: ["Synarthrosen haben einen Gelenkspalt, Diarthrosen nicht", "Synarthrosen haben keinen Gelenkspalt und kaum Beweglichkeit, Diarthrosen (echte Gelenke) haben einen Gelenkspalt", "Es gibt keinen Unterschied", "Diarthrosen kommen nur im Schädel vor"],
+    optionen: ["Synarthrosen besitzen einen Gelenkspalt, Diarthrosen dagegen nicht", "Synarthrosen haben keinen Gelenkspalt, Diarthrosen (echte Gelenke) schon", "Zwischen beiden Gelenktypen besteht in der Praxis kein relevanter Unterschied", "Diarthrosen kommen nach heutigem Wissensstand ausschließlich im Schädel vor"],
     richtig: 1
   }, {
     id: "anat-006",
     frage: "Was ist eine Syndesmose?",
-    optionen: ["Eine Verbindung über straffes kollagenes Bindegewebe, z.B. Schädelnähte bei Säuglingen", "Ein echtes Gelenk mit Gelenkspalt", "Eine Muskelverbindung", "Ein Nerv im Kiefergelenk"],
+    optionen: ["Eine Verbindung über straffes kollagenes Bindegewebe, z.B. Schädelnähte", "Ein echtes, frei bewegliches Gelenk mit ausgeprägtem Gelenkspalt", "Eine spezielle Verbindung zwischen zwei benachbarten Muskeln", "Ein einzelner Nerv im Bereich des Kiefergelenks"],
     richtig: 0
   }, {
     id: "anat-007",
     frage: "Woraus besteht der Blutkreislauf?",
-    optionen: ["Nur aus dem Herzen", "Aus Arterien, Venen, Herz und Mikrozirkulation", "Nur aus Arterien und Venen", "Nur aus dem Lymphsystem"],
+    optionen: ["Ausschließlich aus dem Herzen als zentralem Organ", "Aus Arterien, Venen, dem Herzen und der Mikrozirkulation", "Ausschließlich aus den Arterien und den Venen des Körpers", "Ausschließlich aus dem gesamten Lymphsystem des Körpers"],
     richtig: 1
   }, {
     id: "anat-008",
     frage: "Was unterscheidet Arterien von Venen im Wandbau?",
-    optionen: ["Arterien sind weitlumiger und dünnwandiger als Venen", "Venen sind weitlumiger und dünnwandiger, Arterien haben eine stärker ausgeprägte Muskelschicht (Media)", "Es gibt keinen Unterschied", "Nur Arterien besitzen Klappen"],
+    optionen: ["Arterien sind grundsätzlich weitlumiger und dünnwandiger als Venen", "Venen sind weitlumiger, Arterien haben eine stärker ausgeprägte Muskelschicht", "Zwischen Arterien und Venen besteht im Wandbau kein relevanter Unterschied", "Ausschließlich Arterien besitzen funktionsfähige Venenklappen"],
     richtig: 1
   }, {
     id: "anat-009",
     frage: "Wozu dienen die Klappen in den Venen?",
-    optionen: ["Um den Blutdruck zu erhöhen", "Um den Rückfluss des Blutes zu vermeiden", "Um Sauerstoff aufzunehmen", "Um das Blut zu filtern"],
+    optionen: ["Um den arteriellen Blutdruck im gesamten Kreislauf zu erhöhen", "Um einen Rückfluss des Blutes innerhalb der Vene zu vermeiden", "Um im venösen Blut gelösten Sauerstoff aufzunehmen", "Um das durchfließende Blut aktiv zu filtern"],
     richtig: 1
   }, {
     id: "anat-010",
     frage: "Wie werden die Schädelknochen fachsprachlich unterteilt?",
-    optionen: ["Nur in Viscerocranium", "In Neurocranium (Hirnschädel) und Viscerocranium (Gesichtsschädel)", "Nur in Neurocranium", "In Ober- und Unterschädel"],
+    optionen: ["Ausschließlich in das sogenannte Viscerocranium des Gesichts", "In Neurocranium (Hirnschädel) und Viscerocranium (Gesichtsschädel)", "Ausschließlich in das sogenannte Neurocranium des Kopfes", "In einen oberen und einen unteren knöchernen Schädelabschnitt"],
     richtig: 1
   }, {
     id: "anat-011",
     frage: "Was sind Fontanellen?",
-    optionen: ["Verknöcherte Bereiche des Schädels bei Erwachsenen", "Bindegewebige Nahtstellen (Syndesmosen) bei Neugeborenen, die dem Schädelwachstum mit dem Gehirn dienen", "Teile des Kiefergelenks", "Muskeln im Gesicht"],
+    optionen: ["Vollständig verknöcherte Bereiche des Schädels bei Erwachsenen", "Bindegewebige Nahtstellen bei Neugeborenen, die dem Schädelwachstum dienen", "Spezielle knöcherne Anteile des Kiefergelenks", "Bestimmte Muskelgruppen im mimischen Bereich des Gesichts"],
     richtig: 1
   }, {
     id: "anat-012",
     frage: "Wann verschließen sich die Fontanellen ungefähr?",
-    optionen: ["Sofort nach der Geburt", "Nach 3 bis 36 Lebensmonaten", "Erst im Erwachsenenalter", "Sie verschließen sich nie vollständig"],
+    optionen: ["Bereits unmittelbar nach der Geburt des Kindes", "Etwa zwischen dem 3. und dem 36. Lebensmonat", "Erst im fortgeschrittenen Erwachsenenalter", "Sie verschließen sich im Verlauf des Lebens niemals vollständig"],
     richtig: 1
   }, {
     id: "anat-013",
     frage: "Wozu dienen die Nasennebenhöhlen (Sinus paranasales)?",
-    optionen: ["Zur Speichelproduktion", "Zur Gewichtsersparnis durch pneumatisierte (mit Luft gefüllte) Knochen", "Zur Blutbildung", "Zur Hörfunktion"],
+    optionen: ["Vor allem der zusätzlichen Speichelproduktion im Kopfbereich", "Zur Gewichtsersparnis durch pneumatisierte, mit Luft gefüllte Knochen", "Vor allem der Blutbildung im Bereich des Gesichtsschädels", "Vor allem der eigentlichen Hörfunktion des Ohres"],
     richtig: 1
   }, {
     id: "anat-014",
     frage: "Welche Bewegungen kann der Unterkiefer im Kiefergelenk ausführen?",
-    optionen: ["Nur Rotation", "Nur Gleiten", "Gleiten und Rotieren, es ist ein Doppelgelenk", "Der Unterkiefer kann sich im Gelenk nicht bewegen"],
+    optionen: ["Ausschließlich eine reine Rotationsbewegung um eine feste Achse", "Ausschließlich eine reine Gleitbewegung ohne Rotationsanteil", "Gleiten und Rotieren, es handelt sich um ein Doppelgelenk", "Der Unterkiefer kann sich im Kiefergelenk grundsätzlich nicht bewegen"],
     richtig: 2
   }, {
     id: "anat-015",
     frage: "Welche Funktion hat der M. masseter?",
-    optionen: ["Öffnet den Mund", "Schließt den Mund (\"Zubeißen\")", "Ist für die Zungenbewegung zuständig", "Steuert die Mimik"],
+    optionen: ["Er ist hauptverantwortlich für das aktive Öffnen des Mundes", "Er schließt den Mund und ist damit zentral für das Zubeißen", "Er ist in erster Linie für die Bewegung der Zunge zuständig", "Er steuert vor allem die mimische Beweglichkeit des Gesichts"],
     richtig: 1
   }, {
     id: "anat-016",
-    frage: "Welcher Muskel zieht den Unterkiefer nach vorne (beidseitig) bzw. bewirkt bei einseitiger Kontraktion eine Seitwärtsbewegung?",
-    optionen: ["M. masseter", "M. pterygoideus medialis", "M. pterygoideus lateralis", "N. facialis"],
+    frage: "Welcher Muskel zieht den Unterkiefer nach vorne bzw. bewirkt bei einseitiger Kontraktion eine Seitwärtsbewegung?",
+    optionen: ["Der M. masseter", "Der M. pterygoideus medialis", "Der M. pterygoideus lateralis", "Der N. facialis"],
     richtig: 2
   }, {
     id: "anat-017",
     frage: "Was unterscheidet motorische von sensiblen Nerven?",
-    optionen: ["Motorische Nerven steuern Muskeln, sensible Nerven leiten Empfindungen (Schmerz, Berührung, Temperatur) weiter", "Es gibt keinen Unterschied", "Nur motorische Nerven kommen im Kopf vor", "Sensible Nerven steuern ausschließlich die Muskulatur"],
+    optionen: ["Motorische Nerven steuern Muskeln, sensible leiten Empfindungen weiter", "Zwischen beiden Nervenarten besteht funktionell kein relevanter Unterschied", "Motorische Nerven kommen nach heutigem Wissen ausschließlich im Kopf vor", "Sensible Nerven steuern nach diesem Verständnis ausschließlich die Muskulatur"],
     richtig: 0
   }, {
     id: "anat-018",
     frage: "Was ist typisch für eine periphere Facialisparese?",
-    optionen: ["Ausfall der ipsilateralen mimischen Muskulatur", "Vollständiger Sensibilitätsverlust im ganzen Körper", "Ausschließlich Geschmacksverlust", "Sie betrifft nur die Zunge"],
+    optionen: ["Ein Ausfall der mimischen Muskulatur auf der betroffenen Körperseite", "Ein vollständiger Sensibilitätsverlust im gesamten übrigen Körper", "Ein isolierter, ausschließlicher Verlust der Geschmackswahrnehmung", "Sie betrifft nach dieser Definition ausschließlich die Zunge selbst"],
     richtig: 0
   }, {
     id: "anat-019",
     frage: "In wie viele Endäste teilt sich der N. trigeminus (5. Hirnnerv)?",
-    optionen: ["In zwei Äste", "In drei Äste (u.a. N. maxillaris, N. mandibularis)", "In vier Äste", "Er teilt sich nicht auf"],
+    optionen: ["In insgesamt zwei größere Endäste", "In drei Äste, u.a. N. maxillaris und N. mandibularis", "In insgesamt vier voneinander getrennte Endäste", "Er teilt sich nach heutigem Wissensstand gar nicht auf"],
     richtig: 1
   }, {
     id: "anat-020",
     frage: "Welches Versorgungsgebiet hat die A. maxillaris unter anderem?",
-    optionen: ["Nur die Zunge", "Oberkiefer mit Zähnen, harter Gaumen, Kaumuskulatur", "Nur die Haut des Gesichts", "Nur den Unterkiefer"],
+    optionen: ["Ausschließlich das Gewebe der Zunge selbst", "Oberkiefer mit Zähnen, harter Gaumen, Kaumuskulatur", "Ausschließlich die äußere Haut des Gesichts", "Ausschließlich den Bereich des Unterkiefers"],
     richtig: 1
   }, {
     id: "anat-021",
     frage: "Welche Arterie versorgt den Unterkiefer mit Zähnen?",
-    optionen: ["A. lingualis", "A. facialis", "A. alveolaris inferior", "A. infraorbitalis"],
+    optionen: ["Die A. lingualis", "Die A. facialis", "Die A. alveolaris inferior", "Die A. infraorbitalis"],
     richtig: 2
   }, {
     id: "anat-022",
     frage: "Was transportiert das Arteriensystem?",
-    optionen: ["Sauerstoffarmes Blut zum Herzen", "Sauerstoffreiches Blut vom Herzen zu den Geweben, bei höherem Blutdruck als das Venensystem", "Nur Lymphflüssigkeit", "Nur Speichel"],
+    optionen: ["Überwiegend sauerstoffarmes Blut zurück in Richtung Herz", "Sauerstoffreiches Blut vom Herzen zu den Geweben, bei höherem Druck", "Ausschließlich Lymphflüssigkeit innerhalb des Körpers", "Ausschließlich Speichel innerhalb der Kopfregion"],
     richtig: 1
   }, {
     id: "anat-023",
     frage: "Welche Funktion hat das Lymphsystem?",
-    optionen: ["Es transportiert nur sauerstoffreiches Blut", "Es ist ein Gefäßsystem mit Filterstationen (Lymphknoten), das flüssige und feste Stoffe aus dem Gewebe sammelt", "Es hat einen höheren Blutdruck als das Arteriensystem", "Es produziert Speichel"],
+    optionen: ["Es transportiert innerhalb des Körpers ausschließlich sauerstoffreiches Blut", "Ein Gefäßsystem mit Filterstationen, das Stoffe aus dem Gewebe sammelt", "Es weist im Vergleich zum Arteriensystem einen höheren Blutdruck auf", "Es ist innerhalb des Kopfes vor allem für die Speichelproduktion zuständig"],
     richtig: 1
   }, {
     id: "anat-024",
     frage: "Worauf deuten geschwollene Lymphknoten häufig hin?",
-    optionen: ["Auf eine Infektion", "Auf einen niedrigen Blutdruck", "Auf Karies", "Auf eine Allergie gegen Metalle"],
+    optionen: ["Auf eine bestehende Infektion im entsprechenden Versorgungsgebiet", "Auf einen dauerhaft zu niedrigen arteriellen Blutdruck", "Auf eine fortgeschrittene, unbehandelte Karies", "Auf eine bestehende Allergie gegen zahnärztliche Metalllegierungen"],
     richtig: 0
   }, {
     id: "anat-025",
     frage: "Wie viele große, paarig angelegte Speicheldrüsen gibt es?",
-    optionen: ["Zwei", "Drei (Glandula parotis, submandibularis, sublingualis)", "Vier", "Fünf"],
+    optionen: ["Insgesamt zwei paarig angelegte große Speicheldrüsen", "Drei, nämlich Glandula parotis, submandibularis und sublingualis", "Insgesamt vier paarig angelegte große Speicheldrüsen", "Insgesamt fünf paarig angelegte große Speicheldrüsen"],
     richtig: 1
   }, {
     id: "anat-026",
     frage: "Wo mündet der Ductus parotideus (Ausführungsgang der Ohrspeicheldrüse)?",
-    optionen: ["Unter der Zunge", "Im Vestibulum oris gegenüber dem 2. Molar, nachdem er den M. buccinator durchbricht", "Direkt am Zahnfleischrand der Frontzähne", "Am Gaumen"],
+    optionen: ["Im Bereich des Mundbodens unmittelbar unterhalb der Zunge", "Im Vestibulum oris gegenüber dem 2. Molar, nach Durchtritt durch den M. buccinator", "Unmittelbar am Zahnfleischrand der oberen mittleren Frontzähne", "Im Bereich des harten Gaumens nahe der Medianlinie mittig"],
     richtig: 1
   }, {
     id: "anat-027",
     frage: "Wodurch neigt der Ductus submandibularis besonders zur Verstopfung durch Speichelsteine?",
-    optionen: ["Durch seinen sehr kurzen, geraden Verlauf", "Durch seinen gewundenen Verlauf", "Weil er nie Speichel transportiert", "Weil er außerhalb der Mundhöhle mündet"],
+    optionen: ["Durch seinen ungewöhnlich kurzen und weitgehend geraden Verlauf", "Durch seinen ausgeprägt gewundenen anatomischen Verlauf", "Er transportiert nach heutigem Wissensstand grundsätzlich keinen Speichel", "Er mündet vollständig außerhalb der eigentlichen Mundhöhle"],
     richtig: 1
   }, {
     id: "anat-028",
     frage: "Welche Funktion hat die Mundschleimhaut in der Mundhöhle?",
-    optionen: ["Selbstreinigung der Mundhöhle und Nahrungsverteilung", "Ausschließlich Geschmackswahrnehmung", "Nur mechanischer Schutz ohne weitere Funktion", "Blutbildung"],
+    optionen: ["Selbstreinigung der Mundhöhle sowie gleichmäßige Nahrungsverteilung", "Sie dient nach diesem Verständnis ausschließlich der Geschmackswahrnehmung", "Sie erfüllt ausschließlich einen rein mechanischen Schutz ohne weitere Aufgabe", "Sie ist im Wesentlichen an der Blutbildung des Körpers beteiligt"],
     richtig: 0
   }, {
     id: "anat-029",
     frage: "Wodurch wird die Zunge motorisch innerviert?",
-    optionen: ["N. trigeminus", "N. facialis", "N. hypoglossus (N. XII)", "N. mandibularis"],
+    optionen: ["Durch den N. trigeminus", "Durch den N. facialis", "Durch den N. hypoglossus (N. XII)", "Durch den N. mandibularis"],
     richtig: 2
   }, {
     id: "anat-030",
     frage: "Über welche Arterie erfolgt die Blutversorgung der Zunge?",
-    optionen: ["A. maxillaris", "A. lingualis (aus A. carotis externa)", "A. facialis allein", "A. infraorbitalis"],
+    optionen: ["Über die A. maxillaris", "Über die A. lingualis (aus der A. carotis externa)", "Ausschließlich über die A. facialis", "Über die A. infraorbitalis"],
     richtig: 1
   }, {
     id: "anat-031",
     frage: "Welche Zungenpapillen sind für die Wahrnehmung von süß, sauer, salzig, bitter und umami sowie Druck/Temperatur zuständig?",
-    optionen: ["Papillae filiformes", "Papillae fungiformes", "Papillae valatae (vallatae) ausschließlich", "Nur die Zungenwurzel"],
+    optionen: ["Die Papillae filiformes", "Die Papillae fungiformes", "Ausschließlich die Papillae vallatae", "Ausschließlich Rezeptoren im Bereich der Zungenwurzel"],
     richtig: 1
   }, {
     id: "anat-032",
     frage: "Was trennt der Sulcus terminalis der Zunge?",
-    optionen: ["Die Zunge sagittal in zwei Hälften", "Das vordere vom hinteren Zungendrittel", "Zungenspitze von Zungenkörper", "Nichts, er ist funktionslos"],
+    optionen: ["Er trennt die Zunge sagittal in eine linke und eine rechte Hälfte", "Er trennt das vordere vom hinteren Zungendrittel", "Er trennt die Zungenspitze vom übrigen Zungenkörper", "Er hat funktionell keine erkennbare anatomische Bedeutung"],
     richtig: 1
   }, {
     id: "anat-033",
     frage: "Welche Aussage zur Gingiva ist korrekt?",
-    optionen: ["Sie besteht aus vier Geweben: Wurzelzement, Desmodont, Alveolarknochen und Schmelz", "Sie umschließt als epitheliale Manschette den Zahnhals", "Sie hat keine Funktion beim Zahnhalt", "Sie ist Teil des Zahnschmelzes"],
+    optionen: ["Sie besteht aus vier Geweben: Wurzelzement, Desmodont, Knochen und Schmelz", "Sie umschließt als epitheliale Manschette den Zahnhals", "Sie hat funktionell keine wesentliche Rolle beim Zahnhalt", "Sie ist ein unmittelbarer Bestandteil des Zahnschmelzes selbst"],
     richtig: 1
   }, {
     id: "anat-034",
     frage: "Was bedeutet der Begriff \"Parodontium\" ursprünglich?",
-    optionen: ["\"Im Zahn\"", "\"Neben dem Zahn\" (aus dem Altgriechischen)", "\"Über dem Zahn\"", "\"Unter der Zunge\""],
+    optionen: ["\"Im Zahn\" im wörtlichen altgriechischen Sinn", "\"Neben dem Zahn\", aus dem Altgriechischen", "\"Über dem Zahn\" im wörtlichen altgriechischen Sinn", "\"Unter der Zunge\" im wörtlichen altgriechischen Sinn"],
     richtig: 1
   }, {
     id: "anat-035",
     frage: "Woraus besteht das Parodontium?",
-    optionen: ["Nur aus der Gingiva", "Aus vier Geweben: Gingiva, Desmodont, Wurzelzement und Alveolarknochen", "Nur aus Schmelz und Dentin", "Aus zwei Geweben: Zahnschmelz und Pulpa"],
+    optionen: ["Ausschließlich aus der Gingiva als einzigem Gewebe", "Aus vier Geweben: Gingiva, Desmodont, Wurzelzement und Alveolarknochen", "Ausschließlich aus Zahnschmelz und dem darunterliegenden Dentin", "Aus zwei Geweben, nämlich Zahnschmelz und der Zahnpulpa"],
     richtig: 1
   }, {
     id: "anat-036",
     frage: "Wie hoch ist ungefähr der anorganische Anteil des Zahnschmelzes?",
-    optionen: ["circa 50%", "circa 70%", "circa 98% (vor allem Hydroxylapatit)", "circa 20%"],
+    optionen: ["Etwa 50% des gesamten Zahnschmelzes", "Etwa 70% des gesamten Zahnschmelzes", "Etwa 98%, vor allem in Form von Hydroxylapatit", "Etwa 20% des gesamten Zahnschmelzes"],
     richtig: 2
   }, {
     id: "anat-037",
     frage: "Was zeigen die Retzius-Streifen im Zahnschmelz an?",
-    optionen: ["Sie sind Zeichen für Karies", "Hypomineralisierte Bereiche/Ruhephasen der Ameloblasten, im Durchlichtmikroskop erkennbar", "Sie kommen nur im Dentin vor", "Sie zeigen die Zahnfarbe an"],
+    optionen: ["Sie gelten grundsätzlich als sicheres Zeichen für vorliegende Karies", "Hypomineralisierte Bereiche/Ruhephasen der Ameloblasten", "Sie kommen nach heutigem Wissensstand ausschließlich im Dentin vor", "Sie sind in erster Linie verantwortlich für die individuelle Zahnfarbe"],
     richtig: 1
   }, {
     id: "anat-038",
     frage: "Was zeigen die Hunter-Schreger-Streifen im Schmelz?",
-    optionen: ["Gewellter Verlauf der Prismen, sichtbar durch abwechselnd dunkle und helle Streifen im Längsschnitt", "Sie sind ein Zeichen für Zahnfleischentzündung", "Sie kommen ausschließlich im Wurzelzement vor", "Sie sind für die Zahnfarbe verantwortlich"],
+    optionen: ["Gewellter Verlauf der Prismen, sichtbar als helle und dunkle Streifen", "Sie gelten allgemein als typisches Zeichen einer Zahnfleischentzündung", "Sie kommen nach diesem Verständnis ausschließlich im Wurzelzement vor", "Sie sind in erster Linie verantwortlich für die individuelle Zahnfarbe"],
     richtig: 0
   }, {
     id: "anat-039",
     frage: "Wie hoch ist der anorganische Mineralgehalt von Dentin ungefähr, und wie unterscheidet es sich vom Schmelz?",
-    optionen: ["Circa 70%, im Gegensatz zum Schmelz ein lebendes, weniger mineralisiertes Gewebe", "Circa 98%, mehr mineralisiert als Schmelz", "Dentin enthält keine Mineralien", "Dentin und Schmelz haben identischen Mineralgehalt"],
+    optionen: ["Circa 70%, im Gegensatz zum Schmelz ein lebendes, weniger mineralisiertes Gewebe", "Circa 98%, damit insgesamt stärker mineralisiert als der Zahnschmelz", "Dentin enthält nach diesem Verständnis grundsätzlich keine Mineralien", "Dentin und Zahnschmelz weisen einen identischen Mineralgehalt auf"],
     richtig: 0
   }, {
     id: "anat-040",
     frage: "Was sind Owen-Linien im Dentin?",
-    optionen: ["Normale, gesunde Wachstumslinien ohne Bedeutung", "Stark hypomineralisierte Bereiche, die Allgemeinerkrankungen im Kindesalter widerspiegeln können", "Linien, die nur im Zahnschmelz vorkommen", "Linien, die die Zahnwurzel begrenzen"],
+    optionen: ["Normale, gesunde Wachstumslinien ganz ohne besondere klinische Bedeutung", "Stark hypomineralisierte Bereiche, die Allgemeinerkrankungen im Kindesalter widerspiegeln können", "Linien, die nach heutigem Wissensstand ausschließlich im Zahnschmelz vorkommen", "Linien, die anatomisch die eigentliche Zahnwurzel nach außen hin begrenzen"],
     richtig: 1
   }, {
     id: "anat-041",
     frage: "Was kennzeichnet die Neonatallinie im Dentin?",
-    optionen: ["Sie kommt nur bei Erwachsenen vor", "Eine hypomineralisierte Ruhepause der Odontoblasten (circa 15 Tage) rund um die Geburt, sichtbar bei Milchzähnen und ersten Molaren", "Sie hat nichts mit der Geburt zu tun", "Sie beschreibt eine Krankheit des Zahnfleisches"],
+    optionen: ["Sie kommt nach diesem Verständnis ausschließlich bei Erwachsenen vor", "Eine hypomineralisierte Ruhepause der Odontoblasten rund um die Geburt", "Sie steht in keinerlei Zusammenhang mit dem Zeitpunkt der Geburt", "Sie beschreibt in erster Linie eine eigenständige Erkrankung des Zahnfleisches"],
     richtig: 1
   }, {
     id: "anat-042",
     frage: "Was ist das Saumepithel und welche Funktion hat es?",
-    optionen: ["Ein einschichtiges Epithel ohne besondere Funktion", "Ein zweischichtiges Epithel (mitotisch aktives Stratum basale, inaktives Stratum suprabasale), das als Abwehrmechanismus gegen Bakterien dient", "Teil des Alveolarknochens", "Ein Teil der Zahnpulpa"],
+    optionen: ["Ein einschichtiges Epithel ohne erkennbare besondere Funktion", "Ein zweischichtiges Epithel, das als Abwehrmechanismus gegen Bakterien dient", "Es zählt anatomisch zu den festen Bestandteilen des Alveolarknochens", "Es bildet einen unmittelbaren, funktionellen Teil der Zahnpulpa"],
     richtig: 1
   }, {
     id: "anat-043",
     frage: "Wodurch ist die Dentinoberfläche überdeckt und wie dick ist diese Schicht ungefähr?",
-    optionen: ["Von Schmelz, circa 100 µm", "Von Zement, circa 10 µm dick", "Von Gingiva, circa 1 mm", "Von keiner zusätzlichen Schicht"],
+    optionen: ["Von einer zusätzlichen Schmelzschicht, etwa 100 µm dick", "Von Zement, in etwa 10 µm dick", "Von einer dünnen Gingivaschicht, etwa 1 mm dick", "Von keiner zusätzlichen schützenden Schicht"],
     richtig: 1
   }, {
     id: "anat-044",
     frage: "Was ist die Funktion des azellulären Fremdfaserzements?",
-    optionen: ["Verankerung durch einstrahlende Sharpey'sche Fasern aus dem Desmodont", "Bildung von neuem Schmelz", "Es hat keine bekannte Funktion und keine Fasern", "Es dient der Nervenversorgung des Zahnes"],
+    optionen: ["Verankerung durch einstrahlende Sharpey'sche Fasern aus dem Desmodont", "Die aktive Bildung von neuem Zahnschmelz an der Wurzeloberfläche", "Er besitzt nach heutigem Wissensstand keine bekannte Funktion oder Fasern", "Er dient in erster Linie der Nervenversorgung des betroffenen Zahnes"],
     richtig: 0
   }, {
     id: "anat-045",
     frage: "Wie viele Gewebeschichten der Lamina propria der Gingiva werden unterschieden?",
-    optionen: ["Nur eine Schicht", "Stratum papillare und Stratum reticulare", "Drei Schichten", "Fünf Schichten"],
+    optionen: ["Es wird nach diesem Verständnis lediglich eine Schicht unterschieden", "Stratum papillare und Stratum reticulare", "Es werden nach diesem Verständnis drei getrennte Schichten unterschieden", "Es werden nach diesem Verständnis fünf getrennte Schichten unterschieden"],
     richtig: 1
   }],
   zahnhartsubstanz: [{
     id: "zahnhart-001",
     frage: "Was ist eine Besonderheit des Wurzelzements im Vergleich zu anderen Zahnhartsubstanzen?",
-    optionen: ["Er enthält die meisten Mineralien aller Zahnhartsubstanzen", "Er ist die Zahnhartsubstanz mit den wenigsten Mineralien und ohne Blutgefäße/Nerven", "Er wird als einziger Zahnbestandteil ständig komplett erneuert", "Er enthält keine Zellen"],
+    optionen: ["Er enthält von allen Zahnhartsubstanzen die meisten Mineralien", "Er ist die Zahnhartsubstanz mit den wenigsten Mineralien und ohne Gefäße", "Er wird als einziger Zahnbestandteil ständig komplett neu gebildet", "Er enthält im Gegensatz zu Schmelz und Dentin überhaupt keine Zellen"],
     richtig: 1
   }, {
     id: "zahnhart-002",
     frage: "Sollte Wurzelzement bei der professionellen Zahnreinigung (PZR) entfernt werden?",
-    optionen: ["Ja, immer vollständig", "Nein, er soll nicht entfernt werden", "Nur bei jungen Patienten", "Nur im koronalen Drittel"],
+    optionen: ["Ja, er sollte bei jeder PZR grundsätzlich vollständig entfernt werden", "Nein, er soll bei der professionellen Zahnreinigung nicht entfernt werden", "Nur bei besonders jungen Patienten wird eine Entfernung empfohlen", "Nur der koronale Anteil des Wurzelzements wird routinemäßig entfernt"],
     richtig: 1
   }, {
     id: "zahnhart-003",
     frage: "In welchem Bereich kann sich Wurzelzement neu bilden?",
-    optionen: ["Im koronalen Drittel", "Im apikalen, aber nicht im koronalen Wurzeldrittel", "Er kann sich nirgends neu bilden", "Nur im Zahnhalsbereich"],
+    optionen: ["Vor allem im koronalen Drittel der Zahnwurzel", "Im apikalen, aber nicht im koronalen Wurzeldrittel", "Wurzelzement kann sich grundsätzlich nirgends neu bilden", "Ausschließlich im unmittelbaren Zahnhalsbereich"],
     richtig: 1
   }, {
     id: "zahnhart-004",
     frage: "Wozu dient Wurzelzement funktionell?",
-    optionen: ["Zur Lichtbrechung im Zahn", "Zur Verankerung der desmodontalen (Sharpey'schen) Fasern", "Zur Speichelproduktion", "Zur Schmelzbildung"],
+    optionen: ["Vor allem der Lichtbrechung innerhalb des Zahnes", "Zur Verankerung der desmodontalen (Sharpey'schen) Fasern", "In erster Linie der eigentlichen Speichelproduktion", "Vor allem der Bildung von neuem Zahnschmelz"],
     richtig: 1
   }, {
     id: "zahnhart-005",
     frage: "Wodurch ist das Saumepithel mit dem Zahn verbunden?",
-    optionen: ["Durch Muskelfasern", "Durch Hemidesmosomen, die \"epitheliales Attachment\" genannt werden", "Durch Blutgefäße", "Durch Nervenfasern"],
+    optionen: ["Durch spezialisierte, quer verlaufende Muskelfasern", "Durch Hemidesmosomen, genannt \"epitheliales Attachment\"", "Ausschließlich durch feine, oberflächlich verlaufende Blutgefäße", "Ausschließlich durch dünne, sensible Nervenfasern"],
     richtig: 1
   }, {
     id: "zahnhart-006",
     frage: "Womit \"verkleben\" die Hemidesmosomen das Saumepithel?",
-    optionen: ["Nur mit dem Zahnschmelz", "Mit dem Zahnschmelz und dem Wurzelzement", "Nur mit dem Alveolarknochen", "Nur mit dem Dentin"],
+    optionen: ["Ausschließlich mit dem äußeren Zahnschmelz", "Mit dem Zahnschmelz und dem Wurzelzement", "Ausschließlich mit dem darunterliegenden Alveolarknochen", "Ausschließlich mit dem im Zahn liegenden Dentin"],
     richtig: 1
   }, {
     id: "zahnhart-007",
     frage: "Was passiert mit dem Alveolarknochen bei Druck auf den Zahn?",
-    optionen: ["Der Knochen wird ständig auf- und umgebaut, Druck führt zu Abbau", "Der Knochen bleibt vollständig unverändert", "Druck führt ausschließlich zu Knochenaufbau", "Der Alveolarknochen reagiert nicht auf mechanische Reize"],
+    optionen: ["Der Knochen wird ständig auf- und umgebaut, Druck führt zu Abbau", "Der Alveolarknochen bleibt trotz Druckbelastung vollständig unverändert", "Druck führt in diesem Zusammenhang ausschließlich zu Knochenaufbau", "Der Alveolarknochen reagiert grundsätzlich nicht auf mechanische Reize"],
     richtig: 0
   }, {
     id: "zahnhart-008",
     frage: "Welche Funktion hat das Desmodont (parodontales Ligament)?",
-    optionen: ["Es wandelt Druck auf den Zahn in Zug auf den Knochen um und ist etwa 0,02 mm breit", "Es bildet den Zahnschmelz", "Es hat keine mechanische Funktion", "Es transportiert nur Sauerstoff"],
+    optionen: ["Es wandelt Druck auf den Zahn in Zug auf den Knochen um", "Es ist maßgeblich an der eigentlichen Bildung des Zahnschmelzes beteiligt", "Es erfüllt nach heutigem Verständnis keine relevante mechanische Funktion", "Es dient in erster Linie dem reinen Sauerstofftransport im Gewebe"],
     richtig: 0
   }, {
     id: "zahnhart-009",
     frage: "Was zählt laut den Materialien zum Parodontium?",
-    optionen: ["Nur die Gingiva", "Wurzelzement, Desmodont und Alveolarknochen (sowie Gingiva)", "Nur Schmelz und Dentin", "Nur der Alveolarknochen"],
+    optionen: ["Ausschließlich die Gingiva als einziges zugehöriges Gewebe", "Wurzelzement, Desmodont und Alveolarknochen sowie die Gingiva", "Ausschließlich Zahnschmelz und das darunterliegende Dentin", "Ausschließlich der Alveolarknochen als knöcherne Struktur"],
     richtig: 1
   }, {
     id: "zahnhart-010",
     frage: "Wofür stehen die Richtungsbezeichnungen \"mesial\" und \"distal\"?",
-    optionen: ["Mesial = zur Mitte hin, distal = nach hinten hin", "Mesial = nach oben, distal = nach unten", "Mesial = zur Lippe hin, distal = zum Gaumen hin", "Es sind Synonyme ohne Unterschied"],
+    optionen: ["Mesial bezeichnet zur Mitte hin, distal nach hinten hin", "Mesial bezeichnet nach oben, distal entsprechend nach unten", "Mesial bezeichnet zur Lippe hin, distal zum Gaumen hin", "Beide Begriffe sind im Grunde austauschbare Synonyme"],
     richtig: 0
   }, {
     id: "zahnhart-011",
     frage: "In welchen Stadien läuft die Zahnentwicklung (Odontogenese) ab?",
-    optionen: ["Nur ein einziges Stadium", "Leisten-, Knospen-, Kappen-, Glocken- und Zahnhartsubstanzstadium", "Nur Kappen- und Glockenstadium", "Schmelz-, Dentin- und Zementstadium"],
+    optionen: ["Die Zahnentwicklung durchläuft nach diesem Modell nur ein einziges Stadium", "Leisten-, Knospen-, Kappen-, Glocken- und Zahnhartsubstanzstadium", "Ausschließlich ein Kappen- und ein anschließendes Glockenstadium", "Ein Schmelz-, ein Dentin- und ein abschließendes Zementstadium"],
     richtig: 1
   }, {
     id: "zahnhart-012",
     frage: "Was entsteht aus dem Zahnschmelzorgan (A) der Zahnknospe?",
-    optionen: ["Dentin", "Zahnschmelz", "Zementoblasten", "Odontoblasten"],
+    optionen: ["Das spätere Dentin des Zahnes", "Der spätere Zahnschmelz", "Die späteren Zementoblasten", "Die späteren Odontoblasten"],
     richtig: 1
   }, {
     id: "zahnhart-013",
     frage: "Was entsteht aus der Zahnpapille (B) der Zahnknospe?",
-    optionen: ["Zahnschmelz", "Dentin", "Wurzelzement", "Alveolarknochen"],
+    optionen: ["Der spätere Zahnschmelz", "Das spätere Dentin", "Der spätere Wurzelzement", "Der spätere Alveolarknochen"],
     richtig: 1
   }, {
     id: "zahnhart-014",
     frage: "Was entsteht aus dem Zahnfollikel (C) der Zahnknospe?",
-    optionen: ["Nur Zahnschmelz", "Zementoblasten, Osteoblasten und Fibroblasten", "Nur Dentin", "Ausschließlich Nervengewebe"],
+    optionen: ["Ausschließlich der spätere Zahnschmelz", "Zementoblasten, Osteoblasten und Fibroblasten", "Ausschließlich das spätere Dentin des Zahnes", "Ausschließlich das spätere Nervengewebe der Pulpa"],
     richtig: 1
   }, {
     id: "zahnhart-015",
     frage: "Von welchem Keimblatt stammt der Zellhaufen ab, aus dem die Zahnbildung hervorgeht?",
-    optionen: ["Mesoderm", "Ektoderm (äußeres Keimblatt)", "Endoderm", "Aus keinem Keimblatt"],
+    optionen: ["Vom Mesoderm als mittlerem Keimblatt", "Vom Ektoderm, dem äußeren Keimblatt", "Vom Endoderm als innerem Keimblatt", "Er stammt nach diesem Modell aus keinem der Keimblätter"],
     richtig: 1
   }, {
     id: "zahnhart-016",
     frage: "Wie hoch ist der anorganische Anteil des Zahnschmelzes ungefähr laut Zahnentwicklungslehre?",
-    optionen: ["70%", "95% (3% Wasser)", "50%", "20%"],
+    optionen: ["Etwa 70% des gesamten Zahnschmelzes", "Etwa 95%, bei rund 3% Wasseranteil", "Etwa 50% des gesamten Zahnschmelzes", "Etwa 20% des gesamten Zahnschmelzes"],
     richtig: 1
   }, {
     id: "zahnhart-017",
     frage: "Von welchen Zellen wird der Zahnschmelz gebildet?",
-    optionen: ["Von Odontoblasten", "Von Adamantoblasten (Ameloblasten)", "Von Fibroblasten", "Von Osteoklasten"],
+    optionen: ["Von den sogenannten Odontoblasten", "Von Adamantoblasten (Ameloblasten)", "Von den sogenannten Fibroblasten", "Von den sogenannten Osteoklasten"],
     richtig: 1
   }, {
     id: "zahnhart-018",
     frage: "Welche Aussage zu prismenfreiem Schmelz trifft zu?",
-    optionen: ["Prismenfreier Schmelz kommt bei Milchzähnen, in Fissuren und im zervikalen Bereich vor", "Der gesamte Schmelz ist immer prismenfrei", "Prismenfreier Schmelz kommt nur bei bleibenden Zähnen vor", "Prismenfreier Schmelz existiert nicht"],
+    optionen: ["Prismenfreier Schmelz kommt bei Milchzähnen, in Fissuren und zervikal vor", "Der gesamte Zahnschmelz ist nach diesem Verständnis grundsätzlich prismenfrei", "Prismenfreier Schmelz kommt nach diesem Verständnis nur bei bleibenden Zähnen vor", "Prismenfreier Schmelz existiert nach heutigem Wissensstand überhaupt nicht"],
     richtig: 0
   }, {
     id: "zahnhart-019",
     frage: "Welche Vitamine und Mineralstoffe beeinflussen die Zahnentwicklung besonders?",
-    optionen: ["Nur Vitamin B12", "Calcium, Phosphor, Fluorid sowie Vitamin A, C und D", "Nur Eisen", "Ausschließlich Vitamin C"],
+    optionen: ["Nach diesem Verständnis ausschließlich Vitamin B12", "Calcium, Phosphor, Fluorid sowie Vitamin A, C und D", "Nach diesem Verständnis ausschließlich Eisen als Spurenelement", "Nach diesem Verständnis ausschließlich Vitamin C"],
     richtig: 1
   }, {
     id: "zahnhart-020",
     frage: "Wozu dient die wellenförmige \"Hunter-Schreger-Streifung\" im Schmelz funktionell?",
-    optionen: ["Sie verhindert die Schmelzspaltung während der Kautätigkeit", "Sie ist rein kosmetisch ohne Funktion", "Sie dient der Zahnfarbe", "Sie erhöht die Löslichkeit des Schmelzes in Säure"],
+    optionen: ["Sie verhindert eine Schmelzspaltung während der eigentlichen Kautätigkeit", "Sie hat funktionell keine erkennbare Bedeutung und ist rein kosmetisch", "Sie ist in erster Linie verantwortlich für die individuelle Zahnfarbe", "Sie erhöht gezielt die Löslichkeit des Zahnschmelzes gegenüber Säure"],
     richtig: 0
   }, {
     id: "zahnhart-021",
     frage: "Wodurch entstehen die Retzius-Streifen (Wachstumslinien) im Schmelz?",
-    optionen: ["Durch Karies", "Durch Mineralisationswechsel/Ruhepausen der Ameloblasten", "Durch mechanische Abnutzung", "Sie entstehen zufällig ohne biologische Ursache"],
+    optionen: ["Sie entstehen unmittelbar als direkte Folge einer bestehenden Karies", "Durch Mineralisationswechsel bzw. Ruhepausen der Ameloblasten", "Sie entstehen in erster Linie durch mechanische Abnutzung des Zahnes", "Sie entstehen weitgehend zufällig ohne erkennbare biologische Ursache"],
     richtig: 1
   }, {
     id: "zahnhart-022",
     frage: "Was sind Perikymatien?",
-    optionen: ["Vertiefungen an der Zahnoberfläche, die im Querschnitt als Schmelzbildungsfehler durch Mineralisationswechsel auftreten", "Krankheitserreger im Mund", "Ein anderer Name für Karies", "Teile des Wurzelzements"],
+    optionen: ["Feine Vertiefungen an der Zahnoberfläche durch Mineralisationswechsel", "Bestimmte Krankheitserreger, die im Mundraum vorkommen können", "Ein alternativer Fachbegriff, der synonym für Karies verwendet wird", "Feine strukturelle Bestandteile des tiefer liegenden Wurzelzements"],
     richtig: 0
   }, {
     id: "zahnhart-023",
     frage: "Wie hoch ist der anorganische Mineralgehalt von Dentin ungefähr (in der Zahnentwicklungslehre)?",
-    optionen: ["98%", "70% (20% organisch, 10% Wasser)", "30%", "100%"],
+    optionen: ["Etwa 98% des gesamten Dentins", "Etwa 70%, bei 20% organischem Anteil und 10% Wasser", "Etwa 30% des gesamten Dentins", "Nahezu 100% des gesamten Dentins"],
     richtig: 1
   }, {
     id: "zahnhart-024",
     frage: "Wovon wird Dentin gebildet?",
-    optionen: ["Von Ameloblasten", "Von Odontoblasten", "Von Fibroblasten", "Von Osteoklasten"],
+    optionen: ["Von den sogenannten Ameloblasten", "Von den sogenannten Odontoblasten", "Von den sogenannten Fibroblasten", "Von den sogenannten Osteoklasten"],
     richtig: 1
   }, {
     id: "zahnhart-025",
     frage: "Welche Eigenschaft hat Kollagen im Dentin?",
-    optionen: ["Hohe Zugfestigkeit, nicht dehnbar", "Sehr elastisch und dehnbar", "Es hat keine strukturelle Funktion", "Es kommt nur im Schmelz vor"],
+    optionen: ["Es besitzt eine hohe Zugfestigkeit und ist dabei kaum dehnbar", "Es ist im Dentin sehr elastisch und ausgesprochen dehnbar", "Es erfüllt im Dentin keine erkennbare strukturelle Funktion", "Es kommt nach diesem Verständnis ausschließlich im Zahnschmelz vor"],
     richtig: 0
   }, {
     id: "zahnhart-026",
     frage: "Wie viele Arten von Dentin werden unterschieden?",
-    optionen: ["Zwei: nur Primär- und Sekundärdentin", "Drei: Primär-, Sekundär- und Tertiär-/Reizdentin", "Nur eine Art", "Fünf Arten"],
+    optionen: ["Nach diesem Verständnis lediglich Primär- und Sekundärdentin", "Drei Arten: Primär-, Sekundär- und Tertiär-/Reizdentin", "Nach diesem Verständnis lediglich eine einzige Dentinart", "Insgesamt fünf verschiedene, klar abgegrenzte Dentinarten"],
     richtig: 1
   }, {
     id: "zahnhart-027",
     frage: "Wann wird Primärdentin gebildet?",
-    optionen: ["Erst im Erwachsenenalter", "Bis zum abgeschlossenen Wurzelwachstum", "Nur als Reaktion auf einen Reiz", "Ausschließlich vor der Geburt"],
+    optionen: ["Ausschließlich erst im fortgeschrittenen Erwachsenenalter", "Bis zum abgeschlossenen Wurzelwachstum des Zahnes", "Ausschließlich als direkte Reaktion auf einen äußeren Reiz", "Ausschließlich vor der eigentlichen Geburt des Kindes"],
     richtig: 1
   }, {
     id: "zahnhart-028",
     frage: "Wie verhält sich die Bildung von Sekundärdentin im Laufe des Lebens?",
-    optionen: ["Es wird ein Leben lang gebildet, lässt im Alter aber nach", "Es wird nur in der Kindheit gebildet", "Es wird nie gebildet", "Es entsteht ausschließlich durch Karies"],
+    optionen: ["Es wird ein Leben lang gebildet, lässt im Alter aber nach", "Es wird nach diesem Verständnis ausschließlich in der Kindheit gebildet", "Sekundärdentin wird nach diesem Verständnis grundsätzlich nie gebildet", "Es entsteht ausschließlich als unmittelbare Folge von Karies"],
     richtig: 0
   }, {
     id: "zahnhart-029",
     frage: "Wodurch entsteht Tertiär-/Reizdentin?",
-    optionen: ["Als Reaktion auf einen äußeren Reiz (z.B. Karies, Präparation)", "Nur während des Zahndurchbruchs", "Es entsteht spontan ohne äußeren Anlass", "Nur bei Milchzähnen"],
+    optionen: ["Als Reaktion auf einen äußeren Reiz, etwa Karies oder Präparation", "Ausschließlich während des eigentlichen Zahndurchbruchs", "Es entsteht weitgehend spontan ohne erkennbaren äußeren Anlass", "Nach diesem Verständnis ausschließlich bei Milchzähnen"],
     richtig: 0
   }, {
     id: "zahnhart-030",
     frage: "Was ist eine Rezession im parodontalen Kontext?",
-    optionen: ["Zahnfleischwachstum", "Attachmentverlust / Rückgang der parodontalen Gewebe", "Zahnschmelzbildung", "Eine Form von Karies"],
+    optionen: ["Ein sichtbares Wachstum des umgebenden Zahnfleisches", "Attachmentverlust bzw. Rückgang der parodontalen Gewebe", "Ein Vorgang der aktiven Zahnschmelzbildung", "Eine besondere, lokal begrenzte Form von Karies"],
     richtig: 1
   }, {
     id: "zahnhart-031",
     frage: "Welche Ursache für eine Rezession wird als \"traumatisch\" bezeichnet?",
-    optionen: ["Bänderzug", "Falsche Putztechnik oder kieferorthopädische Behandlung (KFO)", "Zu dicke attached Gingiva", "Genetische Veranlagung"],
+    optionen: ["Ein anhaltender, mechanischer Bänderzug im betroffenen Bereich", "Eine falsche Putztechnik oder eine kieferorthopädische Behandlung", "Eine ungewöhnlich dicke, gut ausgebildete attached Gingiva", "Eine erblich bedingte, genetische Veranlagung des Patienten"],
     richtig: 1
   }, {
     id: "zahnhart-032",
     frage: "Was ist bei der Rezession der aussagekräftigste Messwert?",
-    optionen: ["Die Zahnfarbe", "Die Sondierungstiefe", "Die Zahnzahl", "Der Speichelfluss"],
+    optionen: ["Die individuelle Zahnfarbe des betroffenen Zahnes", "Die klinisch gemessene Sondierungstiefe", "Die insgesamt vorhandene Anzahl der Zähne", "Die aktuell gemessene Speichelmenge im Mund"],
     richtig: 1
   }, {
     id: "zahnhart-033",
     frage: "Welche klassischen Entzündungszeichen werden am Zahn/Zahnfleisch beschrieben?",
-    optionen: ["Nur Schmerz", "Calor (Hitze), Dolor (Schmerz), Tumor (Schwellung), Rubor (Rötung), Functio laesa (eingeschränkte Funktion)", "Nur Schwellung und Rötung", "Nur Fieber"],
+    optionen: ["Nach diesem Verständnis ausschließlich der auftretende Schmerz", "Calor, Dolor, Tumor, Rubor und Functio laesa", "Nach diesem Verständnis ausschließlich Schwellung und Hautrötung", "Nach diesem Verständnis ausschließlich begleitendes Fieber"],
     richtig: 1
   }, {
     id: "zahnhart-034",
     frage: "Woraus entwickelt sich die Pulpa (Zahnmark) embryologisch?",
-    optionen: ["Aus Mesenchymzellen zu Odontoblasten", "Aus Zahnschmelz", "Aus Alveolarknochen", "Aus Speicheldrüsengewebe"],
+    optionen: ["Aus Mesenchymzellen, die sich zu Odontoblasten entwickeln", "Unmittelbar aus dem umgebenden Zahnschmelz", "Unmittelbar aus dem darunterliegenden Alveolarknochen", "Aus Gewebe, das ursprünglich aus der Speicheldrüse stammt"],
     richtig: 0
   }, {
     id: "zahnhart-035",
     frage: "Welche Bestandteile finden sich in der Pulpa?",
-    optionen: ["Nur Zahnschmelz", "Bindegewebe, Nerven, Blutgefäße, Lymphgefäße", "Ausschließlich Knochenzellen", "Nur Speichel"],
+    optionen: ["Nach diesem Verständnis ausschließlich Zahnschmelz", "Bindegewebe, Nerven, Blutgefäße und Lymphgefäße", "Nach diesem Verständnis ausschließlich Knochenzellen", "Nach diesem Verständnis ausschließlich Speichelbestandteile"],
     richtig: 1
   }, {
     id: "zahnhart-036",
     frage: "Hat Karies eine erbliche (genetische) Ursache?",
-    optionen: ["Ja, Karies ist rein erblich bedingt", "Nein, Karies hat laut den Unterlagen nichts mit Vererbung zu tun", "Nur bei Milchzähnen", "Nur bei Erwachsenen"],
+    optionen: ["Ja, Karies gilt nach diesem Verständnis als rein erblich bedingt", "Nein, Karies hat laut den Unterlagen nichts mit Vererbung zu tun", "Nach diesem Verständnis ausschließlich bei Milchzähnen erblich bedingt", "Nach diesem Verständnis ausschließlich bei Erwachsenen erblich bedingt"],
     richtig: 1
   }, {
     id: "zahnhart-037",
     frage: "Was bezeichnet ECC (Early Childhood Caries)?",
-    optionen: ["Eine Kariesform, die nur bei Erwachsenen auftritt", "Frühkindliche Karies durch Demineralisation durch süße oder saure Flüssigkeiten, häufig zwischen dem 6. und 36. Lebensmonat", "Eine Form von Zahnfehlstellung", "Eine Wurzelkanalbehandlung"],
+    optionen: ["Eine spezielle Kariesform, die ausschließlich bei Erwachsenen auftritt", "Frühkindliche Karies, häufig zwischen dem 6. und 36. Lebensmonat", "Eine bestimmte Form von angeborener Zahnfehlstellung", "Eine spezielle Form der zahnärztlichen Wurzelkanalbehandlung"],
     richtig: 1
   }, {
     id: "zahnhart-038",
     frage: "Was kann eine thermische Schädigung der Pulpa verursachen?",
-    optionen: ["Vakuolenbildung und im schlimmsten Fall Pulpanekrose", "Sofortige vollständige Heilung", "Zahnschmelzverdickung", "Keine bekannten Auswirkungen"],
+    optionen: ["Vakuolenbildung und im schlimmsten Fall eine Pulpanekrose", "In diesem Fall grundsätzlich eine sofortige, vollständige Heilung", "Eine deutliche Verdickung des umliegenden Zahnschmelzes", "Nach diesem Verständnis keinerlei bekannte Auswirkungen"],
     richtig: 0
   }, {
     id: "zahnhart-039",
     frage: "Welche Zellen bilden Wurzelzement (Zementogenese)?",
-    optionen: ["Odontoblasten", "Zementoblasten (aus Zahnfollikel bzw. benachbartem Knochen)", "Ameloblasten", "Osteoklasten"],
+    optionen: ["Die sogenannten Odontoblasten", "Zementoblasten aus dem Zahnfollikel bzw. benachbartem Knochen", "Die sogenannten Ameloblasten", "Die sogenannten Osteoklasten"],
     richtig: 1
   }, {
     id: "zahnhart-040",
     frage: "Woraus besteht der Zahnhalteapparat (Parodontium) laut der Zahnentwicklungslehre?",
-    optionen: ["Zahnfleisch, Zahnzement, Zahnfach (Alveole) und Wurzelhaut", "Nur aus Zahnschmelz", "Nur aus der Pulpa", "Aus Speicheldrüsen und Muskulatur"],
+    optionen: ["Zahnfleisch, Zahnzement, Zahnfach (Alveole) und Wurzelhaut", "Nach diesem Verständnis ausschließlich aus Zahnschmelz", "Nach diesem Verständnis ausschließlich aus der Pulpa", "Aus Speicheldrüsen und der umgebenden Kaumuskulatur"],
     richtig: 0
   }, {
     id: "zahnhart-041",
     frage: "Welche Funktion hat Speichel unter anderem?",
-    optionen: ["Remineralisation, Spülfunktion, Pufferkapazität und Immunabwehr", "Ausschließlich Geschmackswahrnehmung", "Nur mechanischer Schutz ohne chemische Funktion", "Zerstörung von Zahnschmelz"],
+    optionen: ["Remineralisation, Spülfunktion, Pufferkapazität und Immunabwehr", "Nach diesem Verständnis ausschließlich die reine Geschmackswahrnehmung", "Ausschließlich mechanischer Schutz ohne jede chemische Funktion", "Er trägt nach diesem Verständnis zur Zerstörung des Zahnschmelzes bei"],
     richtig: 0
   }, {
     id: "zahnhart-042",
     frage: "Wie hoch ist der Wasseranteil im Speichel ungefähr?",
-    optionen: ["circa 50%", "circa 99,5%", "circa 70%", "circa 20%"],
+    optionen: ["Etwa 50% des gesamten Speichelvolumens", "Etwa 99,5% des gesamten Speichelvolumens", "Etwa 70% des gesamten Speichelvolumens", "Etwa 20% des gesamten Speichelvolumens"],
     richtig: 1
   }, {
     id: "zahnhart-043",
     frage: "Was bewirkt das freie Fluoridion im Speichel?",
-    optionen: ["Es wirkt remineralisierend und hemmt Enzyme der Glykolyse in der Plaque", "Es fördert ausschließlich die Demineralisation", "Es hat keine Wirkung auf den Zahnschmelz", "Es zerstört die Speicheldrüsen"],
+    optionen: ["Es wirkt remineralisierend und hemmt Enzyme der Glykolyse in der Plaque", "Es fördert nach diesem Verständnis ausschließlich die Demineralisation", "Es hat nach diesem Verständnis keine Wirkung auf den Zahnschmelz", "Es führt in diesem Zusammenhang zur Zerstörung der Speicheldrüsen"],
     richtig: 0
   }, {
     id: "zahnhart-044",
     frage: "Was versteht man unter Xerostomie?",
-    optionen: ["Übermäßigen Speichelfluss", "Mundtrockenheit durch verringerten Speichelfluss (Fließrate in Ruhe unter 0,1 ml/min)", "Eine Form von Karies", "Eine Zahnfehlstellung"],
+    optionen: ["Einen deutlich übermäßigen, unkontrollierten Speichelfluss", "Mundtrockenheit durch verringerten Speichelfluss unter 0,1 ml/min", "Eine besondere, lokal begrenzte Form von Karies", "Eine bestimmte Form der angeborenen Zahnfehlstellung"],
     richtig: 1
   }, {
     id: "zahnhart-045",
     frage: "Wovon hängt die Speichelpufferkapazität hauptsächlich ab?",
-    optionen: ["Von der Zahnfarbe", "Von Menge und Konzentration des Bicarbonats", "Vom Körpergewicht", "Von der Anzahl der Zähne"],
+    optionen: ["In erster Linie von der individuellen Zahnfarbe des Patienten", "Von Menge und Konzentration des im Speichel gelösten Bicarbonats", "In erster Linie vom allgemeinen Körpergewicht des Patienten", "In erster Linie von der insgesamt vorhandenen Anzahl der Zähne"],
     richtig: 1
   }, {
     id: "zahnhart-046",
     frage: "Was ist Anodontie?",
-    optionen: ["Übermäßig viele Zähne", "Keine Zähne angelegt", "Zu große Zähne", "Eine Form von Karies"],
+    optionen: ["Eine ungewöhnlich hohe Anzahl überzähliger Zähne", "Es sind keine Zähne im Kiefer angelegt", "Eine Fehlbildung mit auffällig zu großen Zähnen", "Eine bestimmte, klar abgrenzbare Form von Karies"],
     richtig: 1
   }, {
     id: "zahnhart-047",
     frage: "Was versteht man unter Hypodontie?",
-    optionen: ["Alle Zähne sind zu groß", "Es sind teilweise Zähne nicht angelegt", "Es gibt zu viele Zähne", "Alle Zähne fehlen vollständig"],
+    optionen: ["Sämtliche vorhandenen Zähne sind deutlich zu groß ausgebildet", "Es sind im Kiefer teilweise Zähne nicht angelegt", "Im Kiefer sind insgesamt deutlich zu viele Zähne angelegt", "Sämtliche Zähne fehlen im Kiefer vollständig"],
     richtig: 1
   }, {
     id: "zahnhart-048",
     frage: "Was ist die Molaren-Inzisiven-Hypomineralisation (MIH)?",
-    optionen: ["Eine Störung der Schmelzmineralisation durch ungenügende Calcium- und Phosphateinlagerung, betroffen sind meist Frontzähne und Molaren", "Eine Erkrankung, die nur die Wurzel betrifft", "Eine reine Verfärbung ohne Substanzverlust", "Eine Form von Parodontitis"],
+    optionen: ["Eine Störung der Schmelzmineralisation, betroffen sind meist Frontzähne und Molaren", "Eine Erkrankung, die ausschließlich die Zahnwurzel betrifft", "Eine reine, oberflächliche Verfärbung ohne jeden Substanzverlust", "Eine spezielle, frühkindliche Form von Parodontitis"],
     richtig: 0
   }, {
     id: "zahnhart-049",
     frage: "Was ist Amelogenesis imperfecta?",
-    optionen: ["Eine erworbene Krankheit durch schlechte Mundhygiene", "Eine genetisch bedingte Schmelzfehlbildung, die generalisiert (am ganzen Gebiss) auftritt, bei normaler Dentinstruktur", "Eine Form von Karies", "Eine Erkrankung des Zahnfleisches"],
+    optionen: ["Eine im Laufe des Lebens erworbene Krankheit durch mangelhafte Mundhygiene", "Eine genetisch bedingte, generalisierte Schmelzfehlbildung bei normaler Dentinstruktur", "Eine besondere, örtlich begrenzte Form von Karies", "Eine primär entzündliche Erkrankung des umgebenden Zahnfleisches"],
     richtig: 1
   }, {
     id: "zahnhart-050",
     frage: "Was kennzeichnet einen Turner-Zahn?",
-    optionen: ["Eine symmetrisch verteilte Erkrankung aller Zähne", "Eine meist durch Trauma verursachte, nicht-symmetrisch verteilte Veränderung, oft am Frontzahn, von Opazität bis Hypoplasie", "Eine natürliche Zahnfarbe ohne pathologischen Hintergrund", "Eine Erkrankung, die nur die Zahnwurzel betrifft"],
+    optionen: ["Eine gleichmäßig symmetrisch verteilte Erkrankung sämtlicher Zähne", "Eine meist traumatisch bedingte, asymmetrische Veränderung, oft am Frontzahn", "Eine völlig natürliche Zahnfarbe ohne jeden pathologischen Hintergrund", "Eine Erkrankung, die ausschließlich die eigentliche Zahnwurzel betrifft"],
     richtig: 1
   }, {
     id: "zahnhart-051",
     frage: "Was ist eine Erosion der Zahnhartsubstanz?",
-    optionen: ["Ein bakteriell bedingter Substanzverlust", "Ein oberflächlicher Verlust von Zahnhartsubstanz ohne Bakterienbeteiligung, meist durch Säuren verursacht", "Eine reine Verfärbung ohne Substanzverlust", "Ausschließlich genetisch bedingt"],
+    optionen: ["Ein primär bakteriell bedingter Verlust an Zahnhartsubstanz", "Ein oberflächlicher, meist durch Säuren verursachter Substanzverlust ohne Bakterienbeteiligung", "Eine reine, oberflächliche Verfärbung ohne jeden Substanzverlust", "Eine ausschließlich genetisch bedingte Veränderung der Zahnhartsubstanz"],
     richtig: 1
   }, {
     id: "zahnhart-052",
     frage: "Was unterscheidet Abrasion von Erosion?",
-    optionen: ["Abrasion wird durch Reibung verursacht (z.B. Zahnpasta, Zahnbürste), Erosion durch Säuren – beide ohne Bakterienbeteiligung", "Abrasion wird durch Bakterien verursacht", "Es gibt keinen Unterschied", "Erosion wird durch Reibung, Abrasion durch Säuren verursacht"],
+    optionen: ["Abrasion entsteht durch Reibung, Erosion durch Säuren, beide ohne Bakterien", "Abrasion wird nach diesem Verständnis grundsätzlich durch Bakterien verursacht", "Zwischen beiden Formen besteht in der Praxis kein relevanter Unterschied", "Erosion entsteht nach diesem Verständnis durch Reibung, Abrasion durch Säuren"],
     richtig: 0
   }, {
     id: "zahnhart-053",
     frage: "Was verursacht Attrition der Zahnhartsubstanz?",
-    optionen: ["Säureeinwirkung", "Okklusionskontakt (Zahn-zu-Zahn-Kontakt), betrifft häufig Prämolaren und Molaren", "Falsche Zahnpasta", "Bakterien"],
+    optionen: ["Eine anhaltende, chemische Säureeinwirkung auf die Zahnoberfläche", "Okklusionskontakt, betrifft häufig Prämolaren und Molaren", "Eine falsch gewählte oder zu abrasive Zahnpasta", "Eine bakterielle Besiedlung der betroffenen Zahnoberfläche"],
     richtig: 1
   }, {
     id: "zahnhart-054",
     frage: "Was misst der BEWE-Index (Basic Erosive Wear Examination)?",
-    optionen: ["Den Grad der Parodontitis", "Das Ausmaß von Zahnschmelzverlust durch Erosion, eingeteilt in Sextanten", "Die Anzahl der Karieszähne", "Die Speichelmenge"],
+    optionen: ["Den vorliegenden Schweregrad einer bestehenden Parodontitis", "Das Ausmaß von Schmelzverlust durch Erosion, eingeteilt in Sextanten", "Die insgesamt vorhandene Anzahl kariöser Zähne im Gebiss", "Die aktuell im Mund vorhandene Speichelmenge"],
     richtig: 1
   }],
   allgemeinmedizin: [{
     id: "allgmed-001",
     frage: "Wofür steht die Abkürzung im Ablauf \"Anamnese > Befund > Diagnose > Therapie\"?",
-    optionen: ["Es ist die typische Reihenfolge des diagnostischen Vorgehens", "Es sind vier unabhängige, austauschbare Schritte", "Diagnose kommt immer zuerst", "Anamnese ist optional"],
+    optionen: ["Es ist die typische, standardisierte Reihenfolge des diagnostischen Vorgehens", "Es handelt sich um vier voneinander unabhängige, beliebig austauschbare Schritte", "Im klinischen Alltag steht die Diagnose grundsätzlich stets am Anfang", "Die Anamnese gilt in diesem Ablauf als vollständig optionaler Schritt"],
     richtig: 0
   }, {
     id: "allgmed-002",
     frage: "Was gehört zur allgemeinen Anamnese?",
-    optionen: ["Nur familiäre Erkrankungen", "Erkrankungen, die Einfluss auf die Behandlung haben können (Medikamente, Allergien, Klappenersatz, Diabetes etc.)", "Nur die aktuelle Beschwerde des Patienten", "Ausschließlich die Zahngeschichte"],
+    optionen: ["Nach diesem Verständnis ausschließlich bereits bekannte familiäre Erkrankungen", "Erkrankungen, die Einfluss auf die Behandlung haben können", "Nach diesem Verständnis ausschließlich die aktuelle Beschwerde des Patienten", "Nach diesem Verständnis ausschließlich die bisherige zahnärztliche Vorgeschichte"],
     richtig: 1
   }, {
     id: "allgmed-003",
     frage: "Was erfasst die Familienanamnese?",
-    optionen: ["Aktuelle Beschwerden des Patienten", "Vorerkrankungen, die bereits in der Familie aufgetreten sind (vererbbar)", "Nur Medikamenteneinnahme", "Nur zahnärztliche Vorbehandlungen"],
+    optionen: ["Ausschließlich die aktuellen Beschwerden des behandelten Patienten selbst", "Vorerkrankungen, die bereits in der Familie aufgetreten sind", "Ausschließlich die aktuelle Medikamenteneinnahme des Patienten", "Ausschließlich frühere zahnärztliche Behandlungen des Patienten"],
     richtig: 1
   }, {
     id: "allgmed-004",
     frage: "In wie viel Prozent der Notfallsituationen ist die Anamnese an der Erstdiagnose beteiligt?",
-    optionen: ["circa 10%", "circa 50%", "circa 85%", "100%"],
+    optionen: ["In etwa 10% der auftretenden Notfallsituationen", "In etwa 50% der auftretenden Notfallsituationen", "In etwa 85% der auftretenden Notfallsituationen", "In praktisch 100% aller auftretenden Notfallsituationen"],
     richtig: 2
   }, {
     id: "allgmed-005",
     frage: "Was unterscheidet den Soforttyp von einer Spättyp-Allergie?",
-    optionen: ["Beim Soforttyp reagiert der Körper unmittelbar bei Zweitkontakt heftig, beim Spättyp erst Tage/Wochen nach Kontakt", "Es gibt keinen Unterschied", "Spättyp-Allergien sind immer gefährlicher", "Soforttyp betrifft nur die Haut"],
+    optionen: ["Beim Soforttyp reagiert der Körper sofort heftig, beim Spättyp erst nach Tagen", "Zwischen beiden Allergietypen besteht in der Praxis kein relevanter Unterschied", "Spättyp-Allergien gelten grundsätzlich als deutlich gefährlicher als der Soforttyp", "Der Soforttyp betrifft nach diesem Verständnis ausschließlich die Haut"],
     richtig: 0
   }, {
     id: "allgmed-006",
     frage: "Welche Allergietyp-Klassifikation macht ungefähr 90% aller Allergien aus?",
-    optionen: ["Typ IV", "Typ I (Soforttyp, anaphylaktische Reaktion)", "Typ II", "Typ III"],
+    optionen: ["Der Typ IV, auch als verzögerter Typ bezeichnet", "Der Typ I, der sogenannte Soforttyp", "Der Typ II der klassischen Allergieeinteilung", "Der Typ III der klassischen Allergieeinteilung"],
     richtig: 1
   }, {
     id: "allgmed-007",
     frage: "Was ist typisch für eine Typ-IV-Allergie (verzögerter Typ)?",
-    optionen: ["Sie tritt innerhalb von Sekunden auf", "T-Zell-vermittelte Reaktion nach 24-72 Stunden, z.B. allergisches Kontaktekzem", "Sie wird ausschließlich durch Nahrungsmittel ausgelöst", "Sie ist identisch mit dem Soforttyp"],
+    optionen: ["Sie tritt typischerweise bereits innerhalb weniger Sekunden nach Kontakt auf", "T-Zell-vermittelte Reaktion nach 24-72 Stunden, z.B. Kontaktekzem", "Sie wird nach diesem Verständnis ausschließlich durch Nahrungsmittel ausgelöst", "Sie verläuft nach diesem Verständnis identisch zum klassischen Soforttyp"],
     richtig: 1
   }, {
     id: "allgmed-008",
     frage: "Welche Sofortmaßnahmen gehören zur Therapie einer Typ-I-Allergie (anaphylaktische Reaktion)?",
-    optionen: ["Allergenzufuhr stoppen, Notruf, Lagerung je nach Symptomatik, ggf. Adrenalin und Antihistaminika", "Nur Abwarten ohne Intervention", "Sofortige zahnärztliche Behandlung fortsetzen", "Nur eine Wunddesinfektion"],
+    optionen: ["Allergenzufuhr stoppen, Notruf, Lagerung, ggf. Adrenalin und Antihistaminika", "In diesem Fall grundsätzlich nur abwarten, ohne aktiv einzugreifen", "Die laufende zahnärztliche Behandlung soll unverändert fortgesetzt werden", "Ausschließlich eine örtliche Desinfektion der betroffenen Hautstelle"],
     richtig: 0
   }, {
     id: "allgmed-009",
     frage: "Was unterscheidet Diabetes Typ 1 von Typ 2?",
-    optionen: ["Typ 1 ist absoluter Insulinmangel durch Untergang der Beta-Zellen (3-5% Häufigkeit), Typ 2 ist reaktiver Insulinmangel (über 90% Häufigkeit)", "Beide Typen sind identisch in Ursache und Häufigkeit", "Typ 2 ist immer angeboren", "Typ 1 betrifft nur ältere Menschen"],
+    optionen: ["Typ 1 ist absoluter Insulinmangel, Typ 2 meist reaktiver Insulinmangel", "Beide Diabetestypen sind hinsichtlich Ursache und Häufigkeit identisch", "Diabetes Typ 2 gilt grundsätzlich als von Geburt an bestehende Erkrankung", "Diabetes Typ 1 betrifft nach diesem Verständnis ausschließlich ältere Menschen"],
     richtig: 0
   }, {
     id: "allgmed-010",
     frage: "Was zeigt der HbA1c-Wert bei Diabetes an, und welcher Zusammenhang besteht zu Parodontitis?",
-    optionen: ["Er hat keinen Bezug zur Mundgesundheit", "Das \"Blutzuckergedächtnis\" – je höher der HbA1c-Wert, desto höher das Risiko für eine Parodontitis", "Er misst ausschließlich den Blutdruck", "Ein hoher HbA1c-Wert senkt das Parodontitisrisiko"],
+    optionen: ["Der Wert steht nach diesem Verständnis in keinem Bezug zur Mundgesundheit", "Je höher der HbA1c-Wert, desto höher das Risiko für eine Parodontitis", "Der HbA1c-Wert misst nach diesem Verständnis ausschließlich den Blutdruck", "Ein hoher HbA1c-Wert senkt nach diesem Verständnis das Parodontitisrisiko"],
     richtig: 1
   }, {
     id: "allgmed-011",
     frage: "Wie sollte bei Diabetikern mit der Medikamenteneinnahme in der zahnärztlichen Behandlung umgegangen werden?",
-    optionen: ["Medikamente sollten grundsätzlich abgesetzt werden", "Medikamenteneinnahme in üblicher Weise fortführen, keine Nahrungskarenz", "Insulin sollte verdoppelt werden", "Es spielt keine Rolle"],
+    optionen: ["Die bestehende Medikation sollte für die Behandlung grundsätzlich abgesetzt werden", "Medikamenteneinnahme in üblicher Weise fortführen, keine Nahrungskarenz", "Die übliche Insulindosis sollte für die Behandlung verdoppelt werden", "Die Medikamenteneinnahme spielt bei der Behandlung keine relevante Rolle"],
     richtig: 1
   }, {
     id: "allgmed-012",
     frage: "Welche oralen Symptome können bei Diabetes auftreten?",
-    optionen: ["Keine, Diabetes hat keinen Einfluss auf die Mundhöhle", "Verstärkte Gingivitis/Parodontitis, Mundtrockenheit, Candida, Burning-Mouth-Syndrom", "Nur Karies", "Nur Zahnverlust"],
+    optionen: ["Nach diesem Verständnis keine, Diabetes hat keinen Einfluss auf die Mundhöhle", "Verstärkte Gingivitis, Mundtrockenheit, Candida, Burning-Mouth-Syndrom", "Nach diesem Verständnis ausschließlich eine erhöhte Kariesanfälligkeit", "Nach diesem Verständnis ausschließlich vermehrter Zahnverlust"],
     richtig: 1
   }, {
     id: "allgmed-013",
     frage: "Welche Medikamentengruppe steht bei Osteoporose in Zusammenhang mit dem Risiko einer Kiefernekrose?",
-    optionen: ["Antibiotika", "Antiresorptiva (u.a. Bisphosphonate, Alendronat, Ibandronat)", "Schmerzmittel", "Antihistaminika"],
+    optionen: ["Klassische Antibiotika der ersten Generation", "Antiresorptiva, u.a. Bisphosphonate und Alendronat", "Gängige, frei verkäufliche Schmerzmittel", "Antihistaminika gegen allergische Reaktionen"],
     richtig: 1
   }, {
     id: "allgmed-014",
     frage: "Gibt es bei Osteoporose-Patienten mit oraler Antiresorptiva-Einnahme eine Einschränkung bei zahnmedizinischen Prophylaxebehandlungen?",
-    optionen: ["Ja, jegliche Prophylaxebehandlung ist verboten", "Nein, keine Einschränkung bei zahnmedizinischen Prophylaxebehandlungen (bei oraler Einnahme)", "Nur Zahnreinigung ist erlaubt, keine anderen Maßnahmen", "Nur bei Frauen gibt es Einschränkungen"],
+    optionen: ["Ja, jegliche Form der Prophylaxebehandlung ist in diesem Fall verboten", "Nein, bei oraler Einnahme besteht keine Einschränkung bei der Prophylaxe", "Es ist lediglich die reine Zahnreinigung erlaubt, sonst keine Maßnahme", "Eine Einschränkung besteht nach diesem Verständnis nur bei weiblichen Patientinnen"],
     richtig: 1
   }, {
     id: "allgmed-015",
     frage: "Bei welchen zahnärztlichen Eingriffen ist bei Osteoporose-Patienten unter Antiresorptiva besondere Vorsicht (Cave) geboten?",
-    optionen: ["Bei Prophylaxebehandlungen", "Bei Extraktion und anderen chirurgischen Behandlungen", "Beim Zähneputzen", "Bei der Anamnese"],
+    optionen: ["Bei den üblichen zahnärztlichen Prophylaxebehandlungen", "Bei Extraktionen und anderen chirurgischen Behandlungen", "Beim gewöhnlichen häuslichen Zähneputzen des Patienten", "Bereits bei der grundlegenden zahnärztlichen Anamneseerhebung"],
     richtig: 1
   }, {
     id: "allgmed-016",
     frage: "Was ist charakteristisch für eine Blutgerinnungsstörung?",
-    optionen: ["Blutungen, die zu lang, zu stark oder ohne erkennbaren Anlass auftreten", "Immer eine sofort tödliche Erkrankung", "Sie betrifft nur ältere Menschen", "Sie hat keinen Einfluss auf zahnärztliche Behandlungen"],
+    optionen: ["Blutungen, die zu lang, zu stark oder ohne erkennbaren Anlass auftreten", "Es handelt sich dabei grundsätzlich um eine sofort tödliche Erkrankung", "Eine Blutgerinnungsstörung betrifft nach diesem Verständnis nur ältere Menschen", "Sie hat nach diesem Verständnis keinerlei Einfluss auf zahnärztliche Behandlungen"],
     richtig: 0
   }, {
     id: "allgmed-017",
     frage: "Was gilt bei zahnärztlichen Prophylaxebehandlungen bei Patienten mit Blutgerinnungsstörung/Antikoagulanzieneinnahme?",
-    optionen: ["Antikoagulanzien sollten vom Zahnarzt eigenmächtig reduziert werden", "Keine Einschränkung bei streng supragingivaler Instrumentierung, Antikoagulanzien keinesfalls eigenmächtig reduzieren", "Die Behandlung muss immer abgesagt werden", "Es sind keine besonderen Maßnahmen nötig"],
+    optionen: ["Antikoagulanzien sollten vom Zahnarzt in Eigenregie reduziert werden", "Keine Einschränkung bei streng supragingivaler Instrumentierung", "Die geplante Behandlung muss in diesem Fall grundsätzlich abgesagt werden", "In diesem Fall sind grundsätzlich keine besonderen Maßnahmen nötig"],
     richtig: 1
   }, {
     id: "allgmed-018",
     frage: "Welche klinischen Zeichen deuten auf eine Blutgerinnungsstörung hin?",
-    optionen: ["Häufiges Nasenbluten, Zahnfleischbluten, schnelle/starke Hämatombildung", "Ausschließlich Fieber", "Nur Kopfschmerzen", "Nur Mundtrockenheit"],
+    optionen: ["Häufiges Nasenbluten, Zahnfleischbluten und starke Hämatombildung", "Nach diesem Verständnis ausschließlich anhaltendes hohes Fieber", "Nach diesem Verständnis ausschließlich wiederkehrende Kopfschmerzen", "Nach diesem Verständnis ausschließlich anhaltende Mundtrockenheit"],
     richtig: 0
   }, {
     id: "allgmed-019",
     frage: "Was besagt die S3-Leitlinie zur zahnärztlichen Chirurgie unter oraler Antikoagulation grundsätzlich in Bezug auf das Vorgehen?",
-    optionen: ["Es gibt eine klare Leitlinie, die Rücksprache mit dem behandelnden Arzt und angepasstes Vorgehen empfiehlt", "Es gibt keinerlei Empfehlungen für diese Patientengruppe", "Antikoagulanzien müssen immer abgesetzt werden", "Es sind keine besonderen Maßnahmen notwendig"],
+    optionen: ["Sie empfiehlt Rücksprache mit dem behandelnden Arzt und ein angepasstes Vorgehen", "Für diese Patientengruppe existieren nach diesem Verständnis keinerlei Empfehlungen", "Antikoagulanzien müssen laut dieser Leitlinie grundsätzlich abgesetzt werden", "Bei dieser Patientengruppe sind grundsätzlich keine besonderen Maßnahmen notwendig"],
     richtig: 0
   }, {
     id: "allgmed-020",
     frage: "Welche Maßnahmen zur erweiterten Blutstillung werden bei Blutungsneigung genannt?",
-    optionen: ["Lokale Kompression, resorbierbare Hämostyptika, Naht, Mundspülung mit Tranexamsäure", "Nur Abwarten ohne Intervention", "Sofortige systemische Antibiotikagabe", "Es gibt keine speziellen Maßnahmen"],
+    optionen: ["Lokale Kompression, resorbierbare Hämostyptika sowie eine Naht", "In diesem Fall grundsätzlich nur ein abwartendes Verhalten ohne Eingreifen", "Eine sofortige, systemische Antibiotikagabe unabhängig vom Befund", "Für diese Situation existieren nach diesem Verständnis keine speziellen Maßnahmen"],
     richtig: 0
   }, {
     id: "allgmed-021",
     frage: "Was ist eine bakterielle Endokarditis?",
-    optionen: ["Eine harmlose, nicht behandlungsbedürftige Erkrankung", "Eine durch einen infektiösen Streuherd im Bereich der Herzinnenhaut/Herzklappen verursachte, unbehandelt potenziell tödliche Erkrankung", "Eine reine Hauterkrankung", "Eine Erkrankung der Lunge"],
+    optionen: ["Eine harmlose, grundsätzlich nicht behandlungsbedürftige Erkrankung", "Eine durch einen Streuherd an der Herzinnenhaut verursachte, unbehandelt gefährliche Erkrankung", "Eine rein oberflächliche Erkrankung der äußeren Haut ohne systemische Folgen", "Eine ausschließlich die Lunge betreffende, entzündliche Erkrankung"],
     richtig: 1
   }, {
     id: "allgmed-022",
     frage: "Welche zahnärztlichen Eingriffe gelten als Risikoprozeduren für eine bakterielle Endokarditis?",
-    optionen: ["Nur professionelle Zahnreinigung ohne jede Blutung", "Eingriffe mit Manipulation an Gingiva, periapikaler Zahnregion oder Perforation der oralen Mukosa", "Nur die Anamnese", "Röntgenaufnahmen"],
+    optionen: ["Nach diesem Verständnis ausschließlich eine professionelle Zahnreinigung ohne Blutung", "Eingriffe mit Manipulation an Gingiva oder Perforation der oralen Mukosa", "Nach diesem Verständnis ausschließlich die grundlegende zahnärztliche Anamnese", "Nach diesem Verständnis ausschließlich das Anfertigen von Röntgenaufnahmen"],
     richtig: 1
   }, {
     id: "allgmed-023",
     frage: "Wie wird die Antibiotikaprophylaxe zur Endokarditisprophylaxe bei Erwachsenen zeitlich vor dem Eingriff verabreicht?",
-    optionen: ["Erst nach dem Eingriff", "30-60 Minuten vor der Behandlung", "Eine Woche vorher", "Sie wird immer erst 2 Stunden nach dem Eingriff gegeben"],
+    optionen: ["Sie wird in diesem Fall grundsätzlich erst nach dem Eingriff verabreicht", "Etwa 30 bis 60 Minuten vor der geplanten Behandlung", "Bereits eine volle Woche vor dem geplanten zahnärztlichen Eingriff", "Erst rund zwei Stunden nach dem abgeschlossenen Eingriff"],
     richtig: 1
   }, {
     id: "allgmed-024",
     frage: "Welche Patientengruppe hat laut den Materialien die höchste Wahrscheinlichkeit eines schweren/letalen Verlaufs einer infektiösen Endokarditis?",
-    optionen: ["Patienten mit Klappenersatz oder überstandener Endokarditis", "Alle Patienten über 18 Jahre", "Nur Diabetiker", "Nur Raucher"],
+    optionen: ["Patienten mit Klappenersatz oder bereits überstandener Endokarditis", "Grundsätzlich alle erwachsenen Patienten über 18 Jahre gleichermaßen", "Nach diesem Verständnis ausschließlich Patienten mit Diabetes mellitus", "Nach diesem Verständnis ausschließlich Raucher unabhängig vom Alter"],
     richtig: 0
   }, {
     id: "allgmed-025",
     frage: "Was ist Angina pectoris?",
-    optionen: ["Eine Form von Karies", "Anfallsartiger Brustschmerz durch eine vorübergehende Durchblutungsstörung des Herzens", "Eine Erkrankung der Mundschleimhaut", "Eine Allergieform"],
+    optionen: ["Eine besondere, klar abgrenzbare Form von Karies", "Anfallsartiger Brustschmerz durch eine vorübergehende Durchblutungsstörung des Herzens", "Eine primär entzündliche Erkrankung der Mundschleimhaut", "Eine bestimmte, weitverbreitete Form der Nahrungsmittelallergie"],
     richtig: 1
   }, {
     id: "allgmed-026",
     frage: "Warum kann Angina pectoris zahnärztlich relevant sein?",
-    optionen: ["Sie hat nie Bezug zur Zahnmedizin", "Sie kann sich mit zahnschmerzähnlichen Beschwerden im Unterkiefer äußern, wodurch Patienten fälschlich zuerst den Zahnarzt aufsuchen", "Sie verursacht ausschließlich Zahnverfärbungen", "Sie tritt nur bei Kindern auf"],
+    optionen: ["Sie steht nach diesem Verständnis in keinerlei Bezug zur Zahnmedizin", "Sie kann sich mit zahnschmerzähnlichen Beschwerden im Unterkiefer äußern", "Sie verursacht nach diesem Verständnis ausschließlich Zahnverfärbungen", "Sie tritt nach diesem Verständnis ausschließlich bei Kindern auf"],
     richtig: 1
   }, {
     id: "allgmed-027",
     frage: "Wie lange sollten nach einem Herzinfarkt keine elektiven (planbaren) zahnärztlichen Eingriffe erfolgen?",
-    optionen: ["1 Woche", "6 Monate", "Es gibt keine zeitliche Einschränkung", "5 Jahre"],
+    optionen: ["Für einen Zeitraum von rund einer Woche", "Für einen Zeitraum von rund sechs Monaten", "In diesem Fall besteht keinerlei zeitliche Einschränkung", "Für einen sehr langen Zeitraum von rund fünf Jahren"],
     richtig: 1
   }, {
     id: "allgmed-028",
     frage: "Was gilt bei der Lokalanästhesie nach Herzinfarkt bezüglich Adrenalinzusatz?",
-    optionen: ["Beliebig viel Adrenalin ist erlaubt", "Nicht mehr Adrenalinzusatz als 1:200.000", "Adrenalin ist grundsätzlich verboten", "Adrenalin spielt keine Rolle"],
+    optionen: ["In diesem Fall ist eine beliebig hohe Menge an Adrenalin grundsätzlich erlaubt", "Nicht mehr Adrenalinzusatz als im Verhältnis 1:200.000", "Der Einsatz von Adrenalin ist in diesem Fall grundsätzlich vollständig verboten", "Der Adrenalinzusatz spielt in diesem Zusammenhang keine relevante Rolle"],
     richtig: 1
   }, {
     id: "allgmed-029",
     frage: "Was zeichnet Multiple Sklerose aus?",
-    optionen: ["Eine chronisch entzündliche Erkrankung des zentralen Nervensystems, häufiger bei Frauen, Erkrankungsalter meist 20-40 Jahre", "Eine reine Alterserkrankung", "Eine bakterielle Infektion", "Eine Erkrankung, die nur Männer betrifft"],
+    optionen: ["Eine chronisch entzündliche ZNS-Erkrankung, häufiger bei Frauen im Alter von 20-40 Jahren", "Eine typische, ausschließlich im höheren Lebensalter auftretende Erkrankung", "Eine primär bakteriell bedingte Infektionskrankheit des Nervensystems", "Eine Erkrankung, die nach diesem Verständnis ausschließlich Männer betrifft"],
     richtig: 0
   }, {
     id: "allgmed-030",
     frage: "Welche Symptomgruppen können bei Parkinson auftreten?",
-    optionen: ["Nur psychische Symptome", "Motorische (Tremor), sensorische, vegetative und psychische Störungen", "Nur Sehstörungen", "Ausschließlich Sprachstörungen"],
+    optionen: ["Nach diesem Verständnis ausschließlich rein psychische Symptome", "Motorische, sensorische, vegetative und psychische Störungen", "Nach diesem Verständnis ausschließlich isolierte Sehstörungen", "Nach diesem Verständnis ausschließlich isolierte Sprachstörungen"],
     richtig: 1
   }, {
     id: "allgmed-031",
     frage: "Worauf sollte bei Patienten mit Antidepressiva-Einnahme im Zusammenhang mit Lokalanästhesie geachtet werden?",
-    optionen: ["Es gibt keine Wechselwirkungen zu beachten", "Achtung bei intravasaler (i.v.) Gabe im Zusammenhang mit Lokalanästhesie", "Antidepressiva verstärken nur die Zahnschmelzbildung", "Es sind keine Vorsichtsmaßnahmen nötig"],
+    optionen: ["In diesem Zusammenhang bestehen grundsätzlich keine relevanten Wechselwirkungen", "Achtung bei intravasaler Gabe im Zusammenhang mit der Lokalanästhesie", "Antidepressiva verstärken in diesem Zusammenhang lediglich die Zahnschmelzbildung", "In diesem Fall sind grundsätzlich keinerlei Vorsichtsmaßnahmen nötig"],
     richtig: 1
   }, {
     id: "allgmed-032",
     frage: "Wofür besteht bei Patienten mit Demenz/Parkinson/MS ein besonders erhöhtes Risiko?",
-    optionen: ["Für Wurzelkaries und Parodontitis", "Für Herzinfarkt ausschließlich", "Für Allergien", "Für Osteoporose ausschließlich"],
+    optionen: ["Für die Entstehung von Wurzelkaries und fortschreitender Parodontitis", "Nach diesem Verständnis ausschließlich für einen erlittenen Herzinfarkt", "Nach diesem Verständnis ausschließlich für bestehende Allergien", "Nach diesem Verständnis ausschließlich für eine bestehende Osteoporose"],
     richtig: 0
   }, {
     id: "allgmed-033",
     frage: "Welche Medikamentengruppen können zu Mundtrockenheit führen?",
-    optionen: ["Nur Antibiotika", "U.a. Antihistaminika, Antihypertensiva, Diuretika, Psychopharmaka, Sedativa", "Ausschließlich Vitamine", "Keine Medikamente verursachen Mundtrockenheit"],
+    optionen: ["Nach diesem Verständnis ausschließlich verschiedene Antibiotikaklassen", "U.a. Antihistaminika, Antihypertensiva, Diuretika und Psychopharmaka", "Nach diesem Verständnis ausschließlich Vitaminpräparate", "Medikamente verursachen laut diesem Verständnis grundsätzlich keine Mundtrockenheit"],
     richtig: 1
   }, {
     id: "allgmed-034",
     frage: "Welche Medikamentengruppen können zu einer Gingivahyperplasie (Zahnfleischwucherung) führen?",
-    optionen: ["Nur Schmerzmittel", "U.a. bestimmte Antiepileptika (Phenytoin), Immunsuppressiva (Cyclosporin) und Kalziumkanalblocker (Nifedipin, Amlodipin)", "Nur Vitamine", "Ausschließlich Antibiotika"],
+    optionen: ["Nach diesem Verständnis ausschließlich gängige Schmerzmittel", "U.a. bestimmte Antiepileptika, Immunsuppressiva und Kalziumkanalblocker", "Nach diesem Verständnis ausschließlich Vitaminpräparate", "Nach diesem Verständnis ausschließlich verschiedene Antibiotikaklassen"],
     richtig: 1
   }, {
     id: "allgmed-035",
     frage: "Welche orale Nebenwirkung kann bei Patienten mit inhalativen Kortikoid-Präparaten (z.B. bei Asthma) auftreten?",
-    optionen: ["Candidiasis", "Zahnschmelzverlust", "Zahnverfärbung als einzige Nebenwirkung", "Keine oralen Nebenwirkungen möglich"],
+    optionen: ["Eine orale Candidiasis (Mundsoor)", "Ein deutlicher, fortschreitender Zahnschmelzverlust", "Nach diesem Verständnis ausschließlich eine Zahnverfärbung", "Nach diesem Verständnis bestehen grundsätzlich keine oralen Nebenwirkungen"],
     richtig: 0
   }, {
     id: "allgmed-036",
     frage: "Was gehört zu den Routinemethoden der Befunderhebung?",
-    optionen: ["Nur Röntgen", "Inspektion, Palpation, Perkussion, Vitalitätsprüfung, Lockerungsgrad, Okklusion", "Nur eine Blutuntersuchung", "Ausschließlich die Anamnese"],
+    optionen: ["Nach diesem Verständnis ausschließlich eine Röntgenuntersuchung", "Inspektion, Palpation, Perkussion, Vitalitätsprüfung und Okklusionsprüfung", "Nach diesem Verständnis ausschließlich eine begleitende Blutuntersuchung", "Nach diesem Verständnis ausschließlich die reine Anamneseerhebung"],
     richtig: 1
   }, {
     id: "allgmed-037",
     frage: "Wie wird bei der extraoralen Untersuchung die Motorik geprüft?",
-    optionen: ["Durch Aufforderung, die Nase zu rümpfen oder den Mund zu spitzen", "Durch Abtasten der Zähne", "Durch eine Blutuntersuchung", "Motorik wird nicht extraoral geprüft"],
+    optionen: ["Durch Aufforderung, die Nase zu rümpfen oder den Mund zu spitzen", "Durch das übliche Abtasten der einzelnen Zähne", "Durch eine ergänzende, klassische Blutuntersuchung", "Die Motorik wird bei der extraoralen Untersuchung grundsätzlich nicht geprüft"],
     richtig: 0
   }, {
     id: "allgmed-038",
     frage: "Was wird bei der Prüfung der Sensibilität untersucht?",
-    optionen: ["Nur die Zahnfarbe", "Stumpf-Spitz-Diskrimination, Zwei-Punkt-Diskrimination, ggf. Anästhesie/Hypästhesie/Hyperästhesie/Parästhesie", "Nur der Blutdruck", "Die Kaukraft"],
+    optionen: ["Nach diesem Verständnis ausschließlich die individuelle Zahnfarbe", "Stumpf-Spitz-Diskrimination und Zwei-Punkt-Diskrimination, ggf. Parästhesie", "Nach diesem Verständnis ausschließlich der aktuelle Blutdruck", "Nach diesem Verständnis ausschließlich die individuelle Kaukraft"],
     richtig: 1
   }, {
     id: "allgmed-039",
     frage: "Was ist Leukoplakie?",
-    optionen: ["Eine rote, abwischbare Veränderung der Mundschleimhaut", "Eine weißliche, nicht abwischbare Veränderung der Mundschleimhaut, die als fakultative Präkanzerose gilt", "Eine harmlose, immer temporäre Verfärbung", "Eine Form von Karies"],
+    optionen: ["Eine rote, gut abwischbare Veränderung der Mundschleimhaut", "Eine weißliche, nicht abwischbare Veränderung mit Präkanzerose-Potential", "Eine harmlose, grundsätzlich nur vorübergehende Verfärbung", "Eine besondere, klar abgrenzbare Form von Karies"],
     richtig: 1
   }, {
     id: "allgmed-040",
     frage: "Welche Leukoplakie-Form gilt im Allgemeinen als harmlos, welche hat Entartungspotential?",
-    optionen: ["Plane Leukoplakien sind im Allgemeinen harmlos, erosive und verruköse haben Entartungspotential", "Alle Leukoplakieformen sind gleich gefährlich", "Plane Leukoplakien sind immer bösartig", "Es gibt nur eine Form von Leukoplakie"],
+    optionen: ["Plane Leukoplakien gelten meist als harmlos, erosive/verruköse haben Entartungspotential", "Sämtliche Leukoplakieformen gelten grundsätzlich als gleich gefährlich", "Plane Leukoplakien gelten nach diesem Verständnis grundsätzlich als bösartig", "Es wird nach diesem Verständnis grundsätzlich nur eine einzige Form unterschieden"],
     richtig: 0
   }, {
     id: "allgmed-041",
     frage: "Was ist der Oraler Lichen Planus (OLP)?",
-    optionen: ["Eine reine Pilzinfektion", "Eine Autoimmunerkrankung mit weißlichen, streifenartigen Schleimhautveränderungen (Wickham-Streifen), die eine Präkanzerose darstellt", "Eine harmlose anatomische Variante ohne Krankheitswert", "Eine Form von Karies"],
+    optionen: ["Eine primär durch Pilze verursachte Infektion der Mundschleimhaut", "Eine Autoimmunerkrankung mit weißlichen Wickham-Streifen und Präkanzerose-Charakter", "Eine harmlose, anatomische Normvariante ohne jeden Krankheitswert", "Eine besondere, klar abgrenzbare Form von Karies"],
     richtig: 1
   }, {
     id: "allgmed-042",
     frage: "Was ist eine Erythroplakie und wie unterscheidet sie sich von der Leukoplakie in Bezug auf das Entartungsrisiko?",
-    optionen: ["Sie ist das Pendant zur Leukoplakie, gerötet statt weiß, und entartet häufiger als die Leukoplakie", "Sie hat kein Entartungsrisiko", "Sie ist immer harmlos", "Sie kommt nur bei Kindern vor"],
+    optionen: ["Sie ist das Pendant zur Leukoplakie, gerötet statt weiß, entartet aber häufiger", "Sie besitzt nach diesem Verständnis grundsätzlich kein Entartungsrisiko", "Sie gilt nach diesem Verständnis grundsätzlich als vollkommen harmlos", "Sie tritt nach diesem Verständnis ausschließlich bei Kindern auf"],
     richtig: 0
   }, {
     id: "allgmed-043",
     frage: "Was ist eine Candidose (Candidiasis) der Mundhöhle?",
-    optionen: ["Eine bakterielle Infektion", "Eine Pilzinfektion, auch Soor genannt, begünstigt durch Antibiotika, Glukokortikoide oder Zytostatika", "Eine genetische Fehlbildung", "Eine Form von Zahnstein"],
+    optionen: ["Eine primär durch Bakterien verursachte Infektion der Mundschleimhaut", "Eine Pilzinfektion, begünstigt durch Antibiotika, Kortikoide oder Zytostatika", "Eine ausschließlich genetisch bedingte Fehlbildung der Mundschleimhaut", "Eine besondere, klar abgrenzbare Form von Zahnstein"],
     richtig: 1
   }, {
     id: "allgmed-044",
     frage: "Wodurch werden Papillome der Mundschleimhaut verursacht?",
-    optionen: ["Durch Vitaminmangel", "Durch humanes Papilloma Virus (HPV)", "Durch mechanische Reibung allein", "Durch Bakterien"],
+    optionen: ["Durch einen bestehenden Mangel an bestimmten Vitaminen", "Durch das humane Papilloma Virus (HPV)", "Durch anhaltende mechanische Reibung ohne weitere Ursache", "Durch eine primär bakterielle Infektion der Mundschleimhaut"],
     richtig: 1
   }, {
     id: "allgmed-045",
     frage: "Was unterscheidet Low-risk- von High-risk-HPV bezüglich Papillomen?",
-    optionen: ["Low-risk hat kein Malignitätspotential, High-risk erhöht das Risiko für ein Karzinom des Mund-/Rachenraums", "Beide sind gleich gefährlich", "High-risk-HPV ist immer harmlos", "Es gibt keinen Unterschied zwischen den beiden Typen"],
+    optionen: ["Low-risk-Typen haben kein Malignitätspotential, High-risk erhöht das Karzinomrisiko", "Beide HPV-Typen gelten in ihrem Risikoprofil grundsätzlich als gleich gefährlich", "High-risk-HPV gilt nach diesem Verständnis grundsätzlich als vollkommen harmlos", "Zwischen beiden HPV-Typen besteht in der Praxis kein relevanter Unterschied"],
     richtig: 0
   }, {
     id: "allgmed-046",
     frage: "Was ist die schwarze Haarzunge?",
-    optionen: ["Eine bösartige Tumorerkrankung", "Hypertrophie und Hyperkeratose der Papillae filiformes, symptomlos, gelegentlich durch Antibiotika/Zytostatika", "Eine Form von Karies", "Eine Infektionskrankheit durch Bakterien"],
+    optionen: ["Eine seltene, primär bösartige Tumorerkrankung der Zunge", "Hypertrophie/Hyperkeratose der Papillae filiformes, meist symptomlos", "Eine besondere, klar abgrenzbare Form von Karies der Zunge", "Eine primär bakteriell verursachte Infektionskrankheit der Zunge"],
     richtig: 1
   }, {
     id: "allgmed-047",
     frage: "Was ist das Kaposi-Sarkom im Kontext der Mundschleimhaut?",
-    optionen: ["Eine harmlose Zungenveränderung", "Eine AIDS-assoziierte, aggressive Tumorerkrankung, die auch die Mundhöhle betreffen kann", "Eine Form von Zahnfleischbluten", "Eine allergische Reaktion"],
+    optionen: ["Eine harmlose, rein anatomisch bedingte Zungenveränderung", "Eine AIDS-assoziierte, aggressive Tumorerkrankung mit oraler Beteiligung", "Eine besondere, gut abgrenzbare Form von Zahnfleischbluten", "Eine typische, lokal begrenzte allergische Reaktion der Mundschleimhaut"],
     richtig: 1
   }, {
     id: "allgmed-048",
     frage: "Was kennzeichnet die Lingua plicata (Faltenzunge)?",
-    optionen: ["Verstärkte Faltenbildung, vererblich, meist keine funktionelle Beeinträchtigung", "Eine bösartige Erkrankung mit hoher Entartungsrate", "Sie ist immer ein Zeichen für eine akute Infektion", "Sie kommt ausschließlich bei Rauchern vor"],
+    optionen: ["Verstärkte Faltenbildung, vererblich, meist ohne funktionelle Beeinträchtigung", "Eine bösartige Erkrankung mit einer auffällig hohen Entartungsrate", "Sie gilt grundsätzlich als sicheres Zeichen einer akuten Infektion", "Sie tritt nach diesem Verständnis ausschließlich bei Rauchern auf"],
     richtig: 0
   }, {
     id: "allgmed-049",
     frage: "Wie äußert sich die Lingua geographica (Landkartenzunge)?",
-    optionen: ["Als gleichmäßig raue Zungenoberfläche ohne Farbveränderung", "Als runde/girlandenförmige helle, rote oder rosafarbene Flecken mit grauweißen Säumen durch Abstoßung der Papillae filiformes", "Als dauerhafte Schwarzfärbung der Zunge", "Als Zahnverlust"],
+    optionen: ["Als eine gleichmäßig raue Zungenoberfläche ohne erkennbare Farbveränderung", "Als girlandenförmige, rote oder rosafarbene Flecken mit grauweißen Säumen", "Als eine dauerhafte, flächige Schwarzfärbung der gesamten Zunge", "Als ein fortschreitender Verlust der betroffenen Zähne"],
     richtig: 1
   }, {
     id: "allgmed-050",
     frage: "Was ist eine Cheilitis angularis (Mundwinkelrhagade)?",
-    optionen: ["Eine lokale Kontaktdermatitis/Infektion (z.B. durch Candida albicans) an den Mundwinkeln", "Eine Erkrankung ausschließlich der Zunge", "Eine Form von Karies", "Eine reine Zahnfehlstellung"],
+    optionen: ["Eine lokale Kontaktdermatitis bzw. Infektion an den Mundwinkeln", "Eine Erkrankung, die nach diesem Verständnis ausschließlich die Zunge betrifft", "Eine besondere, klar abgrenzbare Form von Karies", "Eine ausschließlich angeborene Form der Zahnfehlstellung"],
     richtig: 0
   }, {
     id: "allgmed-051",
     frage: "Wie geht man bei nicht abwischbaren weißen Schleimhautveränderungen (Verdacht auf OLP) praktisch vor?",
-    optionen: ["Sofortige Extraktion aller Zähne", "Bürstenzytologie oder Probeinzision/Exzision zur histopathologischen Diagnosesicherung", "Keine Maßnahme notwendig", "Nur eine Röntgenaufnahme"],
+    optionen: ["Es erfolgt in diesem Fall grundsätzlich die sofortige Extraktion aller Zähne", "Bürstenzytologie oder Probeinzision zur histopathologischen Diagnosesicherung", "In diesem Fall ist grundsätzlich keine weitere Maßnahme notwendig", "Es erfolgt in diesem Fall lediglich eine ergänzende Röntgenaufnahme"],
     richtig: 1
   }, {
     id: "allgmed-052",
     frage: "Wie geht man bei abwischbaren Schleimhautveränderungen (Verdacht auf Candidiasis) praktisch vor?",
-    optionen: ["Mikrobiologische Untersuchung (Abstrich) bei Verdacht auf Pilze/Viren", "Sofortige Operation", "Es ist keine Diagnostik notwendig", "Nur eine Blutuntersuchung"],
+    optionen: ["Mikrobiologische Untersuchung mittels Abstrich bei Verdacht auf Pilze", "Es erfolgt in diesem Fall grundsätzlich eine sofortige Operation", "In diesem Fall ist grundsätzlich keine weitere Diagnostik notwendig", "Es erfolgt in diesem Fall lediglich eine ergänzende Blutuntersuchung"],
     richtig: 0
   }, {
     id: "allgmed-053",
     frage: "Wann sollte an eine Überweisung zum Spezialisten gedacht werden?",
-    optionen: ["Nie, der Zahnarzt behandelt alles selbst", "Bei unklaren oder therapieresistenten Befunden sowie bei systemischen Erkrankungen mit oralen Symptomen", "Nur bei Zahnschmerzen", "Nur bei Kindern"],
+    optionen: ["Grundsätzlich nie, der Zahnarzt behandelt sämtliche Befunde selbst", "Bei unklaren oder therapieresistenten Befunden sowie systemischen Erkrankungen", "Nach diesem Verständnis ausschließlich bei akuten Zahnschmerzen", "Nach diesem Verständnis ausschließlich bei minderjährigen Patienten"],
     richtig: 1
   }, {
     id: "allgmed-054",
     frage: "Was ist die generelle Konsequenz von Mundschleimhautveränderungen für die zahnärztliche Prophylaxebehandlung?",
-    optionen: ["Gründliche Inspektion der Mundhöhle und ggf. zahnärztliche Abklärung VOR der Prophylaxebehandlung", "Mundschleimhautveränderungen spielen für die Prophylaxe keine Rolle", "Die Behandlung muss immer sofort abgebrochen werden", "Es ist grundsätzlich keine Reaktion erforderlich"],
+    optionen: ["Gründliche Inspektion und ggf. zahnärztliche Abklärung vor der Prophylaxe", "Mundschleimhautveränderungen spielen für die Prophylaxe grundsätzlich keine Rolle", "Die geplante Behandlung muss in diesem Fall grundsätzlich sofort abgebrochen werden", "Es ist in diesem Fall grundsätzlich keinerlei Reaktion erforderlich"],
     richtig: 0
   }, {
     id: "allgmed-055",
     frage: "Was besagt das HIV-Übertragungsrisiko bei einer Nadelstichverletzung (NSV) ungefähr?",
-    optionen: ["Es liegt bei unter 0,3%", "Es liegt bei über 90%", "Es gibt kein Übertragungsrisiko", "Es liegt bei genau 50%"],
+    optionen: ["Es liegt nach aktuellem Kenntnisstand bei unter 0,3%", "Es liegt nach diesem Verständnis grundsätzlich bei über 90%", "Bei einer Nadelstichverletzung besteht grundsätzlich kein Übertragungsrisiko", "Es liegt nach diesem Verständnis bei exakt 50%"],
     richtig: 0
   }, {
     id: "allgmed-056",
     frage: "Wie sollte bei einer Nadelstichverletzung als Erstmaßnahme vorgegangen werden?",
-    optionen: ["Wunde abbinden und Blutfluss stoppen", "Spontanen Blutfluss nicht unterbinden, nicht abbinden, mit Wasser und Seife spülen, zusätzlich Antiseptikum", "Wunde ignorieren", "Sofortige Wundnaht ohne weitere Maßnahmen"],
+    optionen: ["Die Wunde sollte umgehend abgebunden werden, um den Blutfluss zu stoppen", "Blutfluss nicht unterbinden, mit Wasser und Seife spülen, Antiseptikum anwenden", "Die betroffene Wunde sollte in diesem Fall grundsätzlich ignoriert werden", "Es erfolgt eine sofortige Wundnaht ohne weitere begleitende Maßnahmen"],
     richtig: 1
   }, {
     id: "allgmed-057",
     frage: "Wird HIV durch Tröpfcheninfektion übertragen?",
-    optionen: ["Ja, HIV wird hauptsächlich durch Tröpfcheninfektion übertragen", "Nein, keine Tröpfcheninfektion bei HIV", "Nur bei engem Kontakt über mehrere Stunden", "Nur beim Husten"],
+    optionen: ["Ja, HIV wird nach diesem Verständnis hauptsächlich über Tröpfchen übertragen", "Nein, eine Übertragung durch Tröpfcheninfektion findet bei HIV nicht statt", "Nur bei sehr engem Kontakt über mehrere Stunden hinweg", "Ausschließlich beim Husten in unmittelbarer Nähe einer infizierten Person"],
     richtig: 1
   }, {
     id: "allgmed-058",
     frage: "Welche Hepatitisform ist laut den Materialien am häufigsten (HB > HA > HC > HD, HE)?",
-    optionen: ["Hepatitis E", "Hepatitis B", "Hepatitis D", "Hepatitis C"],
+    optionen: ["Die Hepatitis-E-Form", "Die Hepatitis-B-Form", "Die Hepatitis-D-Form", "Die Hepatitis-C-Form"],
     richtig: 1
   }, {
     id: "allgmed-059",
     frage: "Besteht zwischen den einzelnen Hepatitisformen eine Kreuzimmunität?",
-    optionen: ["Ja, vollständige Kreuzimmunität", "Nein, keine Kreuzimmunität zwischen den Hepatitisformen", "Nur zwischen Hepatitis A und B", "Nur bei geimpften Personen"],
+    optionen: ["Ja, zwischen sämtlichen Hepatitisformen besteht eine vollständige Kreuzimmunität", "Nein, zwischen den verschiedenen Hepatitisformen besteht keine Kreuzimmunität", "Eine Kreuzimmunität besteht nach diesem Verständnis nur zwischen Hepatitis A und B", "Eine Kreuzimmunität besteht nach diesem Verständnis nur bei geimpften Personen"],
     richtig: 1
   }, {
     id: "allgmed-060",
     frage: "Worauf sollte bei der zahnärztlichen Behandlung von Patienten mit Hepatitis besonders geachtet werden?",
-    optionen: ["Auf nichts Besonderes", "Zurückhaltende Verordnung von Medikamenten, die über die Leber verstoffwechselt werden, sowie strikte Hygiene", "Nur auf die Zahnfarbe", "Auf besonders viel Fluoridgabe"],
+    optionen: ["In diesem Zusammenhang besteht grundsätzlich keine besondere Beachtung nötig", "Zurückhaltende Verordnung leberpflichtiger Medikamente sowie strikte Hygiene", "Bei der Behandlung ist in erster Linie auf die individuelle Zahnfarbe zu achten", "Bei diesen Patienten wird in diesem Zusammenhang besonders viel Fluorid verabreicht"],
     richtig: 1
   }]
 };
@@ -1332,7 +1332,8 @@ function useFortschritt() {
           proThema: {},
           pruefungsversuche: [],
           ausgeschlosseneFragenIds: [],
-          ausgeschlosseneThemenIds: []
+          ausgeschlosseneThemenIds: [],
+          karteikarten: {}
         });
       }
     } catch (e) {
@@ -1340,7 +1341,8 @@ function useFortschritt() {
         proThema: {},
         pruefungsversuche: [],
         ausgeschlosseneFragenIds: [],
-        ausgeschlosseneThemenIds: []
+        ausgeschlosseneThemenIds: [],
+        karteikarten: {}
       });
     }
     setGeladen(true);
@@ -1675,13 +1677,20 @@ function ThemaScreen({
   themaId,
   fortschritt,
   onZurueck,
-  onStartLernen
+  onStartLernen,
+  onStartKarteikarten
 }) {
   const thema = THEMEN_META.find(t => t.id === themaId);
   const fragen = FRAGEN_DATEN[themaId] || [];
   const stat = fortschritt.proThema[themaId];
   const falscheIds = stat?.falscheFragenIds || [];
   const anzahlWiederholen = falscheIds.filter(id => fragen.some(f => f.id === id)).length;
+  const karteikartenStatus = fortschritt.karteikarten?.[themaId] || {};
+  const anzahlFaelligeKarten = fragen.filter(f => {
+    const k = karteikartenStatus[f.id];
+    if (!k) return true;
+    return new Date(k.faelligAm) <= new Date();
+  }).length;
   return /*#__PURE__*/React.createElement("div", {
     style: {
       padding: "20px 20px 100px"
@@ -1730,9 +1739,19 @@ function ThemaScreen({
     }
   }, fragen.length, " Fragen im Lernpool"), /*#__PURE__*/React.createElement("div", {
     style: {
+      fontSize: 12,
+      letterSpacing: 1,
+      color: "#7A7264",
+      textTransform: "uppercase",
+      fontWeight: 600,
+      marginBottom: 10
+    }
+  }, "Quiz-Modus"), /*#__PURE__*/React.createElement("div", {
+    style: {
       display: "flex",
       flexDirection: "column",
-      gap: 12
+      gap: 12,
+      marginBottom: 26
     }
   }, /*#__PURE__*/React.createElement("button", {
     onClick: () => onStartLernen("alle"),
@@ -1788,7 +1807,39 @@ function ThemaScreen({
       fontSize: 13,
       color: "#7A7264"
     }
-  }, anzahlWiederholen === 0 ? "Noch keine offenen Fragen 🎉" : `${anzahlWiederholen} Fragen zum Auffrischen`))));
+  }, anzahlWiederholen === 0 ? "Noch keine offenen Fragen 🎉" : `${anzahlWiederholen} Fragen zum Auffrischen`))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      letterSpacing: 1,
+      color: "#7A7264",
+      textTransform: "uppercase",
+      fontWeight: 600,
+      marginBottom: 10
+    }
+  }, "Karteikarten"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 12
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: onStartKarteikarten,
+    style: {
+      ...kartenStil
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 16,
+      fontWeight: 600,
+      color: "#2B2620",
+      marginBottom: 3
+    }
+  }, "Karteikarten lernen"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: "#7A7264"
+    }
+  }, anzahlFaelligeKarten > 0 ? `${anzahlFaelligeKarten} Karten heute fällig` : "Alles wiederholt · komm später wieder"))));
 }
 const kartenStil = {
   display: "block",
@@ -1801,6 +1852,286 @@ const kartenStil = {
   cursor: "pointer",
   WebkitTapHighlightColor: "transparent"
 };
+
+/* ============================================================
+   SPACED REPETITION (vereinfachtes Leitner-System)
+   Box 1: 1 Tag, Box 2: 3 Tage, Box 3: 7 Tage, Box 4: 16 Tage, Box 5: 35 Tage
+   "Wusste ich" -> eine Box weiter (bis max. Box 5)
+   "Wusste ich nicht" -> zurück auf Box 1
+   ============================================================ */
+const LEITNER_INTERVALLE_TAGE = [1, 3, 7, 16, 35];
+function berechneNaechsteFaelligkeit(box) {
+  const tage = LEITNER_INTERVALLE_TAGE[Math.min(box, LEITNER_INTERVALLE_TAGE.length - 1)];
+  const datum = new Date();
+  datum.setDate(datum.getDate() + tage);
+  return datum.toISOString();
+}
+
+/* ============================================================
+   SCREEN: KARTEIKARTEN (Spaced Repetition)
+   ============================================================ */
+function KarteikartenScreen({
+  themaId,
+  fortschritt,
+  speichern,
+  onZurueck
+}) {
+  const alleFragen = FRAGEN_DATEN[themaId] || [];
+  const karteikartenStatus = fortschritt.karteikarten?.[themaId] || {};
+  const [faelligeKarten] = useState(() => {
+    const faellig = alleFragen.filter(f => {
+      const k = karteikartenStatus[f.id];
+      if (!k) return true;
+      return new Date(k.faelligAm) <= new Date();
+    });
+    return shuffle(faellig);
+  });
+  const [index, setIndex] = useState(0);
+  const [umgedreht, setUmgedreht] = useState(false);
+  const [sitzungBewertungen, setSitzungBewertungen] = useState({
+    wusste: 0,
+    wusstNicht: 0
+  });
+  const karte = faelligeKarten[index];
+  const bewerten = async wusste => {
+    const bisherigerStatus = karteikartenStatus[karte.id] || {
+      box: 0
+    };
+    const neueBox = wusste ? Math.min(bisherigerStatus.box + 1, LEITNER_INTERVALLE_TAGE.length - 1) : 0;
+    const neuerKartenStatus = {
+      box: neueBox,
+      faelligAm: berechneNaechsteFaelligkeit(neueBox),
+      letzteBewertung: new Date().toISOString()
+    };
+    const neueKarteikarten = {
+      ...fortschritt.karteikarten,
+      [themaId]: {
+        ...karteikartenStatus,
+        [karte.id]: neuerKartenStatus
+      }
+    };
+    await speichern({
+      ...fortschritt,
+      karteikarten: neueKarteikarten
+    });
+    setSitzungBewertungen(s => ({
+      wusste: s.wusste + (wusste ? 1 : 0),
+      wusstNicht: s.wusstNicht + (wusste ? 0 : 1)
+    }));
+    if (index + 1 >= faelligeKarten.length) {
+      // Sitzung fertig, zurück zur Übersicht nach kurzer Bestätigung
+      setIndex(index + 1); // triggers "fertig" render below
+    } else {
+      setIndex(i => i + 1);
+      setUmgedreht(false);
+    }
+  };
+  if (faelligeKarten.length === 0) {
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: "60px 24px",
+        textAlign: "center",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center"
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 40,
+        marginBottom: 16
+      }
+    }, "✓"), /*#__PURE__*/React.createElement("h2", {
+      style: {
+        fontFamily: "'Newsreader', Georgia, serif",
+        fontSize: 22,
+        color: "#2B2620",
+        marginBottom: 8
+      }
+    }, "Keine Karten fällig"), /*#__PURE__*/React.createElement("p", {
+      style: {
+        color: "#7A7264",
+        fontSize: 14,
+        marginBottom: 28
+      }
+    }, "Alle Karteikarten sind aktuell wiederholt. Komm später wieder."), /*#__PURE__*/React.createElement(Knopf, {
+      variant: "primary",
+      onClick: onZurueck
+    }, "Zurück"));
+  }
+  if (index >= faelligeKarten.length) {
+    return /*#__PURE__*/React.createElement("div", {
+      style: {
+        padding: "60px 24px",
+        textAlign: "center",
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center"
+      }
+    }, /*#__PURE__*/React.createElement(RuhePulsRing, {
+      prozent: faelligeKarten.length > 0 ? Math.round(sitzungBewertungen.wusste / faelligeKarten.length * 100) : 0,
+      groesse: 140,
+      dicke: 11,
+      farbe: "#1D4E4A",
+      label: sitzungBewertungen.wusste,
+      sublabel: `von ${faelligeKarten.length}`
+    }), /*#__PURE__*/React.createElement("h2", {
+      style: {
+        fontFamily: "'Newsreader', Georgia, serif",
+        fontSize: 22,
+        color: "#2B2620",
+        marginTop: 24,
+        marginBottom: 8
+      }
+    }, "Stapel durchgearbeitet"), /*#__PURE__*/React.createElement("p", {
+      style: {
+        color: "#7A7264",
+        fontSize: 14,
+        marginBottom: 28
+      }
+    }, sitzungBewertungen.wusstNicht > 0 ? `${sitzungBewertungen.wusstNicht} Karten kommen bald wieder dran.` : "Alles gewusst — stark!"), /*#__PURE__*/React.createElement(Knopf, {
+      variant: "primary",
+      onClick: onZurueck
+    }, "Zurück zur Übersicht"));
+  }
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: "16px 20px 32px",
+      minHeight: "100vh",
+      display: "flex",
+      flexDirection: "column"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "center",
+      gap: 12,
+      marginBottom: 18
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    onClick: onZurueck,
+    style: {
+      background: "none",
+      border: "none",
+      color: "#7A7264",
+      fontSize: 22,
+      cursor: "pointer",
+      padding: 4
+    }
+  }, "×"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      height: 6,
+      background: "#EFEAE1",
+      borderRadius: 4,
+      overflow: "hidden"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: `${index / faelligeKarten.length * 100}%`,
+      height: "100%",
+      background: "#1D4E4A",
+      borderRadius: 4,
+      transition: "width 0.3s ease"
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: "#7A7264",
+      fontWeight: 600,
+      minWidth: 44,
+      textAlign: "right"
+    }
+  }, index + 1, "/", faelligeKarten.length)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center"
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    onClick: () => setUmgedreht(u => !u),
+    style: {
+      background: umgedreht ? "#1D4E4A" : "#FFFFFF",
+      border: umgedreht ? "none" : "1px solid #EFEAE1",
+      borderRadius: 20,
+      padding: "32px 24px",
+      minHeight: 220,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      textAlign: "center",
+      cursor: "pointer",
+      marginBottom: 24,
+      WebkitTapHighlightColor: "transparent"
+    }
+  }, !umgedreht ? /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      fontWeight: 700,
+      color: "#B8B0A2",
+      letterSpacing: 1,
+      textTransform: "uppercase",
+      marginBottom: 14
+    }
+  }, "Frage"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 18,
+      fontWeight: 600,
+      color: "#2B2620",
+      lineHeight: 1.5,
+      fontFamily: "'Newsreader', Georgia, serif"
+    }
+  }, karte.frage), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12.5,
+      color: "#B8B0A2",
+      marginTop: 20
+    }
+  }, "Zum Umdrehen tippen")) : /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      fontWeight: 700,
+      color: "#C9DAD6",
+      letterSpacing: 1,
+      textTransform: "uppercase",
+      marginBottom: 14
+    }
+  }, "Antwort"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 18,
+      fontWeight: 600,
+      color: "#FAF7F2",
+      lineHeight: 1.5,
+      fontFamily: "'Newsreader', Georgia, serif"
+    }
+  }, karte.optionen[karte.richtig]))), umgedreht && /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement(Knopf, {
+    variant: "secondary",
+    onClick: () => bewerten(false),
+    style: {
+      flex: 1,
+      background: "#FBEBE7",
+      color: "#8C3A2F"
+    }
+  }, "Wusste ich nicht"), /*#__PURE__*/React.createElement(Knopf, {
+    variant: "secondary",
+    onClick: () => bewerten(true),
+    style: {
+      flex: 1,
+      background: "#E9F2ED",
+      color: "#2C5E48"
+    }
+  }, "Wusste ich"))));
+}
 
 /* ============================================================
    SCREEN: QUIZ (Lernmodus, ohne Zeitdruck)
@@ -2634,7 +2965,7 @@ function App() {
     geladen,
     speichern
   } = useFortschritt();
-  const [screen, setScreen] = useState("start"); // start | thema | quiz | ergebnis | pruefung-intro | pruefung | pruefung-ergebnis
+  const [screen, setScreen] = useState("start"); // start | thema | karteikarten | quiz | ergebnis | pruefung-intro | pruefung | pruefung-ergebnis
   const [aktivesThema, setAktivesThema] = useState(null);
   const [aktiverModus, setAktiverModus] = useState(null);
   const [letztesErgebnis, setLetztesErgebnis] = useState(null);
@@ -2682,7 +3013,13 @@ function App() {
     onStartLernen: modus => {
       setAktiverModus(modus);
       setScreen("quiz");
-    }
+    },
+    onStartKarteikarten: () => setScreen("karteikarten")
+  }), screen === "karteikarten" && /*#__PURE__*/React.createElement(KarteikartenScreen, {
+    themaId: aktivesThema,
+    fortschritt: fortschritt,
+    speichern: speichern,
+    onZurueck: () => setScreen("thema")
   }), screen === "quiz" && /*#__PURE__*/React.createElement(QuizScreen, {
     themaId: aktivesThema,
     modus: aktiverModus,
